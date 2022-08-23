@@ -27,7 +27,8 @@ import { UpdateWorkerComponent } from './dataWorker/update-worker/update-worker.
     AngularMaterialModule,
     GoogleMapsModule,
     HttpClientModule,
-    HttpClientJsonpModule
+    HttpClientJsonpModule,
+    ReactiveFormsModule,
   ]
 })
 export class BodyModule { }
