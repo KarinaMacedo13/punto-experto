@@ -1,0 +1,132 @@
+<section id="container-mydata">
+  <div id="container-first">
+    <h4 id="tittle-mydata">Crear tu cuenta</h4>
+  </div>
+  <form>
+    <p class="description-form">Nombres: *</p>
+    <input class="input-form-mydata" placeholder="Ingresa tus nombres" />
+
+    <p class="description-form">Apellido Paterno: *</p>
+    <input class="input-form-mydata" placeholder="Ingresa tu apellido paterno" />
+
+    <p class="description-form">Apellido Materno: *</p>
+    <input placeholder="Ingresa tu apellido materno" />
+
+    <p class="description-form">Fecha de nacimiento: *</p>
+    <input type="date" placeholder="dd/mm/aaaa" />
+
+    <p class="description-form">DNI: *</p>
+    <input placeholder="Ingresa tu DNI" type="number"/>
+
+    <p class="description-form">Celular: *</p>
+    <input placeholder="Ingresa tu numero celular" />
+
+    <p class="description-form">Email: *</p>
+    <input type="email" placeholder="Ingresa tu email" />
+
+    <p class="description-form">Ocupación: *</p>
+    <select class="form-select" aria-label="Default select example">
+      <option selected>Selecciona tu ocupación</option>
+      <option value="Albañil">Albañil</option>
+      <option value="Maestro de Obras">Maestro de Obras</option>
+      <option value="Oficial">Oficial</option>
+      <option value="Operario">Operario</option>
+      <option value="Peón">Peón</option>
+    </select>
+
+    <p class="description-form">Dirección: *</p>
+    <input placeholder="departamento,provincia,distrito" />
+
+    <p class="description-form">¿Quieres pertenecer a la sección de oportunidades?</p>
+    <mat-radio-group aria-label="Select an option">
+      <mat-radio-button value="si">Sí, quiero participar</mat-radio-button>
+      <mat-radio-button value="no">No deseo participar</mat-radio-button>
+    </mat-radio-group>
+
+    <p class="description-form">Foto de perfil*:</p>
+    <div class="input-group mb-3">
+      <input
+        type="text"
+        class="form-control"
+        placeholder="Agrega tu foto de perfil"
+        aria-label="Recipient's username"
+        aria-describedby="basic-addon2"
+        disabled="true"
+      />
+      <span class="input-group-text divUploadedImg" id="basic-addon2" (click) = "eventPhotoProfile()">
+        <mat-icon >add_circle_outline</mat-icon>
+        <input type="file" (change)="addPhotoProfile()"/>
+      </span>
+    </div>
+
+    <p class="description-form">Experiencia*</p>
+    <div>
+      <input placeholder="00" type="number" />
+      <p>años de experiencia:*</p>
+    </div>
+
+    <p class="description-form">Zonas de trabajo*</p>
+    <div class="input-group mb-3">
+      <input
+        type="text"
+        class="form-control"
+        placeholder="Ubicar zonas de trabajo"
+        aria-label="Recipient's username"
+        aria-describedby="basic-addon2"
+      />
+      <span class="input-group-text" id="basic-addon2"
+        ><mat-icon>add_circle_outline</mat-icon></span
+      >
+    </div>
+
+    <p class="description-form">Especialidad:*</p>
+    <select class="form-select" aria-label="Default select example">
+      <option selected>Seleccionar especialidad</option>
+      <option value="Gasfitero">Gasfitero</option>
+      <option value="Gestión en Obras">Gestión en Obras</option>
+      <option value="Carpintero">Carpintero</option>
+      <option value="Parquetista">Parquetista</option>
+      <option value="Instalador de Aparatos Elevadores">Instalador de Aparatos Elevadores</option>
+      <option value="Instalador de Domótica en Edificación">Instalador de Domótica en Edificación</option>
+      <option value="Fontanero">Fontanero</option>
+      <option value="Cristalero">Cristalero</option>
+      <option value="Especialista en acabados">Especialista en acabados</option>
+      <option value="Especialista en instalaciones eléctricas">Especialista en instalaciones eléctricas</option>
+    </select>
+
+    <p class="description-form">Galeria de trabajos de obra:</p>
+    <div class="input-group mb-3">
+      <mat-icon>info</mat-icon>
+      <input
+        type="text"
+        class="form-control"
+        placeholder="Agregar foto"
+        aria-label="Recipient's username"
+        aria-describedby="basic-addon2"
+      />
+      <span class="input-group-text" id="basic-addon2">
+        <mat-icon>add_circle_outline</mat-icon>
+      </span>
+    </div>
+
+    <p>
+      autorizas que puedan comunicarse contigo a través del número de Whatsapp
+      registrado
+    </p>
+    <mat-radio-group aria-label="Select an option">
+      <mat-radio-button value="1">Sí, autorizo</mat-radio-button>
+      <mat-radio-button value="2">No autorizo</mat-radio-button>
+    </mat-radio-group>
+
+    <div>
+      <input type="checkbox" />
+      <p>Acepto los términos y condiciones</p>
+    </div>
+
+    <div>
+      <button>Actualizar</button>
+    </div>
+  </form>
+</section>
+
+

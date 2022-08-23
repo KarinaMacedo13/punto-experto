@@ -1,0 +1,53 @@
+.mat-radio-button~.mat-radio-button {
+  margin-left: 16px;
+}
+
+#container-mydata {
+  margin: 21px;
+}
+
+#container-first {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+#tittle-mydata {
+  font-size: 16px;
+}
+
+#edit-mydata {
+  font-size: 13px;
+  margin-right: 20px;
+}
+
+.description-form {
+  font-size: 13px;
+}
+
+.input-form-mydata {
+  width: 296px;
+  height: 16px;
+  left: 32px;
+  top: 249px;
+  padding: 8px;
+  border-radius: 8px;
+
+  font-style: normal;
+  font-weight: 350;
+  font-size: 14px;
+  line-height: 18px;
+
+
+  color: #9F9F9F;
+}
+
+.divUploadedImg::before {
+  color: black;
+  content: 's'; /* texto por defecto */
+  position: absolute;
+}
+.divUploadedImg input[type='file'] {
+  opacity: 0;
+  width: 100%;
+}
