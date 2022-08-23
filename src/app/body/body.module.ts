@@ -12,6 +12,7 @@ import { MapsComponent } from './main/maps/maps.component';
 import { MasterbuildersComponent } from './main/masterbuilders/masterbuilders.component';
 import { CreateWorkerComponent } from './dataWorker/create-worker/create-worker.component';
 import { UpdateWorkerComponent } from './dataWorker/update-worker/update-worker.component';
+import { DialogOptionInitial } from "./dialogs/dialogInitial/dialoginitial.component";
 
 
 @NgModule ({
@@ -20,7 +21,8 @@ import { UpdateWorkerComponent } from './dataWorker/update-worker/update-worker.
     MapsComponent,
     MasterbuildersComponent,
     CreateWorkerComponent,
-    UpdateWorkerComponent
+    UpdateWorkerComponent,
+    DialogOptionInitial
   ],
   imports: [
     BodyRoutingModule,
@@ -28,6 +30,7 @@ import { UpdateWorkerComponent } from './dataWorker/update-worker/update-worker.
     GoogleMapsModule,
     HttpClientModule,
     HttpClientJsonpModule,
+    MatDialogModule
     ReactiveFormsModule,
   ]
 })
