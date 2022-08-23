@@ -1,0 +1,120 @@
+<section id="container-mydata">
+  <div id="container-first">
+    <h4 id="tittle-mydata">Mis datos</h4>
+    <div id="edit-container"><mat-icon id="icon-edit">edit</mat-icon><p id="edit-mydata">Editar</p></div>
+  </div>
+  <form>
+    <p class="description-form">Nombres: *</p>
+    <input class="input-form-mydata" placeholder="Carlos Ernesto" />
+
+    <p class="description-form">Apellido Paterno: *</p>
+    <input class="input-form-mydata" placeholder="Alvarado" />
+
+    <p class="description-form">Apellido Materno: *</p>
+    <input class="input-form-mydata" placeholder="Contreras" />
+
+    <p class="description-form">Fecha de nacimiento: *</p>
+    <input class="input-form-mydata" type="date" placeholder="12/12/1995" />
+
+    <p class="description-form">DNI: *</p>
+    <input class="input-form-mydata" placeholder="08748927" />
+
+    <p class="description-form">Celular: *</p>
+    <input class="input-form-mydata" placeholder="930993949" />
+
+    <p class="description-form">Email: *</p>
+    <input class="input-form-mydata" type="email" placeholder="carlos.alvarado@gmail.com" />
+
+    <p class="description-form">Ocupación: *</p>
+    <input class="input-form-mydata" placeholder="Maestro de Obra" />
+
+    <p class="description-form">Dirección: *</p>
+    <input class="input-form-mydata" placeholder="Piura,Piura,Piura" />
+
+    <p class="description-form">¿Quieres pertenecer a la sección de oportunidades<br>laborales?</p>
+    <mat-radio-group class="group-radio-button" aria-label="Select an option">
+      <mat-radio-button class="options" value="1">Sí, quiero pertenecer</mat-radio-button>
+      <mat-radio-button class="options" value="2">No quiero pertenecer</mat-radio-button>
+    </mat-radio-group>
+
+    <p class="description-form">Foto de perfil*:</p>
+    <div>
+      <input class="input-form-mydata"
+        type="text"
+        placeholder="Agrega tu foto de perfil"
+      />
+      <span class="input-group-text" id="basic-addon2"
+        ><mat-icon>add_circle_outline</mat-icon></span
+      >
+    </div>
+
+    <p class="description-form">Experiencia*</p>
+    <div id="container-experience">
+      <input id="experience" placeholder="00" type="number" />
+      <p id="years-experience">años de experiencia:*</p>
+    </div>
+
+    <p class="description-form">Zonas de trabajo*</p>
+    <div class="input-group mb-3">
+      <input class="input-form-mydata"
+        type="text"
+        class="form-control"
+        placeholder="Ubicar zonas de trabajo"
+        aria-label="Recipient's username"
+        aria-describedby="basic-addon2"
+      />
+      <span class="input-group-text" id="basic-addon2"
+        ><mat-icon>add_circle_outline</mat-icon></span
+      >
+    </div>
+
+    <p class="description-form">Especialidad:*</p>
+    <select class="input-form-mydata" class="form-select" aria-label="Default select example">
+      <option selected>Seleccionar especialidad</option>
+      <option value="1">Gasfitero</option>
+      <option value="2">Gestión en Obras</option>
+      <option value="3">Carpintero</option>
+      <option value="4">Parquetista</option>
+      <option value="5">Instalador de Aparatos Elevadores</option>
+      <option value="6">Instalador de Domótica en Edificación</option>
+      <option value="7">Fontanero</option>
+      <option value="8">Cristalero</option>
+      <option value="9">Especialista en acabados</option>
+      <option value="10">Especialista en instalaciones eléctricas</option>
+    </select>
+
+    <p class="description-form">Galeria de trabajos de obra:</p>
+    <div class="input-group mb-3">
+      <mat-icon>info</mat-icon>
+      <input class="input-form-mydata"
+        type="text"
+        class="form-control"
+        placeholder="Agregar foto"
+        aria-label="Recipient's username"
+        aria-describedby="basic-addon2"
+      />
+      <span class="input-group-text" id="basic-addon2"
+        ><mat-icon>add_circle_outline</mat-icon></span
+      >
+    </div>
+
+    <p>
+      ¿Autorizas que puedan comunicarse contigo a través del número de Whatsapp
+      registrado?
+    </p>
+    <mat-radio-group class="group-radio-button" aria-label="Select an option">
+      <mat-radio-button class="options" value="1">Sí, autorizo</mat-radio-button>
+      <mat-radio-button class="options" value="2">No autorizo</mat-radio-button>
+    </mat-radio-group>
+
+    <div id="check-terms">
+      <input type="checkbox" />
+      <p>Acepto los términos y condiciones</p>
+    </div>
+
+    <div id="container-button-update">
+      <button id="button-update">Actualizar</button>
+    </div>
+  </form>
+</section>
+
