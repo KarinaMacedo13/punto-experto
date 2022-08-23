@@ -31,6 +31,7 @@ import { DialogOptionInitial } from "./dialogs/dialogInitial/dialoginitial.compo
     HttpClientModule,
     HttpClientJsonpModule,
     MatDialogModule
+    ReactiveFormsModule,
   ]
 })
 export class BodyModule { }
