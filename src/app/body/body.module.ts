@@ -30,8 +30,8 @@ import { DialogOptionInitial } from "./dialogs/dialogInitial/dialoginitial.compo
     GoogleMapsModule,
     HttpClientModule,
     HttpClientJsonpModule,
-    MatDialogModule
-    ReactiveFormsModule,
+    MatDialogModule,
+    ReactiveFormsModule
   ]
 })
 export class BodyModule { }
