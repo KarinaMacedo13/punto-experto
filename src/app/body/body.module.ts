@@ -10,13 +10,17 @@ import { BodyRoutingModule } from "./body-routing.module";
 import { MainComponent } from './main/main/main.component';
 import { MapsComponent } from './main/maps/maps.component';
 import { MasterbuildersComponent } from './main/masterbuilders/masterbuilders.component';
+import { CreateWorkerComponent } from './dataWorker/create-worker/create-worker.component';
+import { UpdateWorkerComponent } from './dataWorker/update-worker/update-worker.component';
 
 
 @NgModule ({
   declarations: [
     MainComponent,
     MapsComponent,
-    MasterbuildersComponent
+    MasterbuildersComponent,
+    CreateWorkerComponent,
+    UpdateWorkerComponent
   ],
   imports: [
     BodyRoutingModule,
