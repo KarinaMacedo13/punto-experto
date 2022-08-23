@@ -1,0 +1,26 @@
+<mat-drawer-container class="create-container" autosize>
+  <div class ="container-maps">
+    <div class="btn-group" role="group" aria-label="Basic mixed styles example">
+      <button type="button" class="btn btn-outline-danger">Punto de Venta</button>
+      <button type="button" class="btn btn-outline-danger" (click)="drawer.toggle()">Maestro de Obra</button>
+    </div>
+<!--
+    <div *ngIf="apiLoaded | async">
+      <google-map height="100vh"
+              width="100%"
+              [center]="center"
+              [zoom]="zoom">
+    <map-polygon [paths]="vertices"></map-polygon>
+    </google-map>
+    </div> -->
+     <app-maps></app-maps>
+
+  </div>
+
+<!--   // aqui iria la parte de maestros de Obra -->
+  <mat-drawer #drawer class="create-sidenav" mode="side"  opened="true" position="end">
+    <app-masterbuilders></app-masterbuilders>
+  </mat-drawer>
+
+</mat-drawer-container>
+

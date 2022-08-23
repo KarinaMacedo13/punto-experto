@@ -1,0 +1,23 @@
+<header class="containerNav">
+  <mat-toolbar>
+      <span><img class="logoNav" src="https://i.postimg.cc/HnwhTt7s/logo-Principal.png"/></span>
+      <span><img class="nextOptionNavBar" src="https://i.postimg.cc/yxZqmts2/back.png"/></span>
+      <span class="example-spacer"></span>
+      <div class="optionsNavBar" fxShow="true" fxHide.lt-md="true" *ngFor="let data of navData">
+
+          <a mat-button routerLink="/">{{data.nav}}</a>
+
+      </div>
+      <button class="initSesion" mat-button routerLink="/">INICIAR SESIÓN</button>
+      <span><img class="iconExpert" src="https://i.postimg.cc/jjSzkJC4/icon-Expert.png"/></span>
+  </mat-toolbar>
+</header>
+<main>
+  <router-outlet></router-outlet>
+</main>
+
+
+
+
+
+

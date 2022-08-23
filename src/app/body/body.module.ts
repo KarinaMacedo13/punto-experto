@@ -1,0 +1,29 @@
+import { CommonModule } from "@angular/common";
+import { HttpClientModule, HttpClientJsonpModule } from '@angular/common/http';
+import { NgModule } from "@angular/core";
+
+import { FormGroup, FormsModule, ReactiveFormsModule } from "@angular/forms";
+import { GoogleMapsModule } from "@angular/google-maps";
+import { MatDialogModule } from "@angular/material/dialog";
+import { AngularMaterialModule } from "src/app/angular-material/angular-material.module";
+import { BodyRoutingModule } from "./body-routing.module";
+import { MainComponent } from './main/main/main.component';
+import { MapsComponent } from './main/maps/maps.component';
+import { MasterbuildersComponent } from './main/masterbuilders/masterbuilders.component';
+
+
+@NgModule ({
+  declarations: [
+    MainComponent,
+    MapsComponent,
+    MasterbuildersComponent
+  ],
+  imports: [
+    BodyRoutingModule,
+    AngularMaterialModule,
+    GoogleMapsModule,
+    HttpClientModule,
+    HttpClientJsonpModule
+  ]
+})
+export class BodyModule { }
