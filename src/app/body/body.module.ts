@@ -23,7 +23,8 @@ import { MasterbuildersComponent } from './main/masterbuilders/masterbuilders.co
     AngularMaterialModule,
     GoogleMapsModule,
     HttpClientModule,
-    HttpClientJsonpModule
+    HttpClientJsonpModule,
+    ReactiveFormsModule,
   ]
 })
 export class BodyModule { }
