@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { MatDialogRef } from '@angular/material/dialog';
+import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { Subject } from 'rxjs';
 import { ubications } from '../../../shared/ubications.const';
 
@@ -9,7 +9,7 @@ import { ubications } from '../../../shared/ubications.const';
   styleUrls: ['./dialog-ubication.component.css']
 })
 export class DialogUbicationComponent implements OnInit {
-  constructor( public dialogRef: MatDialogRef<DialogUbicationComponent>,) {}
+  constructor( public dialogRef: MatDialogRef<DialogUbicationComponent>) {}
   onNoClick(): void {this.dialogRef.close();}
 
   public searchTerm$= new Subject<any>();

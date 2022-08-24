@@ -40,41 +40,42 @@ a {
 }
 
 .optionsNavBar {
-  margin: 0% 0% 0% 0%;
-  /* background-color: red */
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .initSesion {
   display: none;
 }
 
-.iconExpert {
-
-}
-
 @media only screen and (min-width: 820px) {
   /* For desktop: */
   .logoNav {
       display: flex;
-      width: 50%;
+      width: 150px;
   }
-
   .nextOptionNavBar {
       display: none;
   }
   a {
-      text-decoration: none;
-      font-size: 40%;
-      white-space: normal;
-      font-family: Forza;
-      text-align: center;
-  }
+    text-decoration: none;
+    font-size: 50%;
+    white-space: normal;
+    font-family: Forza;
+    text-align: center;
+    line-height: 1.5;
+    padding: 1%;
+}
 
   .initSesion {
       display: flex;
       background-color: #EC1D24;
       border-radius: 50px;
       text-align: center;
+      font-size: 10px;
+
   }
   .iconExpert{
       display: none;
