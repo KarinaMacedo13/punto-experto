@@ -1,12 +1,23 @@
-/* You can add global styles to this file, and also import other style files */
 @font-face {
   font-family: 'Forza';
   src: local('Forza Bold'), local('Forza-Bold'),
       url('src/assets/fonts/Forza-Bold.woff2') format('woff2'),
       url('src/assets/fonts/Forza-Bold.woff') format('woff'),
       url('src/assets/fonts/Forza-Bold.ttf') format('truetype');
-  font-weight: 700;
+  font-weight: bold;
+  font-style: normal;
+};
+
+@font-face {
+  font-family: 'Forza';
+  src: local('Forza Medium'), local('Forza-Medium'),
+      url('src/assets/fonts/Forza-Medium.woff2') format('woff2'),
+      url('src/assets/fonts/Forza-Medium.woff') format('woff'),
+      url('src/assets/fonts/Forza-Medium.ttf') format('truetype');
+  font-weight: normal;
   font-style: normal;
 }
+
 html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+body { margin: 0; font-family: Forza, "Helvetica Neue", sans-serif; }
+
