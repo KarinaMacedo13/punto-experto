@@ -1,16 +1,18 @@
 .mat-radio-button~.mat-radio-button {
   margin-left: 16px;
 }
-
+body { margin: 0; font-family: Forza,}
 #container-mydata {
   margin: 21px;
 }
 #edit-container{
+  margin-top: 10px;
+  margin-right: 5px;
   display: flex;
   flex-direction: row;
 }
 #icon-edit{
-  margin-top: 5px;
+  margin-top: px;
 }
 #edit-mydata{
   text-decoration: underline;
@@ -20,10 +22,14 @@
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
+  font-weight: bold;
+  font-family: forza;
 }
 
 #tittle-mydata {
   font-size: 16px;
+  font-weight: bold;
+  font-family: forza;
 }
 
 #edit-mydata {
@@ -33,28 +39,53 @@
 
 .description-form {
   font-size: 13px;
+  font-family: forza;
+  font-weight: bold;
+  margin-bottom: 3px;
 }
-
-.input-form-mydata {
-  width: 310px;
-  height: 16px;
+#container-pic{
+  display:flex;
+  flex-direction: row;
+}
+#input-pic{
+  width: 322px;
+  height: 40px;
   left: 32px;
   top: 249px;
   padding: 8px;
+  margin-bottom: 5px;
   border: 0px;
   border: 1px solid #9F9F9F;
   border-radius: 6px;
 
 
   font-family: forza;
-  font-weight: 350;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 18px;
+  color: #9F9F9F;
+}
+.input-form-mydata {
+  width: 371px;
+  height: 40px;
+  left: 32px;
+  top: 249px;
+  padding: 8px;
+  margin-bottom: 5px;
+  border: 0px;
+  border: 1px solid #9F9F9F;
+  border-radius: 6px;
+
+
+  font-family: forza;
+  font-weight: normal;
   font-size: 14px;
   line-height: 18px;
   color: #9F9F9F;
 }
 #experience{
-  width: 100px;
-  height: 16px;
+  width: 50px;
+  height: 40px;
   left: 32px;
   top: 249px;
   padding: 8px;
@@ -71,17 +102,31 @@
 #container-experience{
   display:flex;
   flex-direction: row;
+  align-items: center;
 }
 #years-experience{
+  margin-left: 9px;
+  margin-top:15px;
   font-size: 12px;
+  font-family: 'Forza';
 }
 #check-terms{
   display:flex;
   flex-direction: row;
+  align-items: center;
+  font-family: forza;
+}
+#text-terms{
+  margin-left: 10px;
+  margin-top: 14px;
+  font-size: 12px;
 }
 .group-radio-button{
   display:flex;
   flex-direction: row;
+  font-family: forza;
+  font-weight: normal;
+  margin-bottom: 5px;
 }
 .options{
   font-size: 13px;
@@ -96,4 +141,18 @@
   font-family: Forza;
   font-size: 14px;
   color:white;
+}
+#container-galery{
+  display:flex;
+  align-items: center;
+}
+.form-select{
+  font-family: Forza;
+  font-weight: normal;
+  color: #9F9F9F;
+}
+.form-control{
+  font-family: Forza;
+  font-weight: normal;
+  color: #9F9F9F;
 }
