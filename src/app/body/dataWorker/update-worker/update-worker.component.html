@@ -38,8 +38,8 @@
     </mat-radio-group>
 
     <p class="description-form">Foto de perfil*:</p>
-    <div>
-      <input class="input-form-mydata"
+    <div id="container-pic">
+      <input id="input-pic"
         type="text"
         placeholder="Agrega tu foto de perfil"
       />
@@ -50,7 +50,7 @@
 
     <p class="description-form">Experiencia*</p>
     <div id="container-experience">
-      <input id="experience" placeholder="00" type="number" />
+      <input id="experience" placeholder="  00" type="number" />
       <p id="years-experience">años de experiencia:*</p>
     </div>
 
@@ -84,7 +84,7 @@
     </select>
 
     <p class="description-form">Galeria de trabajos de obra:</p>
-    <div class="input-group mb-3">
+    <div class="input-group mb-3" id="container-galery">
       <mat-icon>info</mat-icon>
       <input class="input-form-mydata"
         type="text"
@@ -98,7 +98,7 @@
       >
     </div>
 
-    <p>
+    <p class="description-form">
       ¿Autorizas que puedan comunicarse contigo a través del número de Whatsapp
       registrado?
     </p>
@@ -109,7 +109,7 @@
 
     <div id="check-terms">
       <input type="checkbox" />
-      <p>Acepto los términos y condiciones</p>
+      <p id="text-terms">Acepto los términos y condiciones</p>
     </div>
 
     <div id="container-button-update">
@@ -117,4 +117,3 @@
     </div>
   </form>
 </section>
-
