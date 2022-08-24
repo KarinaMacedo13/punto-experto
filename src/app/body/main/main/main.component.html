@@ -3,25 +3,36 @@
     <div class="btn-group containerbtnFilter" role="group" aria-label="Basic mixed styles example">
       <div>
         <button type="button" class="btn btn-outline-danger">Punto de Venta</button>
-        <button type="button" class="btn btn-danger" (click)="drawer.toggle()">Maestro de Obra</button>
+        <button type="button" class="btn btn-danger" >Maestro de Obra</button>
       </div>
       <div class="containerFilter">
-        <input placeholder="Buscar ubicación"/>
+        <input placeholder="Buscar ubicación" (click)="openModalUbication()"/>
         <button><i class="bi bi-funnel"></i>Filtrar</button>
       </div>
     </div>
     <div class="containerMap">
       <app-maps></app-maps>
     </div>
+    <div class="footerOptions">
+      <div>
+        <p>Piura - Piura - Piura</p>
+      </div>
+      <hr>
+      <div>
+        <p>Encontramos 50 Maestros de Obra en esta zona</p>
+        <div id="container-pic">
+          <h4 id="change-pic">Cambia la ubicación</h4>
+          <button type="button" class="btn btn-danger" (click)="drawer.toggle()">Ver listado</button>
+        </div>
+      </div>
+    </div>
+
   </div>
 
-<!--   // aqui iria la parte de maestros de Obra -->
+<!--   //  maestros de Obra -->
   <mat-drawer #drawer class="create-sidenav" mode="side"  opened="false" position="end">
     <app-masterbuilders></app-masterbuilders>
   </mat-drawer>
-
-
-
 
 </mat-drawer-container>
 
