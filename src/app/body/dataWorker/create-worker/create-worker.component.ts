@@ -43,7 +43,7 @@ export class CreateWorkerComponent implements OnInit {
       url_photo: [''],
       url_projects: [''],
       experience: ['', [Validators.required]],
-      direccion: ['', [Validators.required]],
+      direccion: ['', ],
       areaWorker: [[],],
       ubigeo: [''],
 
