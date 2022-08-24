@@ -8,12 +8,48 @@
 
 #container-first {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: space-between;
 }
-
+#text-register{
+  font-family: Forza;
+  font-size: 14px;
+  color: #9F9F9F;
+}
+#text-register-2{
+  font-family: Forza;
+  font-size: 10px;
+  color:#ED1C24
+  
+}
+#container-pic{
+  width: 328px;
+height: 116px;
+border: 1px solid #9F9F9F;
+display: flex;
+align-items: center;
+flex-direction: row;
+}
+#pic{
+  border: 1px solid #9F9F9F;
+  border-radius: 100px;
+  width: 90px;
+  height: 90px;
+  margin-left: 20px;
+}
+#change-pic{
+  color:#ED1C24;
+  font-family:forza;
+  font-size: 13px;
+  margin-left:20px;
+  font-weight: bold;
+  text-decoration: underline;
+}
 #tittle-mydata {
-  font-size: 16px;
+  font-size: 24px;
+  color: #ED1C24;
+  font-weight: bold;
+  font-family: Forza;
 }
 
 #edit-mydata {
@@ -23,24 +59,57 @@
 
 .description-form {
   font-size: 13px;
+  font-family: forza;
+  font-weight: bold;
+  margin-bottom: 3px;
 }
 
 .input-form-mydata {
-  width: 296px;
-  height: 16px;
+  width: 371px;
+  height: 40px;
   left: 32px;
   top: 249px;
   padding: 8px;
-  border-radius: 8px;
+  margin-bottom: 5px;
+  border: 0px;
+  border: 1px solid #9F9F9F;
+  border-radius: 6px;
 
-  font-style: normal;
+
+  font-family: forza;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 18px;
+  color: #9F9F9F;
+}
+#experience{
+  width: 50px;
+  height: 40px;
+  left: 32px;
+  top: 249px;
+  padding: 8px;
+  border: 0px;
+  border: 1px solid #9F9F9F;
+  border-radius: 6px;
+
+  font-family: forza;
   font-weight: 350;
   font-size: 14px;
   line-height: 18px;
-
-
   color: #9F9F9F;
 }
+#container-experience{
+  display:flex;
+  flex-direction: row;
+  align-items: center;
+}
+#years-experience{
+  margin-left: 9px;
+  margin-top:15px;
+  font-size: 12px;
+  font-family: 'Forza';
+}
+
 
 .divUploadedImg::before {
   color: black;
@@ -50,4 +119,148 @@
 .divUploadedImg input[type='file'] {
   opacity: 0;
   width: 100%;
+}
+
+#edit-container{
+  margin-top: 10px;
+  margin-right: 5px;
+  display: flex;
+  flex-direction: row;
+}
+#icon-edit{
+  margin-top: px;
+}
+#edit-mydata{
+  text-decoration: underline;
+}
+
+#tittle-mydata {
+  font-size: 16px;
+  font-weight: bold;
+  font-family: forza;
+}
+
+#edit-mydata {
+  font-size: 13px;
+  margin-right: 20px;
+}
+
+.description-form {
+  font-size: 13px;
+  font-family: forza;
+  font-weight: bold;
+  margin-bottom: 3px;
+}
+#container-pic{
+  display:flex;
+  flex-direction: row;
+}
+#input-pic{
+  width: 322px;
+  height: 40px;
+  left: 32px;
+  top: 249px;
+  padding: 8px;
+  margin-bottom: 5px;
+  border: 0px;
+  border: 1px solid #9F9F9F;
+  border-radius: 6px;
+
+
+  font-family: forza;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 18px;
+  color: #9F9F9F;
+}
+.input-form-mydata {
+  width: 371px;
+  height: 40px;
+  left: 32px;
+  top: 249px;
+  padding: 8px;
+  margin-bottom: 5px;
+  border: 0px;
+  border: 1px solid #9F9F9F;
+  border-radius: 6px;
+
+
+  font-family: forza;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 18px;
+  color: #9F9F9F;
+}
+#experience{
+  width: 50px;
+  height: 40px;
+  left: 32px;
+  top: 249px;
+  padding: 8px;
+  border: 0px;
+  border: 1px solid #9F9F9F;
+  border-radius: 6px;
+
+  font-family: forza;
+  font-weight: 350;
+  font-size: 14px;
+  line-height: 18px;
+  color: #9F9F9F;
+}
+#container-experience{
+  display:flex;
+  flex-direction: row;
+  align-items: center;
+}
+#years-experience{
+  margin-left: 9px;
+  margin-top:15px;
+  font-size: 12px;
+  font-family: 'Forza';
+}
+#check-terms{
+  display:flex;
+  flex-direction: row;
+  align-items: center;
+  font-family: forza;
+}
+#text-terms{
+  margin-left: 10px;
+  margin-top: 14px;
+  font-size: 12px;
+}
+.group-radio-button{
+  display:flex;
+  flex-direction: row;
+  font-family: forza;
+  font-weight: normal;
+  margin-bottom: 5px;
+}
+.options{
+  font-size: 13px;
+}
+#container-button-update{
+  display:flex;
+  justify-content: flex-end;
+}
+#button-update{
+  background: #ED1C24;
+  border: 0px;
+  font-family: Forza;
+  font-size: 14px;
+  color:white;
+}
+#container-galery{
+  display:flex;
+  align-items: center;
+}
+.form-select{
+  font-family: Forza;
+  font-weight: normal;
+  color: #9F9F9F;
+}
+.form-control{
+  font-family: Forza;
+  font-weight: normal;
+  color: #9F9F9F;
 }

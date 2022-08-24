@@ -1,6 +1,8 @@
 <section id="container-mydata">
   <div id="container-first">
     <h4 id="tittle-mydata">Crear tu cuenta</h4>
+    <h4 id="text-register">Registra tus datos personales y prepárate para poner manos a la obra.</h4>
+    <h4 id="text-register-2">*Campo obligatorio</h4>
   </div>
   <form>
     <p class="description-form">Nombres: *</p>
@@ -10,22 +12,22 @@
     <input class="input-form-mydata" placeholder="Ingresa tu apellido paterno" />
 
     <p class="description-form">Apellido Materno: *</p>
-    <input placeholder="Ingresa tu apellido materno" />
+    <input class="input-form-mydata" placeholder="Ingresa tu apellido materno" />
 
     <p class="description-form">Fecha de nacimiento: *</p>
-    <input type="date" placeholder="dd/mm/aaaa" />
+    <input class="input-form-mydata" type="date" placeholder="dd/mm/aaaa" />
 
     <p class="description-form">DNI: *</p>
-    <input placeholder="Ingresa tu DNI" type="number"/>
+    <input class="input-form-mydata" placeholder="Ingresa tu DNI" type="number"/>
 
     <p class="description-form">Celular: *</p>
-    <input placeholder="Ingresa tu numero celular" />
+    <input class="input-form-mydata" placeholder="Ingresa tu numero celular" />
 
     <p class="description-form">Email: *</p>
-    <input type="email" placeholder="Ingresa tu email" />
+    <input class="input-form-mydata" type="email" placeholder="Ingresa tu email" />
 
     <p class="description-form">Ocupación: *</p>
-    <select class="form-select" aria-label="Default select example">
+    <select class="form-select input-form-mydata" aria-label="Default select example">
       <option selected>Selecciona tu ocupación</option>
       <option value="Albañil">Albañil</option>
       <option value="Maestro de Obras">Maestro de Obras</option>
@@ -35,34 +37,26 @@
     </select>
 
     <p class="description-form">Dirección: *</p>
-    <input placeholder="departamento,provincia,distrito" />
+    <input class="input-form-mydata" placeholder="departamento,provincia,distrito" />
 
     <p class="description-form">¿Quieres pertenecer a la sección de oportunidades?</p>
-    <mat-radio-group aria-label="Select an option">
+    <mat-radio-group  aria-label="Select an option">
       <mat-radio-button value="si">Sí, quiero participar</mat-radio-button>
       <mat-radio-button value="no">No deseo participar</mat-radio-button>
     </mat-radio-group>
 
-    <p class="description-form">Foto de perfil*:</p>
-    <div class="input-group mb-3">
-      <input
-        type="text"
-        class="form-control"
-        placeholder="Agrega tu foto de perfil"
-        aria-label="Recipient's username"
-        aria-describedby="basic-addon2"
-        disabled="true"
-      />
-      <span class="input-group-text divUploadedImg" id="basic-addon2" (click) = "eventPhotoProfile()">
-        <mat-icon >add_circle_outline</mat-icon>
-        <input type="file" (change)="addPhotoProfile()"/>
-      </span>
+    <p class="description-form">Foto de perfil:</p>
+    <div id="container-pic">
+      <div id="pic">
+        <img>
+      </div>
+      <h4 id="change-pic">cambia tu foto</h4>
     </div>
 
     <p class="description-form">Experiencia*</p>
-    <div>
-      <input placeholder="00" type="number" />
-      <p>años de experiencia:*</p>
+    <div id="container-experience">
+      <input id="experience" placeholder="  00" type="number" />
+      <p id="years-experience">años de experiencia:*</p>
     </div>
 
     <p class="description-form">Zonas de trabajo*</p>
@@ -104,29 +98,28 @@
         aria-label="Recipient's username"
         aria-describedby="basic-addon2"
       />
-      <span class="input-group-text" id="basic-addon2">
-        <mat-icon>add_circle_outline</mat-icon>
-      </span>
+      <span class="input-group-text" id="basic-addon2"
+        ><mat-icon>add_circle_outline</mat-icon></span
+      >
     </div>
-
-    <p>
-      autorizas que puedan comunicarse contigo a través del número de Whatsapp
-      registrado
+    <p class="description-form">
+      ¿Autorizas que puedan comunicarse contigo a través del número de Whatsapp
+      registrado?
     </p>
-    <mat-radio-group aria-label="Select an option">
-      <mat-radio-button value="1">Sí, autorizo</mat-radio-button>
-      <mat-radio-button value="2">No autorizo</mat-radio-button>
+    <mat-radio-group class="group-radio-button" aria-label="Select an option">
+      <mat-radio-button class="options" value="1">Sí, autorizo</mat-radio-button>
+      <mat-radio-button class="options" value="2">No autorizo</mat-radio-button>
     </mat-radio-group>
 
-    <div>
+    <div id="check-terms">
       <input type="checkbox" />
-      <p>Acepto los términos y condiciones</p>
+      <p id="text-terms">Acepto los términos y condiciones</p>
     </div>
 
-    <div>
-      <button>Actualizar</button>
+    <div id="container-button-update">
+      <button id="button-update">Actualizar</button>
     </div>
+
   </form>
 </section>
-
 
