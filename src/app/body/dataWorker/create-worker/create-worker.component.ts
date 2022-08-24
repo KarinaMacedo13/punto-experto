@@ -12,7 +12,7 @@ export class CreateWorkerComponent implements OnInit {
   photoProfile:boolean =false;
   form!: FormGroup;
   firestoreService: any;
-  certificado!:string;
+
 
   constructor( firestoreService: FirestoreService,
     private formBuilder: FormBuilder, private storage: Storage,
@@ -42,7 +42,7 @@ export class CreateWorkerComponent implements OnInit {
       url_projects: [''],
       experience: ['', [Validators.required]],
       direccion: ['', [Validators.required]],
-      areaWorker: [''],
+      areaWorker: [[],],
       ubigeo: [''],
 
     })
@@ -69,9 +69,22 @@ export class CreateWorkerComponent implements OnInit {
     get experience(){ return this.form.get('experience') }
     get direccion(){ return this.form.get('direccion') }
     get areaWorker(){ return this.form.get('areaWorker') } */
-    addCertificado(){
-      this.form.value.certificados.push(this.certificado)
-      console.log(this.form.value.certificado)
+    addCertificado(elemento:any){
+      console.log(elemento);
+      this.form.value.certificados.push(elemento.value)
+      console.log(this.form.value)
+      //--se limpie nuevamente
+    }
+
+    addAreaWork(elemento:any){
+      console.log(elemento);
+      this.form.value.areaWorker.push(elemento.value)
+      console.log(this.form.value)
+    }
+
+    addAuthorizationWassap(value:any){
+      console.log('aaaaaaaaaaaa')
+      console.log(value)
     }
 
     save(event:Event) {

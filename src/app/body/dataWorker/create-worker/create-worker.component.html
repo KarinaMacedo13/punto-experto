@@ -47,18 +47,21 @@
 
     <p class="description-form">Certificados: *</p>
     <div class="input-group mb-3">
-      <input class="input-form-mydata" placeholder="Ingrese sus certificados" [value]="certificado"/>
-      <span class="input-group-text" id="basic-addon2" (click)="addCertificado()">
+      <input class="input-form-mydata" placeholder="Ingrese sus certificado uno a uno " #element/>
+      <span class="input-group-text" id="basic-addon2" (click)="addCertificado(element)">
         <mat-icon>add_circle_outline</mat-icon>
       </span>
     </div>
 
     <p class="description-form">¿Quieres pertenecer a la sección de oportunidades?</p>
-    <mat-radio-group  aria-label="Select an option">
-      <mat-radio-button value="si">Sí, quiero participar</mat-radio-button>
-      <mat-radio-button value="no">No deseo participar</mat-radio-button>
+    <mat-radio-group  aria-label="Select an option" #valueBoolean>
+      <mat-radio-button value=true >Sí, quiero participar</mat-radio-button>
+      <mat-radio-button value=false >No deseo participar</mat-radio-button>
     </mat-radio-group>
 
+    <ng-template ngIf="">
+
+    </ng-template>
     <p class="description-form">Foto de perfil:</p>
     <div id="container-pic">
       <div id="pic">
@@ -79,12 +82,12 @@
       <input
         type="text"
         class="form-control"
-        placeholder="Ubicar zonas de trabajo"
+        placeholder="Ubicar zonas de trabajo una a una"
         aria-label="Recipient's username"
         aria-describedby="basic-addon2"
-        formControlName="areaWorker"
+        #area
       />
-      <span class="input-group-text" id="basic-addon2">
+      <span class="input-group-text" id="basic-addon2" (click)="addAreaWork(area)">
         <mat-icon>add_circle_outline</mat-icon>
       </span>
     </div>
@@ -123,7 +126,7 @@
       ¿Autorizas que puedan comunicarse contigo a través del número de Whatsapp
       registrado?
     </p>
-    <mat-radio-group class="group-radio-button" aria-label="Select an option">
+    <mat-radio-group class="group-radio-button" aria-label="Select an option" #value (click)="addAuthorizationWassap(value)">
       <mat-radio-button class="options" value="1">Sí, autorizo</mat-radio-button>
       <mat-radio-button class="options" value="2">No autorizo</mat-radio-button>
     </mat-radio-group>
