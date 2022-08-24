@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { MatDialogRef } from '@angular/material/dialog';
 import { Subject } from 'rxjs';
-import { ubications } from './ubications.const';
+import { ubications } from '../../../shared/ubications.const';
 
 @Component({
   selector: 'app-dialog-ubication',

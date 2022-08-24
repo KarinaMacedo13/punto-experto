@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { FirestoreService } from 'src/app/services/firestore.service';
 import { ref, Storage, uploadBytes, getDownloadURL } from '@angular/fire/storage';
+import { ubications } from 'src/app/shared/ubications.const';
+import { Subject } from 'rxjs';
 
 @Component({
   selector: 'app-create-worker',
@@ -14,6 +16,10 @@ export class CreateWorkerComponent implements OnInit {
   firestoreService: any;
   valueBoolean:boolean=false;
   url:any;
+  public searchTerm$= new Subject<any>();
+  public listUbications:any = ubications;
+  public listFiltered:any = [];
+
 
 
   constructor( firestoreService: FirestoreService,
@@ -21,6 +27,7 @@ export class CreateWorkerComponent implements OnInit {
   ) {this.buildForm();}
 
   ngOnInit(): void {
+    this.filterList();
   }
 
   private buildForm() {
@@ -124,19 +131,13 @@ export class CreateWorkerComponent implements OnInit {
   }
 
     save(event:Event) {
+      this.form
       event.preventDefault();
       console.log("dataaaaasin validar");
       console.log(this.form.value)
-      if(this.form.valid){
-        if(this.form.value.userRolId === 1){
-          this.form.value.admin = true
-        }else {this.form.value.admin = false};
-        console.log("this.formCreateUser");
-        console.log(this.form.value);
-       // this.createUser(this.form.value)
-      } else {
+
         this.form.markAllAsTouched();
-      }
+
     }
 
      // conección de firebase
@@ -147,4 +148,12 @@ export class CreateWorkerComponent implements OnInit {
     const response = await this.firestoreService.addMaster(this.form.value)
     console.log(response)
   } */
+
+  filterList = (): void => {
+    this.searchTerm$.subscribe(term => {
+      console.log(term.value)
+       this.listFiltered = this.listUbications.filter((item:any) => item.distrito.toLowerCase().indexOf(term.value.toLowerCase()) >= 0).slice(0,10);
+      });
+  }
+
 }

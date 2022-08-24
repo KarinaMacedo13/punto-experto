@@ -44,7 +44,11 @@
 
 
     <p class="description-form">Distrito: *</p>
-    <input class="input-form-mydata" placeholder="provincia" formControlName="distrito" />
+    <ng-select   class="selectContainer"  (keyup)="searchTerm$.next($event.target)" bindLabel="name" >
+      <ng-option *ngFor="let ubication of listFiltered" [value]="ubication" class="options"  >
+          <p id = "optionp">{{ubication.departamento}}, {{ubication.provincia}},{{ubication.distrito}}</p>
+     </ng-option>
+   </ng-select>
 
     <p class="description-form">Certificados: *</p>
     <div class="input-group mb-3">
