@@ -8,8 +8,8 @@ import { WorkersData } from 'src/app/shared/interfaces/worker';
 export class FirestoreService {
 
   constructor(private firestore: Firestore) { }
-  
-  addMaster( workersData: WorkersData) {
+
+  addWorkers( workersData: WorkersData) {
     const workersRef = collection(this.firestore, 'MasterBuilders');
     return addDoc(workersRef, workersData);
   }

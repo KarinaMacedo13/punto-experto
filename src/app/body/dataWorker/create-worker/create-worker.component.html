@@ -44,7 +44,7 @@
 
 
     <p class="description-form">Distrito: *</p>
-    <ng-select   class="selectContainer"  (keyup)="searchTerm$.next($event.target)" bindLabel="name" >
+    <ng-select   class="selectContainer"  (keyup)="searchTerm$.next($event.target)" bindLabel="name" formControlName="direccion">
       <ng-option *ngFor="let ubication of listFiltered" [value]="ubication" class="options"  >
           <p id = "optionp">{{ubication.departamento}}, {{ubication.provincia}},{{ubication.distrito}}</p>
      </ng-option>
@@ -77,7 +77,7 @@
         />
         <span class="input-group-text div-uploader" id="basic-addon2" >
           <mat-icon>add_circle_outline</mat-icon>
-          <input type="file" (change)="uploadImage($event, 'url_photo')"/>
+          <input type="file" (change)="uploadImagePhoto($event, 'url_photo')"/>
         </span>
       </div>
        <div id="container-pic">
@@ -135,7 +135,7 @@
         />
         <span class="input-group-text div-uploader" id="basic-addon2" (click)="addAreaWork(area)">
           <mat-icon>add_circle_outline</mat-icon>
-          <input type="file" (change)="uploadImage($event, 'url_projects')"/>
+          <input type="file" (change)="uploadImageProjects($event, 'url_projects')"/>
         </span>
       </div>
       <p class="description-form">
