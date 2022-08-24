@@ -109,6 +109,12 @@ export class CreateWorkerComponent implements OnInit {
   addPhotoProfile(){
 
   }
+  
+  clear() {
+    console.log("clear clicked")
+    this.form.reset();
+  }
+
 
 /*   async onSubmit(){
     console.log(this.form.value)
