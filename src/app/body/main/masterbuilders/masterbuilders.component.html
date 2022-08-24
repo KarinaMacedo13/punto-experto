@@ -1,4 +1,3 @@
-<p>masterbuilders works!</p>
 <button type="button" class="btn btn-light">Buscar Ubicación</button>
 <hr>
 <button type="button" class="btn btn-outline-dark"><i class="bi bi-filter"></i>Filtrar</button>
@@ -6,19 +5,18 @@
 <h5>Ubicación: <span>Piura-Piura-Pira</span></h5>
 <h5>Resultado: <span>50 Maestros de Obra</span></h5>
 
-<div class="card" style="width: 18rem;">
+<div class="card" *ngFor="let workers of workersData" style="width: 18rem;">
     <div class="card-body">
-      <img src="https://elcomercio.pe/resizer/TTo07zu8iyH7KDw1S800rfvWhsQ=/580x330/smart/filters:format(jpeg):quality(75)/arc-anglerfish-arc2-prod-elcomercio.s3.amazonaws.com/public/PADOSPZKWVGANF5ER6IM37ROGE.jpg" class="card-img-top imgProfile" alt="...">
-      <h5 class="card-title">Carlos Zurita</h5>
-      <h6 class="card-subtitle mb-2 text-muted">Maestro de Obra</h6>
-      <h6 class="card-subtitle mb-2 text-muted">5 años de experiencia</h6>
+      <img src="{{workers.url_photo}}" class="card-img-top imgProfile" alt="...">
+      <h5 class="card-title">{{workers.names}}</h5>
+      <h6 class="card-subtitle mb-2 text-muted">{{workers.ocupation}}</h6>
+      <h6 class="card-subtitle mb-2 text-muted">{{workers.experience}} años de experiencia</h6>
       <h5 class="card-title">Especializado en:</h5>
-      <span class="badge text-bg-info">Acabados</span>
-      <span class="badge text-bg-info">Electricidad</span>
+      <span class="badge text-bg-info" *ngFor="let especialidad of workers.especialidad" >{{especialidad}}</span>
     </div>
       <ul class="list-group list-group-flush">
         <li class="list-group-item">
-          <a href="#" class="btn btn-danger">Ver perfil laboral</a>
+          <a class="btn btn-danger" (click)="navigation(workers.id)">Ver perfil laboral</a>
         </li>
       </ul>
 </div>
