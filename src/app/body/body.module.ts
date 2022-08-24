@@ -36,6 +36,7 @@ import { DialogOptionInitial } from "./dialogs/dialogInitial/dialoginitial.compo
     ReactiveFormsModule,
     FormsModule,
     CommonModule,
+
   ]
 })
 export class BodyModule { }

@@ -9,14 +9,14 @@ export interface WorkersData {
   birth:Date;
   age:string;
   creation:string;
-  certificados:string;
+  certificados:[];
   especialidad:[];
   ocupation:string;
   departamento:string;
   provincia:string;
   distrito:string;
   url_photo:string;
-  url_projects:[];
+  url_projects:string;
   experience:number;
   direccion:[];
   areaWorker:[];

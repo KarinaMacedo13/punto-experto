@@ -54,82 +54,94 @@
     </div>
 
     <p class="description-form">¿Quieres pertenecer a la sección de oportunidades?</p>
-    <mat-radio-group  aria-label="Select an option" #valueBoolean>
-      <mat-radio-button value=true >Sí, quiero participar</mat-radio-button>
-      <mat-radio-button value=false >No deseo participar</mat-radio-button>
+    <mat-radio-group  aria-label="Select an option" name="opciones" #value1 (change)="addAuthOportunity(value1)">
+      <mat-radio-button value=true name="opciones" >Sí, quiero participar</mat-radio-button>
+      <mat-radio-button value=false name="opciones">No deseo participar</mat-radio-button>
     </mat-radio-group>
+<!--
+    <ng-template #templateData *ngIf="value1"> -->
+      <p class="description-form">Foto de perfil:</p>
 
-    <ng-template ngIf="">
-
-    </ng-template>
-    <p class="description-form">Foto de perfil:</p>
-    <div id="container-pic">
-      <div id="pic">
-        <img>
-        <input class="input-form-mydata" placeholder="Ingresa url foto" formControlName="url_photo"/>
+      <div class="input-group mb-3">
+        <input
+          type="text"
+          class="form-control"
+          placeholder="Agregar foto"
+          aria-label="Recipient's username"
+          aria-describedby="basic-addon2"
+        />
+        <span class="input-group-text div-uploader" id="basic-addon2" >
+          <mat-icon>add_circle_outline</mat-icon>
+          <input type="file" (change)="uploadImage($event, 'url_photo')"/>
+        </span>
       </div>
-      <h4 id="change-pic">cambia tu foto</h4>
-    </div>
+       <div id="container-pic">
+        <div id="pic">
+          <img src="{{url}}">
+        </div>
+        <h4 id="change-pic">cambia tu foto</h4>
+      </div>
 
-    <p class="description-form">Experiencia*</p>
-    <div id="container-experience">
-      <input id="experience" placeholder="  00" type="number" formControlName="experience" />
-      <p id="years-experience">años de experiencia:*</p>
-    </div>
+      <p class="description-form">Experiencia*</p>
+      <div id="container-experience">
+        <input id="experience" placeholder="  00" type="number" formControlName="experience" />
+        <p id="years-experience">años de experiencia:*</p>
+      </div>
 
-    <p class="description-form">Zonas de trabajo*</p>
-    <div class="input-group mb-3">
-      <input
-        type="text"
-        class="form-control"
-        placeholder="Ubicar zonas de trabajo una a una"
-        aria-label="Recipient's username"
-        aria-describedby="basic-addon2"
-        #area
-      />
-      <span class="input-group-text" id="basic-addon2" (click)="addAreaWork(area)">
-        <mat-icon>add_circle_outline</mat-icon>
-      </span>
-    </div>
+      <p class="description-form">Zonas de trabajo*</p>
+      <div class="input-group mb-3">
+        <input
+          type="text"
+          class="form-control"
+          placeholder="Ubicar zonas de trabajo una a una"
+          aria-label="Recipient's username"
+          aria-describedby="basic-addon2"
+          #area
+        />
+        <span class="input-group-text" id="basic-addon2" (click)="addAreaWork(area)">
+          <mat-icon>add_circle_outline</mat-icon>
+        </span>
+      </div>
 
-    <p class="description-form">Especialidad:*</p>
-    <select class="form-select" aria-label="Default select example" formControlName="especialidad">
-      <option selected>Seleccionar especialidad</option>
-      <option value="Gasfitero">Gasfitero</option>
-      <option value="Gestión en Obras">Gestión en Obras</option>
-      <option value="Carpintero">Carpintero</option>
-      <option value="Parquetista">Parquetista</option>
-      <option value="Instalador de Aparatos Elevadores">Instalador de Aparatos Elevadores</option>
-      <option value="Instalador de Domótica en Edificación">Instalador de Domótica en Edificación</option>
-      <option value="Fontanero">Fontanero</option>
-      <option value="Cristalero">Cristalero</option>
-      <option value="Especialista en acabados">Especialista en acabados</option>
-      <option value="Especialista en instalaciones eléctricas">Especialista en instalaciones eléctricas</option>
-    </select>
+      <p class="description-form">Especialidad:*</p>
+      <select class="form-select" aria-label="Default select example" formControlName="especialidad">
+        <option selected>Seleccionar especialidad</option>
+        <option value="Gasfitero">Gasfitero</option>
+        <option value="Gestión en Obras">Gestión en Obras</option>
+        <option value="Carpintero">Carpintero</option>
+        <option value="Parquetista">Parquetista</option>
+        <option value="Instalador de Aparatos Elevadores">Instalador de Aparatos Elevadores</option>
+        <option value="Instalador de Domótica en Edificación">Instalador de Domótica en Edificación</option>
+        <option value="Fontanero">Fontanero</option>
+        <option value="Cristalero">Cristalero</option>
+        <option value="Especialista en acabados">Especialista en acabados</option>
+        <option value="Especialista en instalaciones eléctricas">Especialista en instalaciones eléctricas</option>
+      </select>
 
-    <p class="description-form">Galeria de trabajos de obra:</p>
-    <div class="input-group mb-3">
-      <mat-icon>info</mat-icon>
-      <input
-        type="text"
-        class="form-control"
-        placeholder="Agregar foto"
-        aria-label="Recipient's username"
-        aria-describedby="basic-addon2"
-        formControlName="url_projects"
-      />
-      <span class="input-group-text" id="basic-addon2">
-        <mat-icon>add_circle_outline</mat-icon>
-      </span>
-    </div>
-    <p class="description-form">
-      ¿Autorizas que puedan comunicarse contigo a través del número de Whatsapp
-      registrado?
-    </p>
-    <mat-radio-group class="group-radio-button" aria-label="Select an option" #value (click)="addAuthorizationWassap(value)">
-      <mat-radio-button class="options" value="1">Sí, autorizo</mat-radio-button>
-      <mat-radio-button class="options" value="2">No autorizo</mat-radio-button>
-    </mat-radio-group>
+      <p class="description-form">Galeria de trabajos de obra:</p>
+      <div class="input-group mb-3">
+        <mat-icon>info</mat-icon>
+        <input
+          type="text"
+          class="form-control"
+          placeholder="Agregar foto"
+          aria-label="Recipient's username"
+          aria-describedby="basic-addon2"
+        />
+        <span class="input-group-text div-uploader" id="basic-addon2" (click)="addAreaWork(area)">
+          <mat-icon>add_circle_outline</mat-icon>
+          <input type="file" (change)="uploadImage($event, 'url_projects')"/>
+        </span>
+      </div>
+      <p class="description-form">
+        ¿Autorizas que puedan comunicarse contigo a través del número de Whatsapp
+        registrado?
+      </p>
+      <mat-radio-group class="group-radio-button" aria-label="Select an option">
+        <mat-radio-button class="options" value="1">Sí, autorizo</mat-radio-button>
+        <mat-radio-button class="options" value="2">No autorizo</mat-radio-button>
+      </mat-radio-group>
+<!--     </ng-template> -->
 
     <div id="check-terms">
       <input type="checkbox" />
@@ -137,7 +149,7 @@
     </div>
 
     <div id="container-button-update">
-      <button id="button-update">Registrarme</button>
+      <button id="button-update"  type="submit">Registrarme</button>
     </div>
 
   </form>

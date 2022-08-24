@@ -265,3 +265,22 @@ flex-direction: row;
   font-weight: normal;
   color: #9F9F9F;
 }
+.div-uploader::before {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  width:20px;
+  z-index: 1;
+
+}
+.div-uploader input[type='file'] {
+  opacity: 0;
+  width: 30px;
+  position: absolute;
+  z-index: 3;
+}

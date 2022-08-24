@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { FirestoreService } from 'src/app/services/firestore.service';
-import { Storage } from '@angular/fire/storage'
+import { ref, Storage, uploadBytes, getDownloadURL } from '@angular/fire/storage';
 
 @Component({
   selector: 'app-create-worker',
@@ -12,6 +12,8 @@ export class CreateWorkerComponent implements OnInit {
   photoProfile:boolean =false;
   form!: FormGroup;
   firestoreService: any;
+  valueBoolean:boolean=false;
+  url:any;
 
 
   constructor( firestoreService: FirestoreService,
@@ -87,6 +89,40 @@ export class CreateWorkerComponent implements OnInit {
       console.log(value)
     }
 
+    addAuthOportunity(element:any){
+     console.log(element)
+     console.log(element.value)
+     if(element){
+      this.valueBoolean = true;
+     }
+    }
+
+    uploadImage($event : any, keyWord:any) {
+      const file = $event.target.files[0];
+      console.log(file);
+      const imgRef = ref(this.storage,`products/${file.name}`);
+      uploadBytes(imgRef, file)
+      .then(response => {
+        console.log(response)
+        this.getImages(file.name, keyWord)}
+        )
+      .catch(error => console.log("upload"+error))
+    }
+
+    getImages(file:string, keyword:any) {
+      const imagesRef = ref(this.storage, `products/${file}`);
+      getDownloadURL(imagesRef)
+      .then(response => {this.form.value.keyWord=response, this.url=response})
+      .catch(error => {console.log("listAll"+error)})
+    }
+
+  eventPhotoProfile(){
+    this.photoProfile = true;
+  }
+  addPhotoProfile(){
+
+  }
+
     save(event:Event) {
       event.preventDefault();
       console.log("dataaaaasin validar");
@@ -103,12 +139,8 @@ export class CreateWorkerComponent implements OnInit {
       }
     }
 
-  eventPhotoProfile(){
-    this.photoProfile = true;
-  }
-  addPhotoProfile(){
+     // conección de firebase
 
-  }
 
 /*   async onSubmit(){
     console.log(this.form.value)
