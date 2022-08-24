@@ -6,8 +6,8 @@
   background-color: chartreuse;
 }
 .create-container {
-  width: 100%;
-  height: 100%;
+  width: 100vw;
+  height: 100vh;
 }
 
 .containerbtnFilter{
@@ -20,8 +20,43 @@
 
 }
 .containerMap{
-  height: 70%;
+  height: 50vh;
 }
 .btn{
   border-radius:2px;
+  font-family: forza;
+}
+.containerFilter input{
+  border:1px solid #CECDCD;
+  border-radius: 2px;
+  background-color: #FAFAFB;
+  margin:10px 10px;
+  font-family: forza;
+
+}
+.containerFilter button{
+  border:1px solid #636466;
+  border-radius: 3px;
+  background-color: white;
+  margin:5px 5px;
+  font-family: forza;
+}
+.footerOptions{
+  background-color: white;
+}
+#change-pic{
+  color:#ED1C24;
+  font-family:forza;
+  font-size: 13px;
+  margin-left:20px;
+  font-weight: bold;
+  text-decoration: underline;
+}
+.footerOptions{
+  height: 20vh;
+  position: relative;
+  z-index: 4;
+}
+.footerOptions{
+  display:flex;
 }
