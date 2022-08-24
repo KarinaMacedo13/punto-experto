@@ -11,6 +11,7 @@ export class CreateWorkerComponent implements OnInit {
   photoProfile:boolean =false;
   form!: FormGroup;
   firestoreService: any;
+  certificado!:string;
 
   constructor( firestoreService: FirestoreService,
     private formBuilder: FormBuilder,
@@ -30,7 +31,7 @@ export class CreateWorkerComponent implements OnInit {
       birth: ['', [Validators.required]],
       age: ['', [Validators.required]],
       creation: ['', [Validators.required]],
-      certificados: ['', ],
+      certificados: [[], ],
       especialidad: ['', [Validators.required]],
       ocupation: ['', [Validators.required]],
       departamento: ['', [Validators.required]],
@@ -67,7 +68,10 @@ export class CreateWorkerComponent implements OnInit {
     get experience(){ return this.form.get('experience') }
     get direccion(){ return this.form.get('direccion') }
     get areaWorker(){ return this.form.get('areaWorker') } */
-
+    addCertificado(){
+      this.form.value.certificados.push(this.certificado)
+      console.log(this.form.value.certificado)
+    }
 
     save(event:Event) {
       event.preventDefault();

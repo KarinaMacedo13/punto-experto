@@ -46,7 +46,12 @@
     <input class="input-form-mydata" placeholder="departamento,provincia,distrito" formControlName="direccion" />
 
     <p class="description-form">Certificados: *</p>
-    <input class="input-form-mydata" placeholder="Ingrese sus certificados" formControlName="certificados" />
+    <div class="input-group mb-3">
+      <input class="input-form-mydata" placeholder="Ingrese sus certificados" [value]="certificado"/>
+      <span class="input-group-text" id="basic-addon2" (click)="addCertificado()">
+        <mat-icon>add_circle_outline</mat-icon>
+      </span>
+    </div>
 
     <p class="description-form">¿Quieres pertenecer a la sección de oportunidades?</p>
     <mat-radio-group  aria-label="Select an option">
@@ -79,9 +84,9 @@
         aria-describedby="basic-addon2"
         formControlName="areaWorker"
       />
-      <span class="input-group-text" id="basic-addon2"
-        ><mat-icon>add_circle_outline</mat-icon></span
-      >
+      <span class="input-group-text" id="basic-addon2">
+        <mat-icon>add_circle_outline</mat-icon>
+      </span>
     </div>
 
     <p class="description-form">Especialidad:*</p>
