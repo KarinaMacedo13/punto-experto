@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { FirestoreService } from 'src/app/services/firestore.service';
+import { Storage } from '@angular/fire/storage'
 
 @Component({
   selector: 'app-create-worker',
@@ -14,7 +15,7 @@ export class CreateWorkerComponent implements OnInit {
   certificado!:string;
 
   constructor( firestoreService: FirestoreService,
-    private formBuilder: FormBuilder,
+    private formBuilder: FormBuilder, private storage: Storage,
   ) {this.buildForm();}
 
   ngOnInit(): void {
