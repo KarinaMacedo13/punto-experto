@@ -4,6 +4,7 @@ export interface WorkersData {
   lastname: string;
   secondLastname:string;
   cellphone:number;
+  email:string;
   dni:number;
   birth:Date;
   age:string;

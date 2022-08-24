@@ -15,6 +15,7 @@ import { UpdateWorkerComponent } from './dataWorker/update-worker/update-worker.
 import { DialogOptionInitial } from "./dialogs/dialogInitial/dialoginitial.component";
 
 
+
 @NgModule ({
   declarations: [
     MainComponent,
@@ -22,7 +23,8 @@ import { DialogOptionInitial } from "./dialogs/dialogInitial/dialoginitial.compo
     MasterbuildersComponent,
     CreateWorkerComponent,
     UpdateWorkerComponent,
-    DialogOptionInitial
+    DialogOptionInitial,
+
   ],
   imports: [
     BodyRoutingModule,
@@ -31,7 +33,9 @@ import { DialogOptionInitial } from "./dialogs/dialogInitial/dialoginitial.compo
     HttpClientModule,
     HttpClientJsonpModule,
     MatDialogModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    FormsModule,
+    CommonModule,
   ]
 })
 export class BodyModule { }
