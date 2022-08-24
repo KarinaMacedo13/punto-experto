@@ -1,15 +1,22 @@
 <mat-drawer-container class="create-container" autosize>
-  <div class ="container-maps">
-    <div class="btn-group" role="group" aria-label="Basic mixed styles example">
-      <button type="button" class="btn btn-outline-danger">Punto de Venta</button>
-      <button type="button" class="btn btn-outline-danger" (click)="drawer.toggle()">Maestro de Obra</button>
+  <div class ="container-maps-filter">
+    <div class="btn-group containerbtnFilter" role="group" aria-label="Basic mixed styles example">
+      <div>
+        <button type="button" class="btn btn-outline-danger">Punto de Venta</button>
+        <button type="button" class="btn btn-danger" (click)="drawer.toggle()">Maestro de Obra</button>
+      </div>
+      <div class="containerFilter">
+        <input placeholder="Buscar ubicación"/>
+        <button><i class="bi bi-funnel"></i>Filtrar</button>
+      </div>
     </div>
-     <app-maps></app-maps>
-
+    <div class="containerMap">
+      <app-maps></app-maps>
+    </div>
   </div>
 
 <!--   // aqui iria la parte de maestros de Obra -->
-  <mat-drawer #drawer class="create-sidenav" mode="side"  opened="true" position="end">
+  <mat-drawer #drawer class="create-sidenav" mode="side"  opened="false" position="end">
     <app-masterbuilders></app-masterbuilders>
   </mat-drawer>
 

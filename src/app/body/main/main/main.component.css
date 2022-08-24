@@ -9,6 +9,19 @@
   width: 100%;
   height: 100%;
 }
-.container-maps{
 
+.containerbtnFilter{
+  display:flex;
+  flex-direction: column;
+  height: 15vh;
+  background-color: white;
+  align-items: center;
+  justify-content: center;
+
+}
+.containerMap{
+  height: 70%;
+}
+.btn{
+  border-radius:2px;
 }
