@@ -1,20 +1,38 @@
 <mat-drawer-container class="create-container" autosize>
-  <div class ="container-maps">
-    <div class="btn-group" role="group" aria-label="Basic mixed styles example">
-      <button type="button" class="btn btn-outline-danger">Punto de Venta</button>
-      <button type="button" class="btn btn-outline-danger" (click)="drawer.toggle()">Maestro de Obra</button>
+  <div class ="container-maps-filter">
+    <div class="btn-group containerbtnFilter" role="group" aria-label="Basic mixed styles example">
+      <div>
+        <button type="button" class="btn btn-outline-danger">Punto de Venta</button>
+        <button type="button" class="btn btn-danger" >Maestro de Obra</button>
+      </div>
+      <div class="containerFilter">
+        <input placeholder="Buscar ubicación" (click)="openModalUbication()"/>
+        <button><i class="bi bi-funnel"></i>Filtrar</button>
+      </div>
     </div>
-     <app-maps></app-maps>
+    <div class="containerMap">
+      <app-maps></app-maps>
+    </div>
+    <div class="footerOptions">
+      <div>
+        <p>Piura - Piura - Piura</p>
+      </div>
+      <hr>
+      <div>
+        <p>Encontramos 50 Maestros de Obra en esta zona</p>
+        <div id="container-pic">
+          <h4 id="change-pic">Cambia la ubicación</h4>
+          <button type="button" class="btn btn-danger" (click)="drawer.toggle()">Ver listado</button>
+        </div>
+      </div>
+    </div>
 
   </div>
 
-<!--   // aqui iria la parte de maestros de Obra -->
-  <mat-drawer #drawer class="create-sidenav" mode="side"  opened="true" position="end">
+<!--   //  maestros de Obra -->
+  <mat-drawer #drawer class="create-sidenav" mode="side"  opened="false" position="end">
     <app-masterbuilders></app-masterbuilders>
   </mat-drawer>
-
-
-
 
 </mat-drawer-container>
 

@@ -13,6 +13,8 @@ import { MasterbuildersComponent } from './main/masterbuilders/masterbuilders.co
 import { CreateWorkerComponent } from './dataWorker/create-worker/create-worker.component';
 import { UpdateWorkerComponent } from './dataWorker/update-worker/update-worker.component';
 import { DialogOptionInitial } from "./dialogs/dialogInitial/dialoginitial.component";
+import { DialogUbicationComponent } from './dialogs/dialog-ubication/dialog-ubication.component';
+import { NgSelectModule } from '@ng-select/ng-select';
 
 
 @NgModule ({
@@ -22,7 +24,9 @@ import { DialogOptionInitial } from "./dialogs/dialogInitial/dialoginitial.compo
     MasterbuildersComponent,
     CreateWorkerComponent,
     UpdateWorkerComponent,
-    DialogOptionInitial
+    DialogOptionInitial,
+    DialogUbicationComponent,
+
   ],
   imports: [
     BodyRoutingModule,
@@ -31,7 +35,11 @@ import { DialogOptionInitial } from "./dialogs/dialogInitial/dialoginitial.compo
     HttpClientModule,
     HttpClientJsonpModule,
     MatDialogModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    FormsModule,
+    CommonModule,
+    NgSelectModule
+
   ]
 })
 export class BodyModule { }
