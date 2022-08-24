@@ -1,8 +1,26 @@
+* {
+  font-family: forza;
+  color: black;
+  font-size: 14px;
+}
+
 :host {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   font-size: medium;
-  font-family: 'Patua One', cursive;
+}
+
+::ng-deep .mat-dialog-container {
+  background-color:white;
+  padding: 1.5rem 2.5rem;
+  border-radius: 0.7rem;
+}
+
+.mat-dialog-actions button{
+  background-color:white;
+  box-shadow: none;
+  line-height: 0.9rem;
+  margin-bottom:0.7rem;
 }
