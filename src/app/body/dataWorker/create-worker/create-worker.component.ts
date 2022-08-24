@@ -138,23 +138,20 @@ export class CreateWorkerComponent implements OnInit {
         this.form.markAllAsTouched();
       }
     }
+    clear() {
+      console.log("clear clicked")
+      this.form.reset();
+   }
 
-     // conección de firebase
+   // conección de firebase
 
-<<<<<<< HEAD
+    
   }
-  
-  clear() {
-    console.log("clear clicked")
-    this.form.reset();
-  }
-
-=======
->>>>>>> 6f38cfd0dbf66e021fc6c17b82d911cd44a4de0d
 
 /*   async onSubmit(){
     console.log(this.form.value)
     const response = await this.firestoreService.addMaster(this.form.value)
     console.log(response)
   } */
-}
+
+
