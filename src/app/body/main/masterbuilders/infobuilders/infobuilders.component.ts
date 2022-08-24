@@ -24,9 +24,12 @@ export class InfobuildersComponent implements OnInit {
       console.log(this.workerFilter);
     })
   }
-  openDialogWhatssap(cellphone:number){
+  openDialogWhatssap(cellphone:number,name:string){
     this.dialog.open(DialogWhatssapComponent, {
-      data: cellphone,
+      data: {
+        phone:cellphone,
+        name:name,
+      },
     });
   }
   openDialogMensage(name:string){

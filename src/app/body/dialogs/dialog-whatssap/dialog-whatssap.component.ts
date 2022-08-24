@@ -13,8 +13,4 @@ export class DialogWhatssapComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  sendWhatssapMessage(){
-    console.log(this.data)
-  }
-
 }

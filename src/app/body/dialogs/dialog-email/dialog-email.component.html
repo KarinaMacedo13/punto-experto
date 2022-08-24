@@ -1,19 +1,39 @@
 <h2 mat-dialog-title>Enviar mensaje</h2>
 <div mat-dialog-content>
-  <p>Deja tus datos para que {{data}} se contacte contigo</p>
+  <p>Deja tus datos para que {{ data }} se contacte contigo</p>
 </div>
-<div class="form-check">
-    <input
-      class="form-check-input"
-      type="checkbox"
-      value=""
-      id="flexCheckDefault"
-    />
-    <label class="form-check-label" for="flexCheckDefault">
-      Acepto los <a href="url">Términos y Condiciones</a>
-    </label>
-  </div>
+
+<mat-form-field appearance="legacy">
+  <mat-label>Nombre:*</mat-label>
+  <input matInput placeholder="Nombre" />
+</mat-form-field>
+<br />
+<mat-form-field appearance="legacy">
+  <mat-label>Correo:*</mat-label>
+  <input matInput placeholder="Correo" />
+</mat-form-field>
+<br />
+<mat-form-field appearance="legacy">
+  <mat-label>Celular:*</mat-label>
+  <input matInput placeholder="Celular" />
+</mat-form-field>
+<br />
+<mat-form-field appearance="legacy">
+  <mat-label>Mensaje:*</mat-label>
+  <input matInput placeholder="ensaje" />
+</mat-form-field>
+<br />
+<mat-checkbox
+  class="example-margin"
+  #saveCheckboxOne
+  (change)="(saveCheckboxOne.checked)"
+>
+  Acepto los <a href="url">Términos y Condiciones</a>
+</mat-checkbox>
+
 <div mat-dialog-actions>
-  <button mat-raised-button type="button" mat-dialog-close>Cancelar</button>
-  <button mat-raised-button type="button">Enviar mensaje</button>
+  <button mat-raised-button mat-dialog-close>Cancelar</button>
+  <button mat-raised-button mat-dialog-close [disabled]="!saveCheckboxOne.checked">
+    Enviar Mensaje
+  </button>
 </div>
