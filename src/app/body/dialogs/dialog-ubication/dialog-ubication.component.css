@@ -1,0 +1,8 @@
+:host {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-size: medium;
+  font-family: 'Patua One', cursive;
+}

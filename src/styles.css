@@ -5,7 +5,7 @@
       url('src/assets/fonts/Forza-Bold.woff') format('woff'),
       url('src/assets/fonts/Forza-Bold.ttf') format('truetype');
   font-weight: bold;
-  font-style: normal;
+  font-style: bold;
 };
 
 @font-face {
@@ -16,6 +16,16 @@
       url('src/assets/fonts/Forza-Medium.ttf') format('truetype');
   font-weight: normal;
   font-style: normal;
+}
+
+@font-face {
+  font-family: 'Forza';
+  src: local('Forza Book'), local('Forza-Book'),
+      url('src/assets/fonts/Forza-Book.woff2') format('woff2'),
+      url('src/assets/fonts/Forza-Book.woff') format('woff'),
+      url('src/assets/fonts/Forza-Book.ttf') format('truetype');
+  font-weight: book;
+  font-style: book;
 }
 
 html, body { height: 100%; }

@@ -4,20 +4,22 @@ export interface WorkersData {
   lastname: string;
   secondLastname:string;
   cellphone:number;
+  email:string;
   dni:number;
   birth:Date;
   age:string;
   creation:string;
-  certificados:string;
+  certificados:[];
   especialidad:[];
   ocupation:string;
   departamento:string;
   provincia:string;
   distrito:string;
   url_photo:string;
-  url_projects:[];
+  url_projects:string;
   experience:number;
   direccion:[];
   areaWorker:[];
   ubigeo:number;
+
 }

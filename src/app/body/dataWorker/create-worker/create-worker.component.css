@@ -4,6 +4,9 @@
 
 #container-mydata {
   margin: 21px;
+  display:flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 #container-first {
@@ -20,7 +23,7 @@
   font-family: Forza;
   font-size: 10px;
   color:#ED1C24
-  
+
 }
 #container-pic{
   width: 328px;
@@ -65,7 +68,7 @@ flex-direction: row;
 }
 
 .input-form-mydata {
-  width: 371px;
+  width: 90%;
   height: 40px;
   left: 32px;
   top: 249px;
@@ -74,8 +77,6 @@ flex-direction: row;
   border: 0px;
   border: 1px solid #9F9F9F;
   border-radius: 6px;
-
-
   font-family: forza;
   font-weight: normal;
   font-size: 13px;
