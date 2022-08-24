@@ -11,6 +11,9 @@
       <h5 class="card-title">{{workers.names}}</h5>
       <h6 class="card-subtitle mb-2 text-muted">{{workers.ocupation}}</h6>
       <h6 class="card-subtitle mb-2 text-muted">{{workers.experience}} años de experiencia</h6>
+      <h6 class="card-subtitle mb-2 text-muted">{{[workers.certificados.length]}}</h6>
+      <h6 class="card-subtitle mb-2 text-muted">{{[workers.areaWorker.length]}}</h6>
+      <h6 class="card-subtitle mb-2 text-muted">{{[workers.url_projects.length]}}</h6>
       <h5 class="card-title">Especializado en:</h5>
       <span class="badge text-bg-info" *ngFor="let especialidad of workers.especialidad" >{{especialidad}}</span>
     </div>
