@@ -5,6 +5,10 @@ import { Router, Event, NavigationStart, NavigationEnd, NavigationError } from '
 import { HttpClient } from '@angular/common/http';
 import { Observable, of } from 'rxjs';
 import { catchError, map } from 'rxjs/operators';
+import { MatDialog } from '@angular/material/dialog';
+import { DialogLoginComponent } from '../body/dialogs/dialog-login/dialog-login.component';
+import { DialogOptionInitial } from '../body/dialogs/dialogInitial/dialoginitial.component';
+
 
 @Component({
   selector: 'app-header-nav',
@@ -14,8 +18,8 @@ import { catchError, map } from 'rxjs/operators';
 export class HeaderNavComponent implements OnInit {
 
   public navData = navViewDesktop;
-   currentRoute: string;
-  constructor(private router: Router) {
+    currentRoute: string;
+  constructor(private router: Router, public modal: MatDialog) {
     this.currentRoute = "Demo";
     this.router.events.subscribe((event: Event) => {
 
@@ -26,7 +30,19 @@ export class HeaderNavComponent implements OnInit {
     })
   }
 
+    openDialog(enterAnimationDuration: string, exitAnimationDuration: string): void {
+      this.modal.open(DialogLoginComponent, {
+        width: '25rem',
+        enterAnimationDuration,
+        exitAnimationDuration,
+      });
+    }
+
+    // onNoClick(): void {this.modal.close();}
 
   ngOnInit(): void {
   }
 }
+
+
+

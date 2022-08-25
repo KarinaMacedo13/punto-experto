@@ -15,6 +15,7 @@ import { UpdateWorkerComponent } from './dataWorker/update-worker/update-worker.
 import { DialogOptionInitial } from "./dialogs/dialogInitial/dialoginitial.component";
 import { DialogUbicationComponent } from './dialogs/dialog-ubication/dialog-ubication.component';
 import { NgSelectModule } from '@ng-select/ng-select';
+import { DialogLoginComponent } from './dialogs/dialog-login/dialog-login.component';
 
 
 @NgModule ({
@@ -26,6 +27,7 @@ import { NgSelectModule } from '@ng-select/ng-select';
     UpdateWorkerComponent,
     DialogOptionInitial,
     DialogUbicationComponent,
+    DialogLoginComponent,
 
   ],
   imports: [

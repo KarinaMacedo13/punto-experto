@@ -1,0 +1,14 @@
+import { Component, OnInit } from '@angular/core';
+
+@Component({
+  templateUrl: 'dialog-login.component.html',
+  styleUrls: ['dialog-login.component.css']
+})
+
+export class DialogLoginComponent implements OnInit {
+  constructor() {}
+
+  ngOnInit(): void {
+    }
+
+}
