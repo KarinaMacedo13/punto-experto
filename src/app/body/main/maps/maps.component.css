@@ -11,16 +11,19 @@
 
 }
 #ubication{
-  height: 35px;
+  height: 28px;
   width: 200px;
   margin-left: -2px;
   padding-left: 14px;
+  font-size: 13px;
 }
 #filter{
-  height: 35px;
+  height: 28px;
   width: 100px;
   font-family: forza;
-  color: #636466
+  color: #636466;
+  font-size: 13px;
+
 }
 .containerFilter button{
   border:1px solid #636466;
@@ -46,18 +49,31 @@
   border-top-left-radius: 5px;
   border-bottom-left-radius: 5px;
   width: 170px;
+  font-size: 15px;
 }
 .btn-danger{
   border-top-right-radius: 5px;
   border-bottom-right-radius: 5px;
   width: 170px;
+  font-size: 15px;
 }
 
 @media only screen and (min-width: 1024px) {
 
   .containerbtnFilter{
-    height: 110px;
-
+    height: 14vh;
   }
   
+  .btn-outline-danger{
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+    width: 300px;
+  }
+  .btn-danger{
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    width: 300px;
+  }
+  #ubication{
+    width: 400px;}
 }

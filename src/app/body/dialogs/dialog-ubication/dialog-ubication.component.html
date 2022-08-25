@@ -1,9 +1,11 @@
-<h2 mat-dialog-title class="titleModal">Buscar ubicación</h2>
-<hr>
+<h2 id="tittle" mat-dialog-title class="titleModal">Buscar ubicación
+  <hr id="hr">
+</h2>
+<hr id="hr">
 <div mat-dialog-content>
-<ng-select   [(ngModel)]="data.district" class="selectContainer"  (keyup)="searchTerm$.next($event.target)" bindLabel="name" >
+<ng-select  [(ngModel)]="data.district" class="selectContainer"  (keyup)="searchTerm$.next($event.target)" bindLabel="name" >
    <ng-option *ngFor="let ubication of listFiltered" [value]="ubication" class="options"  >
-       <p id = "optionp">{{ubication.departamento}}, {{ubication.provincia}},{{ubication.distrito}}</p>
+       <p id="optionp">{{ubication.departamento}}, {{ubication.provincia}},{{ubication.distrito}}</p>
   </ng-option>
 </ng-select>
 </div>

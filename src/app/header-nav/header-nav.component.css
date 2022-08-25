@@ -73,10 +73,9 @@ a {
       display: flex;
       background-color: #EC1D24;
       border-radius: 40px;
-      text-align: center;
       font-size: 9px;
-      width:fit-content;
-      width: 150px;
+      width: 170px;
+      font-family: forza;
   }
   .iconExpert{
       display: none;
