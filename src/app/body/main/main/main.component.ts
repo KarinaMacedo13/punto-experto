@@ -16,6 +16,7 @@ export class MainComponent implements OnInit {
   public lng:any;
 
 
+
   constructor(
     public dialog: MatDialog,
     ) {  }
@@ -40,7 +41,6 @@ export class MainComponent implements OnInit {
     }
 
     addUbicationDefault(){
-
         this.openAlert=false;
     }
 
@@ -52,8 +52,13 @@ export class MainComponent implements OnInit {
               "Longitude: " + position.coords.longitude);
             this.lat = position.coords.latitude;
             this.lng = position.coords.longitude;
+            console.log(position)
+            console.log("position")
             console.log(this.lat);
             console.log(this.lng);
+            localStorage.setItem("lat", this.lat);
+            localStorage.setItem("lng", this.lng);
+
           }
         },
           (error: any) => alert(error));
@@ -61,8 +66,5 @@ export class MainComponent implements OnInit {
         alert("Geolocation is not supported by this browser.");
       }
     }
-
-
-
 
 }
