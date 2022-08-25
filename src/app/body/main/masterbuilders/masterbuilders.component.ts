@@ -3,6 +3,7 @@ import { MatDialog } from '@angular/material/dialog';
 import { FirestoreService } from 'src/app/services/firestore.service';
 import { WorkersData } from 'src/app/shared/interfaces/worker';
 import { DialogOptionsComponent } from '../../dialogs/dialog-options/dialog-options.component';
+import { DialogUbicationComponent } from '../../dialogs/dialog-ubication/dialog-ubication.component';
 
 @Component({
   selector: 'app-masterbuilders',
@@ -12,6 +13,7 @@ import { DialogOptionsComponent } from '../../dialogs/dialog-options/dialog-opti
 export class MasterbuildersComponent implements OnInit {
   workersData!: WorkersData[];
   option:string='';
+  ubication!:any;
 
   constructor(private firestoreservice:FirestoreService, public dialog: MatDialog) { }
 
@@ -32,7 +34,12 @@ export class MasterbuildersComponent implements OnInit {
   getOptions(){
     this.firestoreservice.searchModal.subscribe(data => {
       this.option = data.data;
+      this.ubication = data.dataUbication;
       console.log('obtengo option',data.data)
+      console.log('obtengo ubicacion',data.dataUbication)
     });
+  }
+  openModalUbication(){
+    this.dialog.open(DialogUbicationComponent, {})
   }
 }

@@ -1,6 +1,6 @@
 <section id="container">
   <div>
-    <button type="button" class="btn btn-light search-ubication">Buscar Ubicación</button>
+    <button type="button" class="btn btn-light search-ubication" (click)="openModalUbication()">Buscar Ubicación</button>
     <hr id="line" />
   <div id="container-buttons">
     <button id="button-filter" type="button" class="btn btn-outline-dark"><i class="bi bi-filter"></i>Filtrar</button>
@@ -10,7 +10,7 @@
   <h5 id="ubication">Ubicación: <span class="bold">Piura-Piura-Pira</span></h5>
   <h5 id="result">Resultado: <span class="bold">50 Maestros de Obra</span></h5>
   </div>
-  <div class="card" *ngFor="let workers of workersData | optionPipe: option" style="width: 18rem">
+  <div class="card" *ngFor="let workers of workersData | optionPipe: option:ubication" style="width: 18rem">
       <div class="card-body">
         <div id="card-info-basic">
           <img src="{{workers.url_photo}}" class="card-img-top imgProfile" alt="...">

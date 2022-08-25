@@ -10,21 +10,18 @@
           <p class="description-form">Nombres: *</p>
           <input class="input-form-mydata" placeholder="Ingresa tus nombres" formControlName="names"/>
       </div>
+      <div>
           <p class="description-form">Apellido Paterno: *</p>
           <input class="input-form-mydata" placeholder="Ingresa tu apellido paterno" formControlName="lastname"/>
-      <div>
+        </div>
+          <div>
           <p class="description-form">Apellido Materno: *</p>
           <input class="input-form-mydata" placeholder="Ingresa tu apellido materno" formControlName="secondLastname"/>
       </div>
+      <div>
           <p class="description-form">Fecha de nacimiento: *</p>
           <input class="input-form-mydata" type="date" placeholder="dd/mm/aaaa" formControlName="birth"/>
-
-      <div>
-          <p class="description-form">Edad: *</p>
-          <input class="input-form-mydata" type="number" placeholder="Ingresa tu edad" formControlName="age"/>
-
-      </div>
-
+        </div>
       <div>
           <p class="description-form">Edad: *</p>
           <input class="input-form-mydata" type="number" placeholder="Ingresa tu edad" formControlName="age"/>
@@ -90,28 +87,17 @@
   </div>
 
   <div id="container-form-secondary">
-      <div>
-          <p class="description-form">Foto de perfil:</p>
-              <div class="input-group mb-3">
-              <input
-              type="text"
-              class="form-control"
-              placeholder="Agregar foto"
-              aria-label="Recipient's username"
-              aria-describedby="basic-addon2"
-              />
-          <span class="input-group-text div-uploader" id="basic-addon2" >
+    <div>
+        <p class="description-form">Foto de perfil:</p>
+        <div id="container-pic">
+            <img id="pic" src="{{url}}">
+            <h4 id="change-pic">Agregar foto</h4>
+            <span class="input-group-text div-uploader" id="basic-addon2" >
               <mat-icon>add_circle_outline</mat-icon>
               <input type="file" (change)="uploadImagePhoto($event, 'url_photo')"/>
           </span>
-          </div>
-          <div id="container-pic">
-              <div id="pic">
-              <img src="{{url}}">
-              </div>
-              <h4 id="change-pic">cambia tu foto</h4>
-          </div>
-      </div>
+        </div>
+    </div>
 
       <div>
           <p class="description-form">Experiencia*</p>

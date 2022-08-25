@@ -22,7 +22,7 @@
       </div>
     </div>
 
-    <h5 class="card-title sub-tittle">Especializado en:</h5>
+    <h5 class="card-title sub-tittle"> <i class="bi bi-gear"></i> Especializado en:</h5>
     <span
       class="badge text-bg-info items"
       *ngFor="let especialidad of workers.especialidad"
@@ -30,18 +30,18 @@
     >
     <div id="container-group-items">
       <div>
-    <h5 class="sub-tittle card-title">Certificados:</h5>
+    <h5 class="sub-tittle card-title"> <i class="bi bi-award img-more-info"></i>Certificados:</h5>
     <ul>
       <li class="text-basic" *ngFor="let certificado of workers.certificados">
         {{ certificado }}
       </li>
     </ul>
   </div>
-    <h5 class="sub-tittle card-title">Zonas de Trabajo:</h5>
+    <h5 class="sub-tittle card-title"><i class="bi bi-geo-alt img-more-info"></i> Zonas de Trabajo:</h5>
     <span class="items badge text-bg-info" *ngFor="let area of workers.areaWorker">{{
       area
     }}</span>
-    <h5 class="sub-tittle card-title">Galería(obras o proyectos):</h5>
+    <h5 class="sub-tittle card-title"><i class="bi bi-card-image img-more-info"></i> Galería(obras o proyectos):</h5>
     <div
       id="carouselExampleIndicators"
       class="carousel slide"

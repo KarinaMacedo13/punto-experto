@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { Subject } from 'rxjs';
+import { FirestoreService } from 'src/app/services/firestore.service';
 import { ubications } from '../../../shared/ubications.const';
 
 @Component({
@@ -9,7 +10,7 @@ import { ubications } from '../../../shared/ubications.const';
   styleUrls: ['./dialog-ubication.component.css']
 })
 export class DialogUbicationComponent implements OnInit {
-  constructor( public dialogRef: MatDialogRef<DialogUbicationComponent>) {}
+  constructor( public dialogRef: MatDialogRef<DialogUbicationComponent>,private firestoreservice:FirestoreService) {}
   onNoClick(): void {this.dialogRef.close();}
 
   public searchTerm$= new Subject<any>();
@@ -25,6 +26,11 @@ export class DialogUbicationComponent implements OnInit {
     this.searchTerm$.subscribe(term => {
       console.log(term.value)
        this.listFiltered = this.listUbications.filter((item:any) => item.distrito.toLowerCase().indexOf(term.value.toLowerCase()) >= 0).slice(0,10);
+       console.log(this.listFiltered);
+       this.firestoreservice.searchModal.emit({
+        dataUbication: this.listFiltered,
+      });
+
       });
   }
 
