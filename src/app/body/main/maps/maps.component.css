@@ -10,6 +10,18 @@
   font-family: forza;
 
 }
+#ubication{
+  height: 35px;
+  width: 200px;
+  margin-left: -2px;
+  padding-left: 14px;
+}
+#filter{
+  height: 35px;
+  width: 100px;
+  font-family: forza;
+  color: #636466
+}
 .containerFilter button{
   border:1px solid #636466;
   border-radius: 3px;
@@ -18,14 +30,34 @@
   font-family: forza;
 }
 .containerbtnFilter{
-  display:flex;
+  display: flex;
   flex-direction: column;
-  height: 15vh;
+  height: 20vh;
   background-color: white;
   align-items: center;
   justify-content: center;
-
+  margin-top: -29px;
+  padding-top: 15px;
 }
 .map{
   height: 80vh;
+}
+.btn-outline-danger{
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+  width: 170px;
+}
+.btn-danger{
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+  width: 170px;
+}
+
+@media only screen and (min-width: 1024px) {
+
+  .containerbtnFilter{
+    height: 110px;
+
+  }
+  
 }

@@ -1,13 +1,13 @@
 
 <div class="containerbtnFilter">
-  <div >
+  <div id="buttons">
 
     <button type="button" class="btn btn-outline-danger">Punto de Venta</button>
     <button type="button" class="btn btn-danger" >Maestro de Obra</button>
   </div>
   <div class="containerFilter">
-    <input placeholder="Buscar ubicación" (click)="openModalUbication()"/>
-    <button><i class="bi bi-funnel"></i>Filtrar</button>
+    <input id="ubication" placeholder="Buscar ubicación" (click)="openModalUbication()"/>
+    <button id="filter"> <i class="bi bi-funnel"></i>Filtrar</button>
   </div>
 </div>
 <div #map class="map"></div>
