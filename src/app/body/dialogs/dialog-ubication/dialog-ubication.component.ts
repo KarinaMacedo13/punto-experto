@@ -24,14 +24,17 @@ export class DialogUbicationComponent implements OnInit {
 
   filterList = (): void => {
     this.searchTerm$.subscribe(term => {
-      console.log(term.value)
        this.listFiltered = this.listUbications.filter((item:any) => item.distrito.toLowerCase().indexOf(term.value.toLowerCase()) >= 0).slice(0,10);
-       console.log(this.listFiltered);
        this.firestoreservice.searchModal.emit({
         dataUbication: this.listFiltered,
       });
 
       });
   }
-
+  // searchValue(value:any) {
+  //   console.log('soy el valor',value);
+  //   // this.firestoreservice.searchModal.emit({
+  //   //   dataUbication: value,
+  //   // });
+  // }
 }

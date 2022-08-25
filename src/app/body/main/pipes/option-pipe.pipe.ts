@@ -5,9 +5,10 @@ import { WorkersData } from 'src/app/shared/interfaces/worker';
 })
 export class OptionPipePipe implements PipeTransform {
 
-  transform(workers:WorkersData[] , option: string = '',ubication:any={}): WorkersData[] {
-    console.log('pipes',ubication)
-    // console.log("workers",workers.map(e=>e.areaWorker))
+  transform(workers:WorkersData[] , option: string,ubication:any): WorkersData[] {
+    console.log(ubication.map((e:any)=>e.distrito),'soy la ubicacion');
+    const filterArequipa = workers.map(e=>e.areaWorker.forEach(e=>e==='Arequipa'))
+    console.log("workers",filterArequipa)
     if(option==='experience'){
       const experienceArray = workers.sort((a:any, b:any) => b.experience - a.experience);
       console.log("soy experienceArray",experienceArray)
@@ -18,7 +19,9 @@ export class OptionPipePipe implements PipeTransform {
       console.log("soy certificateArray",certificateArray)
     }
     if(ubication.length>0){
-      const filterUbication = workers.filter((elem) =>elem.areaWorker.map(elem =>elem==ubication.distrito));
+      const distritoUbication = ubication.map((e:any)=>e.distrito)[0]
+      console.log('pipes',distritoUbication)
+      const filterUbication = workers.filter(e=>e.areaWorker.find(e=>e===distritoUbication))
       console.log("soy filterUbication",filterUbication);
       return filterUbication;
     }
