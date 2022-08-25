@@ -1,8 +1,29 @@
-<div *ngIf="apiLoaded | async">
-  <google-map height="100vh"
-          width="100%"
-          [center]="center"
-          [zoom]="zoom">
-<map-polygon [paths]="vertices"></map-polygon>
-</google-map>
+
+<div class="containerbtnFilter">
+  <div *ngIf=openAlert id="alertId">
+    <div class="alert alert-dark"  role="alert">
+      ¿Autorizas compartir tu ubicación?
+      <div class="btn-alert ">
+        <button class="btn btn-dark" (click)="addUbicationCurrently()" >Si</button>
+        <button class="btn btn-danger"  (click)="addUbicationDefault()">No</button>
+      </div>
+    </div>
+  </div>
+
+  <div >
+  <!--   <button type="submit" (click)="onSubmit()">Dibujar ciudad seleccionada</button> -->
+    <button type="button" class="btn btn-outline-danger">Punto de Venta</button>
+    <button type="button" class="btn btn-danger" >Maestro de Obra</button>
+
+  </div>
+  <div class="containerFilter">
+    <input id="ubication" placeholder="Buscar ubicación" (click)="openModalUbication()"/>
+    <button id="filter"> <i class="bi bi-funnel"></i>Buscar</button>
+  </div>
+
 </div>
+<div   *ngIf=openAlert >{{direction}}</div>
+<div #map class="map"></div>
+
+
+

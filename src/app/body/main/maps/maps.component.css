@@ -1,0 +1,86 @@
+.btn{
+  border-radius:2px;
+  font-family: forza;
+}
+.containerFilter input{
+  border:1px solid #CECDCD;
+  border-radius: 2px;
+  background-color: #FAFAFB;
+  margin:10px 10px;
+  font-family: forza;
+
+}
+#ubication{
+  height: 35px;
+  width: 200px;
+  margin-left: -2px;
+  padding-left: 14px;
+}
+#filter{
+  height: 35px;
+  width: 100px;
+  font-family: forza;
+  color: #636466
+}
+.containerFilter button{
+  border:1px solid #636466;
+  border-radius: 3px;
+  background-color: white;
+  margin:5px 5px;
+  font-family: forza;
+}
+.containerbtnFilter{
+  display: flex;
+  flex-direction: column;
+  height: 20vh;
+  background-color: white;
+  align-items: center;
+  justify-content: center;
+  margin-top: -29px;
+  padding-top: 15px;
+}
+.map{
+  height: 80vh;
+}
+.btn-outline-danger{
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+  width: 170px;
+}
+.btn-danger{
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+  width: 170px;
+}
+
+@media only screen and (min-width: 1024px) {
+
+  .containerbtnFilter{
+    height: 110px;
+
+  }
+
+}
+
+#alertId{
+  position: absolute;
+  display: flex;
+  font-family:forza;
+  margin-top: 5%
+  }
+  .btn-alert{
+    display: flex;
+    justify-content: space-evenly;
+    font-family:forza;
+
+  }
+  .btn-alert .btn{
+    border-radius: 3px;
+    width:80px;
+  }
+  @media only screen and (min-width: 820px) {
+    .containerbtnFilter{
+      margin-top: -2px;
+
+    }
+  }

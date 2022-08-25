@@ -1,0 +1,79 @@
+<header class="containerNav">
+  <mat-toolbar>
+    <span
+      ><img
+        class="logoNav"
+        src="https://i.postimg.cc/HnwhTt7s/logo-Principal.png"
+    /></span>
+    <span
+      ><img
+        class="nextOptionNavBar"
+        src="https://i.postimg.cc/yxZqmts2/back.png"
+    /></span>
+    <span class="example-spacer"></span>
+    <div
+      class="optionsNavBar"
+      fxShow="true"
+      fxHide.lt-md="true"
+      *ngFor="let data of navData"
+    >
+      <a mat-button routerLink="/">{{ data.nav }}</a>
+    </div>
+
+    <span (click)="openDialog('0ms', '0ms')"
+      ><img
+        class="iconExpert"
+        src="https://i.postimg.cc/jjSzkJC4/icon-Expert.png"
+    /></span>
+  </mat-toolbar>
+</header>
+
+<div class="containerOportunities">
+  <hr>
+  <div class="item">
+    <i class="bi bi-wallet2"></i>
+    <p>Aliado Pacasmayo</p>
+  </div>
+<hr>
+
+  <div class="item">
+    <i class="bi bi-card-checklist"></i>
+    <p>Mis cotizaciones</p>
+  </div>
+  <hr>
+
+  <div class="item">
+    <i class="bi bi-star-fill"></i>
+    <p>Mis logros</p>
+  </div>
+<hr>
+
+  <div class="item">
+    <i class="bi bi-calendar-check"></i>
+    <p>Mis clases en vivo</p>
+  </div>
+  <hr>
+
+  <div class="item">
+    <i class="bi bi-book"></i>
+    <p>Resúmenes por clase</p>
+  </div>
+<hr>
+
+  <div mat-list-item routerLink="actualizar" class="item">
+    <i class="bi bi-file-person"></i>
+    <p>Mis datos</p>
+  </div>
+  <hr>
+
+  <div mat-list-item routerLink="message" class="item">
+    <i class="bi bi-envelope-check"></i>
+    <p>Mis oportunidades</p>
+  </div>
+<hr>
+
+  <div  id="exit"mat-list-item (click)="logOut()">
+    <i class="bi bi-x-circle"></i>
+    Cerrar sesión
+  </div>
+</div>

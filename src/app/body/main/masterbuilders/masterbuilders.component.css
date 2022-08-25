@@ -1,5 +1,241 @@
+#container {
+  display: flex;
+  align-items: center;
+}
+
+#line {
+  color: #636466
+}
+
 .imgProfile {
   width: 5em;
   height: 5em;
-  border-radius:2.5em;
+  border-radius: 2.5em;
+}
+
+.search-ubication {
+  width: 280px;
+  font-family: Forza;
+  color: #9F9F9F;
+  font-weight: normal;
+  font-size: 13px;
+  padding-right: 135px;
+  margin-top: 14px;
+}
+
+#container-buttons {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 15px;
+  margin-left: -8px;
+}
+
+#button-filter {
+  width: 91px;
+  height: 29px;
+  font-size: 13px;
+  font-family: 'Forza';
+  font-style: book;
+  display: flex;
+  align-items: center;
+  color: #636466;
+  border: 1px solid #636466;
+}
+
+#button-class {
+  width: 173px;
+  height: 29px;
+  font-size: 13px;
+  font-family: 'Forza';
+  font-weight: book;
+  display: flex;
+  align-items: center;
+  color: #636466;
+  border: 1px solid #636466;
+}
+
+#container-ubication-result {
+  font: size 14px;
+  font-family: 'Forza';
+  display: flex;
+  justify-content: flex-start;
+  color: #29384C;
+  flex-direction: column;
+  margin-top: 14px;
+}
+
+#ubication {
+  font-size: 13px;
+}
+
+#result {
+  font-size: 13px;
+}
+
+#card-info-basic {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+#info-general {
+  font-family: Forza;
+  margin-left: 9px;
+}
+
+#card-name {
+  color: #29384C;
+  font-size: 15px;
+}
+
+#ocupation {
+  font-size: 13px;
+}
+
+#experience {
+  font-size: 13px;
+}
+
+#more-info {
+  color: #636466;
+  display: flex;
+  flex-direction: row;
+}
+
+.more-info-item {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.text-more-info {
+  font-size: 10px;
+  margin-top: 7px;
+  margin-right: 14px;
+  margin-left: 3px;
+}
+
+#specialization {
+  font-size: 15px;
+  font-family: forza;
+  font-weight: bold;
+  font-style: bold;
+  color: #29384C;
+  margin-top: 9px;
+}
+
+.items {
+  background-color: #E8F4FF !important;
+  color: #828282 !important;
+  font-family: forza;
+  margin-right: 5px;
+}
+
+.list-group-flush>.list-group-item:last-child {
+  border-bottom-width: 0;
+  display: flex;
+  justify-content: flex-end;
+  font-family: forza;
+}
+
+.btn {
+  font-size: 13px;
+}
+
+* {
+  color: black;
+}
+
+.btn-back {
+  width: 280px;
+  font-family: Forza;
+  color: #636466;
+  background-color: white;
+  border: 0px;
+  font-weight: normal;
+  font-size: 13px;
+  padding-right: 135px;
+  margin-top: 14px;
+}
+
+#img {
+  border-radius: 100px;
+  width: 5em;
+  margin-right: 9px;
+}
+
+#container-card {
+  display: flex;
+  flex-direction: row;
+  font-family: forza
+}
+
+#name {
+  margin-top: 9px;
+  color: #29384C;
+  font-size: 15px;
+}
+
+.text-in-card {
+  font-size: 13px;
+  color: #636466
+}
+
+#text-info {
+  margin-left: 9px;
+}
+
+.sub-tittle {
+  font-size: 14px;
+  font-family: forza;
+  font-weight: bold;
+  font-style: bold;
+  color: #29384C;
+  margin-top: 9px;
+}
+
+.items {
+  background-color: #E8F4FF !important;
+  color: #828282 !important;
+  font-family: forza;
+  margin-right: 5px;
+}
+.text-basic{
+  font-family: Forza;
+  font-size: 12px;
+  color: #29384C;
+}
+#group-contact{
+  font-family: Forza;
+  display:flex;
+  flex-direction: row;
+  align-items: center;
+
+}
+#btn-msj{
+  background-color: #ED1C24;
+  width: 109px;
+  font-size: 11px;
+  padding: 5px;
+  border:0px;
+  color:white;
+  margin-left: 4px;
+
+}
+#btn-whatsapp{
+  background-color:#60D66A;
+  width: 109px;
+  font-size: 11px;
+  padding: 5px;
+  border:0px;
+  color: white;
+  margin-left: 4px;
+}
+#contact{
+  margin-top:5px;
+  font-size: 12px;
+  color:#636466;
+}
+#logo1{
+  border-color:white
 }

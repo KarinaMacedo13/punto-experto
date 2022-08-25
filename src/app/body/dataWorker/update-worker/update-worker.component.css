@@ -61,7 +61,7 @@ body { margin: 0; font-family: Forza,}
 
   font-family: forza;
   font-weight: normal;
-  font-size: 14px;
+  font-size: 13px;
   line-height: 18px;
   color: #9F9F9F;
 }
@@ -79,8 +79,7 @@ body { margin: 0; font-family: Forza,}
 
   font-family: forza;
   font-weight: normal;
-  font-size: 14px;
-  line-height: 18px;
+  font-size: 13px;
   color: #9F9F9F;
 }
 #experience{
@@ -95,7 +94,7 @@ body { margin: 0; font-family: Forza,}
 
   font-family: forza;
   font-weight: 350;
-  font-size: 14px;
+  font-size: 13px;
   line-height: 18px;
   color: #9F9F9F;
 }
@@ -118,8 +117,10 @@ body { margin: 0; font-family: Forza,}
 }
 #text-terms{
   margin-left: 10px;
-  margin-top: 14px;
+  margin-top: 25px;
   font-size: 12px;
+  display:flex;
+  flex-direction: row;
 }
 .group-radio-button{
   display:flex;
@@ -141,6 +142,10 @@ body { margin: 0; font-family: Forza,}
   font-family: Forza;
   font-size: 14px;
   color:white;
+  padding: 10px;
+  padding-right: 15px;
+  padding-left: 15px;
+  border-radius: 13px;
 }
 #container-galery{
   display:flex;
@@ -150,9 +155,59 @@ body { margin: 0; font-family: Forza,}
   font-family: Forza;
   font-weight: normal;
   color: #9F9F9F;
+  font-size: 13px;
 }
 .form-control{
   font-family: Forza;
   font-weight: normal;
   color: #9F9F9F;
+  font-size: 13px;
+}
+#terms-red{
+  color:#ED1C24;
+  text-decoration: underline;
+}
+@media only screen and (min-width: 1024px) {
+
+  #tittle-mydata {
+    color:#ED1C24
+  }
+  #container-mydata{
+margin-left: 250px;
+margin-right: 250px;
+  }
+#container-form-first{
+  display:flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content:space-between;
+}
+.input-form-mydata{
+width: 300px;
+margin-right: 10px;
+}
+#container-form-secondary{
+  display:flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content:space-between;
+}
+#input-pic{
+  width: 246px;
+}
+#zone-work{
+  width: 300px;  
+}
+.form-control{
+  width: 259px;
+}
+.form-select{
+  width: 301px;
+}
+#container-experience{
+  margin-right: 130px;
+}
+#text-register{
+  width: 350px;
+}
 }

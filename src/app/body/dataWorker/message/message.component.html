@@ -1,0 +1,14 @@
+
+<div class="oportunitiesContainer">
+  <h2>Mis oportunidades</h2>
+  <div class="card" style="width: 18rem;" *ngFor="let email of emailData">
+    <div class="card-header">
+      {{email.name}} <a routerLink="myMessage">></a>
+    </div>
+    <div class="card-body">
+      <p class="card-text">{{email.correo}}</p>
+      <p class="card-text">{{email.phone}}</p>
+    </div>
+  </div>
+</div>
+

@@ -1,0 +1,124 @@
+*{
+  margin: 0;
+  box-sizing: border-box;
+}
+.containerNav{
+width: 100vw;
+}
+#exit{
+  color:#EC1D24;
+  margin-left:120px;
+  margin-top: 10px;
+}
+.containerOportunities{
+  color:black;
+  font-family: forza;
+}
+.text-oportunity{
+  color:black;
+}
+#header{
+  font-size: 13px;
+  margin-left: 10px;
+  margin-top: 20px;
+  margin-bottom: 15px;
+}
+.item{
+  display:flex;
+  flex-direction: row;
+  margin:5px;
+  margin-left: 10px;
+}
+.item>p{
+  margin-left: 9px;
+}
+
+.example-spacer {
+  flex: 1 1 auto;
+}
+
+.mat-toolbar {
+  background: black;
+  width: 100%;
+  color:white;
+  padding:10px;
+}
+
+.logoNav {
+  display: none;
+}
+
+a {
+  text-decoration: none;
+  font-size: 70%;
+  white-space: normal;
+  font-family: Forza;
+  text-align: center;
+  color:white;
+}
+
+.optionsNavBar {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.initSesion {
+  display: none;
+}
+
+@media only screen and (min-width: 820px) {
+  /* For desktop: */
+  .logoNav {
+      display: flex;
+      width: 130px;
+  }
+  .nextOptionNavBar {
+      display: none;
+  }
+  a {
+    text-decoration: none;
+    font-size: 50%;
+    white-space: normal;
+    font-family: Forza;
+    text-align: center;
+    line-height: 1.5;
+    padding: 0%;
+}
+
+  .initSesion {
+      display: flex;
+      background-color: #EC1D24;
+      border-radius: 40px;
+      text-align: center;
+      font-size: 9px;
+      width:fit-content;
+      width: 150px;
+  }
+  .iconExpert{
+      display: none;
+  }
+}
+
+@media only screen and (min-width: 1000px) {
+a {font-size: 40%;}
+}
+@media only screen and (min-width: 1200px) {
+a {font-size: 50%;}
+.initSesion {
+  width: 350px;
+}
+}
+@media only screen and (min-width: 1400px) {
+a {font-size: 70%;}
+.initSesion {
+  width: 380px;
+}
+}
+
+main{
+  background-color: #EC1D24;
+  width: 100%;
+  height: 100%;
+}

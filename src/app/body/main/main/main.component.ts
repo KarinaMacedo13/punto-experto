@@ -14,19 +14,13 @@ import { DialogUbicationComponent } from '../../dialogs/dialog-ubication/dialog-
 export class MainComponent implements OnInit {
 
 
+
+
   constructor(
     public dialog: MatDialog,
     ) {  }
+    openAlert:any;
     ngOnInit(): void {
-      this.dialog.open(DialogOptionInitial , {});
+
     }
-    openModalUbication(){
-      this.dialog.open(DialogUbicationComponent, {})
-    }
-
-
-
-
-
-
 }

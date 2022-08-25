@@ -1,0 +1,66 @@
+* {
+    font-family: forza;
+    font-size: 0.7rem;
+    color: black;
+    justify-content: center;
+    align-items: center;
+}
+
+h2 {
+    color: #ED1C24;
+    font-size: 1.6rem;
+}
+
+h3 {
+    color:black;
+}
+
+h4 {
+    font-size: 0.9rem;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    color: #9F9F9F;
+}
+
+.input-group-text {
+    color: #ED1C24;
+}
+
+.form-control {
+    color: #9F9F9F;
+}
+
+:host {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: medium;
+}
+
+::ng-deep .mat-form-field {
+    background-color:white;
+    padding: 1.5rem 2.5rem;
+    border-radius: 0.7rem;
+}
+
+::ng-deep .mat-dialog-container {
+    background-color:white;
+    padding: 3rem 2.5rem;
+    border-radius: 0.7rem;
+}
+
+.mat-dialog-actions button{
+    display: flex;
+    background-color: #EC1D24;
+    border-radius: 50px;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    color: white;
+}
+
+.register {
+    color: #ED1C24;
+    text-decoration: none;
+}
+

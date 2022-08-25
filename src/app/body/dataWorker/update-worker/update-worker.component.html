@@ -4,39 +4,61 @@
     <div id="edit-container"><mat-icon id="icon-edit">edit</mat-icon><p id="edit-mydata">Editar</p></div>
   </div>
   <form>
+    <div id="container-form-first">
+      <div>
     <p class="description-form">Nombres: *</p>
     <input class="input-form-mydata" placeholder="Carlos Ernesto" />
+  </div>
 
+  <div>
     <p class="description-form">Apellido Paterno: *</p>
     <input class="input-form-mydata" placeholder="Alvarado" />
+  </div>
 
+  <div>
     <p class="description-form">Apellido Materno: *</p>
     <input class="input-form-mydata" placeholder="Contreras" />
+  </div>
 
+  <div>
     <p class="description-form">Fecha de nacimiento: *</p>
-    <input class="input-form-mydata" type="date" placeholder="12/12/1995" />
+    <input class="input-form-mydata" type="date" placeholder="12/11/1983" />
+  </div>
 
+  <div>
     <p class="description-form">DNI: *</p>
-    <input class="input-form-mydata" placeholder="08748927" />
+    <input class="input-form-mydata" placeholder="43469703" />
+  </div>
 
+  <div>
     <p class="description-form">Celular: *</p>
-    <input class="input-form-mydata" placeholder="930993949" />
+    <input class="input-form-mydata" placeholder="942760738" />
+  </div>
 
+  <div>
     <p class="description-form">Email: *</p>
-    <input class="input-form-mydata" type="email" placeholder="carlos.alvarado@gmail.com" />
+    <input class="input-form-mydata" type="email" placeholder="perezparedespepito85@gmail.com" />
+  </div>
 
+  <div>
     <p class="description-form">Ocupación: *</p>
     <input class="input-form-mydata" placeholder="Maestro de Obra" />
-
+</div>
+<div>
     <p class="description-form">Dirección: *</p>
     <input class="input-form-mydata" placeholder="Piura,Piura,Piura" />
+</div>
 
+<div>
     <p class="description-form">¿Quieres pertenecer a la sección de oportunidades<br>laborales?</p>
     <mat-radio-group class="group-radio-button" aria-label="Select an option">
       <mat-radio-button class="options" value="1">Sí, quiero pertenecer</mat-radio-button>
       <mat-radio-button class="options" value="2">No quiero pertenecer</mat-radio-button>
     </mat-radio-group>
-
+  </div>
+</div>
+<div id="container-form-secondary">
+  <div>
     <p class="description-form">Foto de perfil*:</p>
     <div id="container-pic">
       <input id="input-pic"
@@ -47,13 +69,16 @@
         ><mat-icon>add_circle_outline</mat-icon></span
       >
     </div>
-
+  </div>
+  <div>
     <p class="description-form">Experiencia*</p>
     <div id="container-experience">
       <input id="experience" placeholder="  00" type="number" />
       <p id="years-experience">años de experiencia:*</p>
     </div>
+  </div>
 
+  <div>
     <p class="description-form">Zonas de trabajo*</p>
     <div class="input-group mb-3">
       <input class="input-form-mydata"
@@ -67,7 +92,9 @@
         ><mat-icon>add_circle_outline</mat-icon></span
       >
     </div>
+  </div>
 
+  <div>
     <p class="description-form">Especialidad:*</p>
     <select class="input-form-mydata" class="form-select" aria-label="Default select example">
       <option selected>Seleccionar especialidad</option>
@@ -82,7 +109,9 @@
       <option value="9">Especialista en acabados</option>
       <option value="10">Especialista en instalaciones eléctricas</option>
     </select>
+  </div>
 
+  <div>
     <p class="description-form">Galeria de trabajos de obra:</p>
     <div class="input-group mb-3" id="container-galery">
       <mat-icon>info</mat-icon>
@@ -97,23 +126,27 @@
         ><mat-icon>add_circle_outline</mat-icon></span
       >
     </div>
+  </div>
 
+  <div>
     <p class="description-form">
-      ¿Autorizas que puedan comunicarse contigo a través del número de Whatsapp
+      ¿Autorizas que puedan comunicarse contigo <br> a través del número de Whatsapp
       registrado?
     </p>
     <mat-radio-group class="group-radio-button" aria-label="Select an option">
       <mat-radio-button class="options" value="1">Sí, autorizo</mat-radio-button>
       <mat-radio-button class="options" value="2">No autorizo</mat-radio-button>
     </mat-radio-group>
-
-    <div id="check-terms">
-      <input type="checkbox" />
-      <p id="text-terms">Acepto los términos y condiciones</p>
-    </div>
+  </div>
+</div>
+<div id="check-terms">
+  <input type="checkbox" />
+  <h4 id="text-terms">Acepto los  &nbsp; <p id="terms-red">términos y condiciones</p></h4>
+</div>
 
     <div id="container-button-update">
       <button id="button-update">Actualizar</button>
     </div>
+
   </form>
 </section>

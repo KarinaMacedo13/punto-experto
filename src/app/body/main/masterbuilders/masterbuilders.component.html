@@ -1,24 +1,157 @@
-<p>masterbuilders works!</p>
-<button type="button" class="btn btn-light">Buscar Ubicación</button>
-<hr>
-<button type="button" class="btn btn-outline-dark"><i class="bi bi-filter"></i>Filtrar</button>
-<button type="button" class="btn btn-outline-dark">Ordenar por <i class="bi bi-caret-down"></i></button>
-<h5>Ubicación: <span>Piura-Piura-Pira</span></h5>
-<h5>Resultado: <span>50 Maestros de Obra</span></h5>
-
-<div class="card" style="width: 18rem;">
+<section id="container" *ngIf="container">
+  <div>
+    <button type="button" class="btn btn-light search-ubication" (click)="openModalUbication()">Buscar Ubicación</button>
+    <hr id="line" />
+  <div id="container-buttons">
+    <button id="button-filter" type="button" class="btn btn-outline-dark"><i class="bi bi-filter"></i>Filtrar</button>
+    <button id="button-class" type="button" class="btn btn-outline-dark" (click)="openModal()">Ordenar por <i class="bi bi-caret-down"></i></button>
+  </div>
+  <div id="container-ubication-result">
+  <h5 id="ubication">Ubicación: <span class="bold">Piura-Piura-Pira</span></h5>
+  <h5 id="result">Resultado: <span class="bold"> {{number}} Maestros de Obra</span></h5>
+  </div>
+  <div class="card" *ngFor="let workers of workersData | optionPipe: option:ubication" style="width: 18rem">
+      <div class="card-body">
+        <div id="card-info-basic">
+          <img src="{{workers.url_photo}}" class="card-img-top imgProfile" alt="...">
+          <div id="info-general">
+            <h5 id="card-name" class="card-title">{{workers.names}}</h5>
+            <h6 id="ocupation" class="card-subtitle mb-2 text-muted">{{workers.ocupation}}</h6>
+            <h6 id="experience" class="card-subtitle mb-2 text-muted">{{workers.experience}} años de experiencia</h6>
+            <div id="more-info">
+              <div class="more-info-item">
+                <i class="bi bi-award img-more-info"></i>
+                <h4 class="text-more-info">({{[workers.certificados.length]}})</h4>
+              </div>
+              <div class="more-info-item">
+                <i class="bi bi-geo-alt img-more-info"></i>
+                <h4 class="text-more-info"> ({{[workers.areaWorker.length]}}) </h4>
+              </div>
+              <div class="more-info-item">
+                <i class="bi bi-card-image img-more-info"></i>
+                <h4 class="text-more-info"> ({{[workers.url_projects.length]}})</h4>
+              </div>
+            </div>
+          </div>
+        </div>
+        <h5 id="specialization" class="card-title">Especializado en:</h5>
+        <span class="items badge text-bg-info"  >{{workers.especialidad}}</span>
+      </div>
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item">
+            <a class="btn btn-danger" (click)="navigation(workers.id)">Ver perfil laboral</a>
+          </li>
+        </ul>
+  </div>
+  </div>
+</section>
+<section id="info" *ngIf="info">
+  <button (click)="navigationleft()" type="button" class="btn btn-light btn-back">
+    <i class="bi bi-arrow-left"></i>Volver al listado
+  </button>
+  
+  <div class="card" *ngFor="let workers of workerFilter" style="width: 18rem">
     <div class="card-body">
-      <img src="https://elcomercio.pe/resizer/TTo07zu8iyH7KDw1S800rfvWhsQ=/580x330/smart/filters:format(jpeg):quality(75)/arc-anglerfish-arc2-prod-elcomercio.s3.amazonaws.com/public/PADOSPZKWVGANF5ER6IM37ROGE.jpg" class="card-img-top imgProfile" alt="...">
-      <h5 class="card-title">Carlos Zurita</h5>
-      <h6 class="card-subtitle mb-2 text-muted">Maestro de Obra</h6>
-      <h6 class="card-subtitle mb-2 text-muted">5 años de experiencia</h6>
-      <h5 class="card-title">Especializado en:</h5>
-      <span class="badge text-bg-info">Acabados</span>
-      <span class="badge text-bg-info">Electricidad</span>
-    </div>
-      <ul class="list-group list-group-flush">
-        <li class="list-group-item">
-          <a href="#" class="btn btn-danger">Ver perfil laboral</a>
+      <div id="container-card">
+        <img
+          id="img"
+          src="{{ workers.url_photo }}"
+          class="card-img-top imgProfile"
+          alt="..."
+        />
+        <div id="text-info">
+          <h5 id="name" class="card-title">{{ workers.names }}</h5>
+          <h6 class="text-in-card card-subtitle mb-2 text-muted">
+            {{ workers.ocupation }}
+          </h6>
+          <h6 class="card-subtitle mb-2 text-muted text-in-card">
+            {{ workers.experience }} años de experiencia
+          </h6>
+        </div>
+      </div>
+  
+      <h5 class="card-title sub-tittle"> <i class="bi bi-gear"></i> Especializado en:</h5>
+      <span
+        class="badge text-bg-info items"
+        >{{ workers.especialidad }}</span
+      >
+      <div id="container-group-items">
+        <div>
+      <h5 class="sub-tittle card-title"> <i class="bi bi-award img-more-info"></i>Certificados:</h5>
+      <ul>
+        <li class="text-basic" *ngFor="let certificado of workers.certificados">
+          {{ certificado }}
         </li>
       </ul>
-</div>
+    </div>
+      <h5 class="sub-tittle card-title"><i class="bi bi-geo-alt img-more-info"></i> Zonas de Trabajo:</h5>
+      <span class="items badge text-bg-info" *ngFor="let area of workers.areaWorker">{{
+        area
+      }}</span>
+      <h5 class="sub-tittle card-title"><i class="bi bi-card-image img-more-info"></i> Galería(obras o proyectos):</h5>
+      <div
+        id="carouselExampleIndicators"
+        class="carousel slide"
+        data-bs-ride="true"
+      >
+        <div class="carousel-indicators">
+          <button
+            type="button"
+            data-bs-target="#carouselExampleIndicators"
+            data-bs-slide-to="0"
+            class="active"
+            aria-current="true"
+            aria-label="Slide 1"
+          ></button>
+          <button
+            type="button"
+            data-bs-target="#carouselExampleIndicators"
+            data-bs-slide-to="1"
+            aria-label="Slide 2"
+          ></button>
+          <button
+            type="button"
+            data-bs-target="#carouselExampleIndicators"
+            data-bs-slide-to="2"
+            aria-label="Slide 3"
+          ></button>
+        </div>
+        <div class="carousel-inner">
+          <div
+            class="carousel-item active"
+            *ngFor="let projects of workers.url_projects"
+          >
+            <img src="{{ projects }}" class="d-block w-100" alt="..." />
+          </div>
+        </div>
+        <button
+          class="carousel-control-prev"
+          type="button"
+          data-bs-target="#carouselExampleIndicators"
+          data-bs-slide="prev"
+        >
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button
+          class="carousel-control-next"
+          type="button"
+          data-bs-target="#carouselExampleIndicators"
+          data-bs-slide="next"
+        >
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div>
+    </div>
+  </div>
+    <ul class="list-group list-group-flush">
+      <li id="group-contact" class="list-group-item">
+        <h5 id="contact" class="card-title">Contactar:</h5>
+        <button id="btn-whatsapp" (click)="openDialogWhatssap(workers.cellphone,workers.names)" class="btn btn-danger">Whatssap <i id="color1" class="bi bi-whatsapp"></i> </button>
+        <button id="btn-msj" (click)="openDialogMensage(workers.names)" class="btn btn-danger">Mensaje <i class="bi bi-envelope"></i></button>
+      </li>
+    </ul>
+  </div>
+</section>
+
