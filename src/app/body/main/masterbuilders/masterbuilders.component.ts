@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
+import { throwToolbarMixedModesError } from '@angular/material/toolbar';
 import { FirestoreService } from 'src/app/services/firestore.service';
 import { WorkersData } from 'src/app/shared/interfaces/worker';
 import { DialogOptionsComponent } from '../../dialogs/dialog-options/dialog-options.component';
@@ -14,6 +15,7 @@ export class MasterbuildersComponent implements OnInit {
   workersData!: WorkersData[];
   option:string='';
   ubication!:any;
+  number:number=0;
   // qPerson:any = this.workersData.length;
 
   constructor(private firestoreservice:FirestoreService, public dialog: MatDialog) { }
@@ -21,9 +23,13 @@ export class MasterbuildersComponent implements OnInit {
   ngOnInit(): void {
     this.firestoreservice.getMaster().subscribe(workersData => {
       this.workersData = workersData;
+      // this.number = workersData.length;
       console.log(workersData);
     })
     this.getOptions();
+    this.firestoreservice.searchModal.subscribe(data => {
+      this.number = data.dataNumber;
+    });
   }
   navigation(id:string){
     console.log(id);

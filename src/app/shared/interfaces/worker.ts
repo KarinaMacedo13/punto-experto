@@ -18,5 +18,4 @@ export interface WorkersData {
   direccion:string;
   areaWorker:[];
   ubigeo:number;
-
 }
