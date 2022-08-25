@@ -9,18 +9,8 @@
   width: 100vw;
   height: 100vh;
 }
-
-.containerbtnFilter{
-  display:flex;
-  flex-direction: column;
-  height: 15vh;
-  background-color: white;
-  align-items: center;
-  justify-content: center;
-
-}
 .containerMap{
-  height: 50vh;
+  height: 30vh;
 }
 .btn{
   border-radius:2px;
@@ -43,22 +33,45 @@
 }
 .footerOptions{
   background-color: white;
+  color: black;
+  font-size: 13px;
+  font-family: forza;
+  display:flex;
+  flex-direction: column;
+  padding-top:5px;
+  margin-top: 306px;
+  position:fixed;
+  bottom:0px;
+  height: 20vh;
+  width: 100%;
+  z-index: 4;
+}
+.container-change-ubication{
+display: flex;
+flex-direction: row;
+justify-content: flex-end;
+margin-right: 20px;
+}
+#hr{
+  color:#636466;
+  margin-top:-10px;
 }
 #change-pic{
   color:#ED1C24;
   font-family:forza;
-  font-size: 13px;
+  font-size: 12px;
   margin-left:20px;
   font-weight: bold;
   text-decoration: underline;
+  margin-top: 12px;
+  margin-right: 6px;
 }
-.footerOptions{
-  height: 20vh;
-  position: relative;
-  z-index: 4;
+.btn-danger {
+border-radius: 9px;
+font-size: 12px;
 }
-.footerOptions{
-  display:flex;
+.text-footer{
+  margin-left: 19px;
 }
 #alertId{
 position: absolute;
@@ -75,4 +88,10 @@ margin-top: 5%
 .btn-alert .btn{
   border-radius: 3px;
   width:80px;
+}
+
+@media only screen and (min-width: 1024px) {
+  .footerOptions{
+    align-items: center;}
+
 }

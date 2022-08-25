@@ -1,5 +1,5 @@
 import { EventEmitter, Injectable, Output } from '@angular/core';
-import { Firestore, collection, addDoc, collectionData } from '@angular/fire/firestore';
+import { Firestore, collection, addDoc, collectionData, getDoc, doc } from '@angular/fire/firestore';
 import { Observable } from 'rxjs';
 import { WorkersData } from 'src/app/shared/interfaces/worker';
 import { EmailData } from '../shared/interfaces/email';
@@ -21,7 +21,7 @@ export class FirestoreService {
     return addDoc(emailRef, emailData);
   }
   getMaster(): Observable<WorkersData[]>{
-    const workersRef = collection(this.firestore, 'dataworker');
+    const workersRef = collection(this.firestore, 'MasterBuilders');
     return collectionData(workersRef, {idField: 'id'}) as Observable<WorkersData[]>;
   }
   getEmail(): Observable<EmailData[]>{

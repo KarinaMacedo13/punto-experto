@@ -14,6 +14,7 @@ export class MasterbuildersComponent implements OnInit {
   workersData!: WorkersData[];
   option:string='';
   ubication!:any;
+  // qPerson:any = this.workersData.length;
 
   constructor(private firestoreservice:FirestoreService, public dialog: MatDialog) { }
 
@@ -40,6 +41,12 @@ export class MasterbuildersComponent implements OnInit {
     });
   }
   openModalUbication(){
-    this.dialog.open(DialogUbicationComponent, {})
+    let district;
+    const dialogRef = this.dialog.open(DialogUbicationComponent, {data:{district}});
+    dialogRef.afterClosed().subscribe(result => {
+        const depart = result.district.departamento.toUpperCase();
+        const prov = result.district.provincia.toUpperCase();
+        const distr = result.district.distrito.toUpperCase();
+    });
   }
 }

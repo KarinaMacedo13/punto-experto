@@ -7,6 +7,7 @@ import { OportunityComponent } from "./dataWorker/oportunity/oportunity.componen
 import { UpdateWorkerComponent } from "./dataWorker/update-worker/update-worker.component";
 import { MainComponent } from "./main/main/main.component";
 import { MapsComponent } from "./main/maps/maps.component";
+import { InfobuildersComponent } from "./main/masterbuilders/infobuilders/infobuilders.component";
 
 
 const routes: Routes = [
@@ -23,7 +24,8 @@ const routes: Routes = [
  },
   {path:'oportunity/actualizar' , component: UpdateWorkerComponent,},
 
-  {path:'oportunity/message' , component: MessageComponent,}
+  {path:'oportunity/message' , component: MessageComponent,},
+
 
 
 

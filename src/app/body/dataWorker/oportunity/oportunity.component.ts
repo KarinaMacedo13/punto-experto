@@ -1,7 +1,9 @@
 import { Component, HostListener, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
+import { Router } from '@angular/router';
 import { navViewDesktop } from 'src/app/header-nav/navViewDesktop';
 import { navMobPointExpert } from 'src/app/header-nav/navViewMobile';
+import { AuthService } from 'src/app/services/auth.service';
 import { DialogLoginComponent } from '../../dialogs/dialog-login/dialog-login.component';
 
 @Component({
@@ -14,7 +16,8 @@ export class OportunityComponent implements OnInit {
   getScreenWidth:any = window.innerWidth;
   getScreenHeight:any = window.innerHeight
 
-  constructor(public modal: MatDialog) {
+  constructor(public modal: MatDialog, private authService: AuthService,
+    private router: Router) {
   }
 
   openDialog(enterAnimationDuration: string, exitAnimationDuration: string): void {
@@ -41,7 +44,12 @@ export class OportunityComponent implements OnInit {
       this.navData =  navMobPointExpert ;
     }
   }
-
-
+  
+  logOut(){
+    this.authService.logout()
+    .then(()=>{
+      this.router.navigate([''])
+    })
+  }
 
 }

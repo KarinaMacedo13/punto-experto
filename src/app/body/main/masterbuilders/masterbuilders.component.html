@@ -8,7 +8,7 @@
   </div>
   <div id="container-ubication-result">
   <h5 id="ubication">Ubicación: <span class="bold">Piura-Piura-Pira</span></h5>
-  <h5 id="result">Resultado: <span class="bold">50 Maestros de Obra</span></h5>
+  <h5 id="result">Resultado: <span class="bold"> Maestros de Obra</span></h5>
   </div>
   <div class="card" *ngFor="let workers of workersData | optionPipe: option:ubication" style="width: 18rem">
       <div class="card-body">
@@ -35,7 +35,7 @@
           </div>
         </div>
         <h5 id="specialization" class="card-title">Especializado en:</h5>
-        <span class="items badge text-bg-info" *ngFor="let especialidad of workers.especialidad" >{{especialidad}}</span>
+        <span class="items badge text-bg-info"  >{{workers.especialidad}}</span>
       </div>
         <ul class="list-group list-group-flush">
           <li class="list-group-item">
