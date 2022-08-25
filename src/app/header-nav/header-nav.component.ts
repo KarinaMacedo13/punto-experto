@@ -18,10 +18,21 @@ import { DialogOptionInitial } from '../body/dialogs/dialogInitial/dialoginitial
 export class HeaderNavComponent implements OnInit {
 
   public navData = navMobPointExpert;
-   getScreenWidth:any = window.innerWidth;
-   getScreenHeight:any = window.innerHeight
+  getScreenWidth:any = window.innerWidth;
+  getScreenHeight:any = window.innerHeight
 
-   ngOnInit(): void {
+  constructor(public modal: MatDialog) {
+  }
+
+  openDialog(enterAnimationDuration: string, exitAnimationDuration: string): void {
+    this.modal.open(DialogLoginComponent, {
+      width: '25rem',
+      enterAnimationDuration,
+      exitAnimationDuration,
+    });
+  }
+
+  ngOnInit(): void {
   }
 
 
