@@ -1,5 +1,14 @@
 
 <div class="containerbtnFilter">
+  <div *ngIf=openAlert id="alertId">
+    <div class="alert alert-dark"  role="alert">
+      ¿Autorizas compartir tu ubicación?
+      <div class="btn-alert ">
+        <button class="btn btn-dark" (click)="addUbicationCurrently()" >Si</button>
+        <button class="btn btn-danger"  (click)="addUbicationDefault()">No</button>
+      </div>
+    </div>
+  </div>
   <div >
   <!--   <button type="submit" (click)="onSubmit()">Dibujar ciudad seleccionada</button> -->
     <button type="button" class="btn btn-outline-danger">Punto de Venta</button>
@@ -7,7 +16,10 @@
   </div>
   <div class="containerFilter">
     <input id="ubication" placeholder="Buscar ubicación" (click)="openModalUbication()"/>
-    <button id="filter"> <i class="bi bi-funnel"></i>Filtrar</button>
+    <button id="filter"> <i class="bi bi-funnel"></i>Buscar</button>
   </div>
 </div>
 <div #map class="map"></div>
+
+
+
