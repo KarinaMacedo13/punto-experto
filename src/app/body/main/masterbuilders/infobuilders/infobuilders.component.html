@@ -107,8 +107,8 @@
   <ul class="list-group list-group-flush">
     <li id="group-contact" class="list-group-item">
       <h5 id="contact" class="card-title">Contactar:</h5>
-      <a id="btn-whatsapp" class="btn btn-danger">Whatssap <i id="color1" class="bi bi-whatsapp"></i> </a>
-      <a id="btn-msj" class="btn btn-danger">Mensaje <i class="bi bi-envelope"></i></a>
+      <button id="btn-whatsapp" (click)="openDialogWhatssap(workers.cellphone,workers.names)" class="btn btn-danger">Whatssap <i id="color1" class="bi bi-whatsapp"></i> </button>
+      <button id="btn-msj" (click)="openDialogMensage(workers.names)" class="btn btn-danger">Mensaje <i class="bi bi-envelope"></i></button>
     </li>
   </ul>
 </div>

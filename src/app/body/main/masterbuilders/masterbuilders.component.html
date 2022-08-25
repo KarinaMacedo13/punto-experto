@@ -1,62 +1,48 @@
 <section id="container">
   <div>
-    <button type="button" class="btn btn-light search-ubication">
-      Buscar Ubicación
-    </button>
+    <button type="button" class="btn btn-light search-ubication">Buscar Ubicación</button>
     <hr id="line" />
-    <div id="container-buttons">
-      <button id="button-filter" type="button" class="btn btn-outline-dark">
-        <i class="bi bi-filter"></i>Filtrar
-      </button>
-      <button id="button-class" type="button" class="btn btn-outline-dark">
-        Ordenar por <i class="bi bi-caret-down"></i>
-      </button>
-    </div>
-    <div id="container-ubication-result">
-      <h5 id="ubication">Ubicación: <span class="bold">Piura-Piura-Pira</span></h5>
-      <h5 id="result">Resultado: <span class="bold">50 Maestros de Obra</span></h5>
-    </div>
-    <div class="card" style="width: 18rem">
+  <div id="container-buttons">
+    <button id="button-filter" type="button" class="btn btn-outline-dark"><i class="bi bi-filter"></i>Filtrar</button>
+    <button id="button-class" type="button" class="btn btn-outline-dark" (click)="openModal()">Ordenar por <i class="bi bi-caret-down"></i></button>
+  </div>
+  <div id="container-ubication-result">
+  <h5 id="ubication">Ubicación: <span class="bold">Piura-Piura-Pira</span></h5>
+  <h5 id="result">Resultado: <span class="bold">50 Maestros de Obra</span></h5>
+  </div>
+  <div class="card" *ngFor="let workers of workersData" style="width: 18rem">
       <div class="card-body">
         <div id="card-info-basic">
-          <img
-            src="https://elcomercio.pe/resizer/TTo07zu8iyH7KDw1S800rfvWhsQ=/580x330/smart/filters:format(jpeg):quality(75)/arc-anglerfish-arc2-prod-elcomercio.s3.amazonaws.com/public/PADOSPZKWVGANF5ER6IM37ROGE.jpg"
-            class="card-img-top imgProfile"
-            alt="..."
-          />
+          <img src="{{workers.url_photo}}" class="card-img-top imgProfile" alt="...">
           <div id="info-general">
-            <h5 id="card-name" class="card-title">Carlos Zurita</h5>
-            <h6 id="ocupation" class="card-subtitle mb-2 text-muted">
-              Maestro de Obra
-            </h6>
-            <h6 id="experience" class="card-subtitle mb-2 text-muted">
-              5 años de experiencia
-            </h6>
+            <h5 id="card-name" class="card-title">{{workers.names}}</h5>
+            <h6 id="ocupation" class="card-subtitle mb-2 text-muted">{{workers.ocupation}}</h6>
+            <h6 id="experience" class="card-subtitle mb-2 text-muted">{{workers.experience}} años de experiencia</h6>
             <div id="more-info">
               <div class="more-info-item">
                 <i class="bi bi-award img-more-info"></i>
-                <h4 class="text-more-info">(8)</h4>
+                <h4 class="text-more-info">({{[workers.certificados.length]}})</h4>
               </div>
               <div class="more-info-item">
                 <i class="bi bi-geo-alt img-more-info"></i>
-                <h4 class="text-more-info"> (5) </h4>
+                <h4 class="text-more-info"> ({{[workers.areaWorker.length]}}) </h4>
               </div>
               <div class="more-info-item">
                 <i class="bi bi-card-image img-more-info"></i>
-                <h4 class="text-more-info"> (9)</h4>
+                <h4 class="text-more-info"> ({{[workers.url_projects.length]}})</h4>
               </div>
             </div>
           </div>
         </div>
         <h5 id="specialization" class="card-title">Especializado en:</h5>
-        <span class="items badge text-bg-info">Acabados</span>
-        <span class="items badge text-bg-info">Electricidad</span>
+        <span class="items badge text-bg-info" *ngFor="let especialidad of workers.especialidad" >{{especialidad}}</span>
       </div>
-      <ul class="list-group list-group-flush">
-        <li class="list-group-item">
-          <a href="#" class="btn btn-danger">Ver perfil laboral</a>
-        </li>
-      </ul>
-    </div>
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item">
+            <a class="btn btn-danger" (click)="navigation(workers.id)">Ver perfil laboral</a>
+          </li>
+        </ul>
+  </div>
   </div>
 </section>
+

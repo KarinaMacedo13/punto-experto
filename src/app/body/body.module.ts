@@ -16,6 +16,9 @@ import { DialogOptionInitial } from "./dialogs/dialogInitial/dialoginitial.compo
 import { DialogUbicationComponent } from './dialogs/dialog-ubication/dialog-ubication.component';
 import { NgSelectModule } from '@ng-select/ng-select';
 import { InfobuildersComponent } from './main/masterbuilders/infobuilders/infobuilders.component';
+import { DialogWhatssapComponent } from './dialogs/dialog-whatssap/dialog-whatssap.component';
+import { DialogEmailComponent } from './dialogs/dialog-email/dialog-email.component';
+import { DialogOptionsComponent } from './dialogs/dialog-options/dialog-options.component';
 
 import { DialogLoginComponent } from './dialogs/dialog-login/dialog-login.component';
 
@@ -30,6 +33,9 @@ import { DialogLoginComponent } from './dialogs/dialog-login/dialog-login.compon
     DialogOptionInitial,
     DialogUbicationComponent,
     InfobuildersComponent,
+    DialogWhatssapComponent,
+    DialogEmailComponent,
+    DialogOptionsComponent,
     DialogLoginComponent
 
   ],
