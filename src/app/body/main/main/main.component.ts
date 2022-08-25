@@ -12,8 +12,9 @@ import { DialogUbicationComponent } from '../../dialogs/dialog-ubication/dialog-
   styleUrls: ['./main.component.css']
 })
 export class MainComponent implements OnInit {
-  public lat:any;
-  public lng:any;
+  public lat: number = 0;
+  public lng: number = 0;
+  diection:any = localStorage.getItem("dirección")?localStorage.getItem("dirección"):"Piura, Piura, Piura";
 
 
 
@@ -44,6 +45,19 @@ export class MainComponent implements OnInit {
         this.openAlert=false;
     }
 
+    getAddress(lat: number, lng: number) {
+      console.log('Finding Address');
+      if (navigator.geolocation) {
+         let geocoder = new google.maps.Geocoder();
+         let latlng = new google.maps.LatLng(lat, lng);
+         let request = { LatLng: latlng };
+         geocoder.geocode({ location: latlng }, (results:any, status) => {
+          console.log(results[0].plus_code)
+          localStorage.setItem("address", results[0].formatted_address)
+     });
+   }
+  }
+
     getLocation() {
       if (navigator.geolocation) {
         navigator.geolocation.getCurrentPosition((position: any) => {
@@ -56,9 +70,9 @@ export class MainComponent implements OnInit {
             console.log("position")
             console.log(this.lat);
             console.log(this.lng);
-            localStorage.setItem("lat", this.lat);
-            localStorage.setItem("lng", this.lng);
 
+            console.log("====> tipo de dato: ", this.lat);
+            this.getAddress(this.lat, this.lng);
           }
         },
           (error: any) => alert(error));

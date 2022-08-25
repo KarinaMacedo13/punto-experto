@@ -7,7 +7,7 @@ import { DialogUbicationComponent } from '../../dialogs/dialog-ubication/dialog-
 import { MatDialog } from '@angular/material/dialog';
 import { lambayeque } from './lambayeque.clean.const';
 import {piura} from './piura.clean.const';
-//import {lima} from './lima.clean.const';
+import {lima} from './lima.clean.const';
 
 declare const google: any;
 
@@ -43,6 +43,7 @@ export class MapsComponent implements OnInit {
 
     //el mapa por defecto pintará a PIURA (DISTRITO)
     this.onUbicationObtained('PIURA_PIURA_PIURA');
+
   }
 
   ubication:any;
@@ -53,7 +54,8 @@ export class MapsComponent implements OnInit {
         const depart = result.district.departamento.toUpperCase();
         const prov = result.district.provincia.toUpperCase();
         const distr = result.district.distrito.toUpperCase();
-        const formatDirection = `${depart}_${prov}_${distr}`
+        const formatDirectionShow = localStorage.setItem("dirección", `${depart}, ${ prov}, ${ distr}`);
+        const formatDirection = `${depart}_${prov}_${distr}`;
         this.onUbicationObtained(formatDirection)
     });
   }
@@ -61,7 +63,7 @@ export class MapsComponent implements OnInit {
   loadDataMap(datamap:any) {
     this.extractDataFromJSONAndAddToMap(lambayeque, this.datamapv1);
     this.extractDataFromJSONAndAddToMap(piura, this.datamapv1);
-    //this.extractDataFromJSONAndAddToMap(lima, this.datamapv1);
+    this.extractDataFromJSONAndAddToMap(lima, this.datamapv1);
   }
 
   extractDataFromJSONAndAddToMap(rawdata:any, datamap:any) {
@@ -96,7 +98,6 @@ export class MapsComponent implements OnInit {
     if (this.polygon != null) {
       this.polygon.setMap(null);
     }
-    console.log
     const newCoordenadasADibujar = this.getGoogleMapCoordenatesFromDataMap(this.datamapv1, data);
     this.dibujarCiudad(newCoordenadasADibujar);
   }
