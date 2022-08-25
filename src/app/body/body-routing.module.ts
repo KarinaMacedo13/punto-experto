@@ -20,8 +20,7 @@ const routes: Routes = [
   },
   {path:'crear' , component: CreateWorkerComponent,},
 
-  {path:'oportunity' , component: OportunityComponent,
- },
+  {path:'oportunity' , component: OportunityComponent,},
   {path:'oportunity/actualizar' , component: UpdateWorkerComponent,},
 
   {path:'oportunity/message' , component: MessageComponent,},

@@ -61,8 +61,4 @@ export class MainComponent implements OnInit {
         alert("Geolocation is not supported by this browser.");
       }
     }
-
-
-
-
 }
