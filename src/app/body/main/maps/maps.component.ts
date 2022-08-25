@@ -3,6 +3,8 @@ import { HttpClient } from '@angular/common/http';
 import { Observable, of } from 'rxjs';
 import { catchError, map } from 'rxjs/operators';
 import { coordenadasSJL, coordenadasRimac } from './coordenates.const';
+import { DialogUbicationComponent } from '../../dialogs/dialog-ubication/dialog-ubication.component';
+import { MatDialog } from '@angular/material/dialog';
 declare const google: any;
 
 @Component({
@@ -25,7 +27,7 @@ export class MapsComponent implements OnInit {
     { id: 'huachipa', name: 'Huachipa' },
   ];
 
-  constructor() {
+  constructor( public dialog: MatDialog,) {
   }
 
   ngOnInit() {
@@ -78,5 +80,9 @@ export class MapsComponent implements OnInit {
     });
     // Fit Polygon path bounds
     this.map.fitBounds(bounds);
+  }
+
+  openModalUbication(){
+    this.dialog.open(DialogUbicationComponent, {})
   }
 }
