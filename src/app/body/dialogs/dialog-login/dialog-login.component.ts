@@ -33,13 +33,13 @@ export class DialogLoginComponent implements OnInit {
       .catch(err => console.log('Error' , err))
       }
 
-  /* errRol() {
+  errRol() {
     this.snackBar.open('Contraseña o correo incorrecto. Ingresar nuevamente', 'Aceptar', {
       duration: 5000,
       horizontalPosition: 'center',
       verticalPosition: 'top'
     })
-  } */
+  }
 
   login(){
     this.newRoute.navigate(['/oportunity']);
