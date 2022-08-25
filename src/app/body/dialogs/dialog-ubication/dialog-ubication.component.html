@@ -1,14 +1,12 @@
 <h2 mat-dialog-title class="titleModal">Buscar ubicación</h2>
 <hr>
 <div mat-dialog-content>
-<ng-select   class="selectContainer"  (keyup)="searchTerm$.next($event.target)" bindLabel="name" >
+<ng-select   [(ngModel)]="data.district" class="selectContainer"  (keyup)="searchTerm$.next($event.target)" bindLabel="name" >
    <ng-option *ngFor="let ubication of listFiltered" [value]="ubication" class="options"  >
        <p id = "optionp">{{ubication.departamento}}, {{ubication.provincia}},{{ubication.distrito}}</p>
   </ng-option>
 </ng-select>
 </div>
-
-<!-- <div mat-dialog-actions>
-  <button mat-raised-button type="button" >Crear</button>
-  <button mat-raised-button  type="button" mat-dialog-close>Cancelar</button>
-</div> -->
+ <div mat-dialog-actions>
+  <button mat-button [mat-dialog-close]="data" cdkFocusInitial>Ok</button>
+</div>

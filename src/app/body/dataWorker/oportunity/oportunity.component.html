@@ -29,11 +29,8 @@
     /></span>
   </mat-toolbar>
 </header>
+
 <div class="containerOportunities">
-  <div id="header">
-  <h1 id="tittle">Hola, Luis Angello</h1>
-  <p id="subtittle">Aquí podrás actualizar tu información registrada</p>
-</div>
   <hr>
   <div class="item">
     <i class="bi bi-wallet2"></i>
@@ -77,7 +74,7 @@
   </div>
 <hr>
 
-  <div  id="exit" mat-list-item [routerLink]="['/']">
+  <div  id="exit"mat-list-item (click)="logOut()">
     <i class="bi bi-x-circle"></i>
     Cerrar sesión
   </div>

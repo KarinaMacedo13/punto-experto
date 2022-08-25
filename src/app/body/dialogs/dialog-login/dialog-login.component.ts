@@ -24,24 +24,27 @@ export class DialogLoginComponent implements OnInit {
       email: ['', [Validators.required, Validators.email]],
       password: ['', [Validators.required]]
     })
+    console.log(this.dataUser)
   }
 
    loginByEmail() {
-    return this.authService.login(this.dataUser.value.email, this.dataUser.value.password)
+    this.authService.login(this.dataUser.value.email, this.dataUser.value.password)
       .then(res => {console.log('login succesfully', res)
-       })
-      .catch(err => console.log('Error' , err))
-      }
+          this.newRoute.navigate(['/oportunity']);
+        })
+      .catch(err => this.errRol())
 
-  /* errRol() {
-    this.snackBar.open('Contraseña o correo incorrecto. Ingresar nuevamente', 'Aceptar', {
-      duration: 5000,
-      horizontalPosition: 'center',
-      verticalPosition: 'top'
-    })
-  } */
+    }
 
-  login(){
+    errRol() {
+      this.snackBar.open('Contraseña o correo incorrecto. Ingresar nuevamente', 'Aceptar', {
+        duration: 5000,
+        horizontalPosition: 'center',
+        verticalPosition: 'top'
+      })
+    }
+
+  /* ogin(){
     this.newRoute.navigate(['/oportunity']);
-  }
+  } */
 }
