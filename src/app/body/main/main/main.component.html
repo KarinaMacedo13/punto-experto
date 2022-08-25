@@ -1,17 +1,5 @@
 <mat-drawer-container class="create-container" autosize>
   <div class ="container-maps-filter">
-    <div class="btn-group containerbtnFilter" role="group" aria-label="Basic mixed styles example">
-      <div *ngIf=openAlert id="alertId">
-        <div class="alert alert-dark"  role="alert">
-          ¿Autorizas compartir tu ubicación?
-          <div class="btn-alert ">
-            <button class="btn btn-dark" (click)="addUbicationCurrently()" >Si</button>
-            <button class="btn btn-danger"  (click)="addUbicationDefault()">No</button>
-          </div>
-        </div>
-      </div>
-    </div >
-
 
     <div class="containerMap">
       <app-maps></app-maps>

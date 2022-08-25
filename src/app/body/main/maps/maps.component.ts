@@ -8,6 +8,7 @@ import { MatDialog } from '@angular/material/dialog';
 import { lambayeque } from './lambayeque.clean.const';
 import {piura} from './piura.clean.const';
 import {lima} from './lima.clean.const';
+import { DialogOptionInitial } from '../../dialogs/dialogInitial/dialoginitial.component';
 
 declare const google: any;
 
@@ -23,9 +24,62 @@ export class MapsComponent implements OnInit {
   longitute: number =0;
   polygon: any;
   datamapv1 = new Map(); // key: DEPARTAMENTO_PROVINCIA_DISTRITO , value: COORDENADAS A DIBUJAR
+  openAlert:any;
+  public lat: number = 0;
+  public lng: number = 0;
+  direction!:any;
 
   constructor( public dialog: MatDialog,) {
+    let openAlert = false;
+    const dialogRef = this.dialog.open(DialogOptionInitial , {data:{openAlert}});
+    dialogRef.afterClosed().subscribe(result => {
+    console.log('The dialog was closed');
+    console.log(result)
+    this.openAlert= result;
+  });
   }
+
+  // funcionalidad de styles
+
+  addUbicationCurrently(){
+    this.getLocation();
+    this.openAlert=false;
+}
+
+addUbicationDefault(){
+    this.openAlert=false;
+}
+
+getAddress(lat: number, lng: number) {
+  console.log('Finding Address');
+  if (navigator.geolocation) {
+     let geocoder = new google.maps.Geocoder();
+     let latlng = new google.maps.LatLng(lat, lng);
+     let request = { LatLng: latlng };
+     geocoder.geocode({ location: latlng }, (results:any, status:any) => {
+
+      this.direction=results[0].formatted_address;
+ });
+}
+}
+
+getLocation() {
+  if (navigator.geolocation) {
+    navigator.geolocation.getCurrentPosition((position: any) => {
+      if (position) {
+        console.log("Latitude: " + position.coords.latitude +
+          "Longitude: " + position.coords.longitude);
+        this.lat = position.coords.latitude;
+        this.lng = position.coords.longitude;
+        this.getAddress(this.lat, this.lng);
+      }
+    },
+      (error: any) => alert(error));
+  } else {
+    alert("Geolocation is not supported by this browser.");
+  }
+}
+  //fin de funcionalidad
 
   ngOnInit() {
     const mapProperties = {
