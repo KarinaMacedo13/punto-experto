@@ -1,5 +1,111 @@
+#container {
+display: flex;
+align-items: center;
+}
+#line{
+  color:#636466
+}
 .imgProfile {
   width: 5em;
   height: 5em;
   border-radius:2.5em;
+}
+.search-ubication{
+  width:280px;
+  font-family:Forza;
+  color:#9F9F9F;
+  font-weight:normal;
+  font-size: 13px;
+  padding-right: 135px;
+  margin-top: 14px;
+}
+#container-buttons{
+  display:flex;
+  justify-content:space-around;
+  margin-top: 15px;
+  margin-left: -8px;
+}
+#button-filter{
+  width: 91px;
+  height: 29px;
+  font-size: 13px;
+  font-family: 'Forza';
+  font-style: book;
+  display: flex;
+  align-items: center;
+  color: #636466;
+  border:1px solid #636466;
+}
+#button-class{
+  width: 173px;
+  height: 29px;
+  font-size: 13px;
+  font-family: 'Forza';
+  font-weight: book;
+  display: flex;
+  align-items: center;
+  color: #636466;
+  border:1px solid #636466;
+}
+#container-ubication-result{
+  font: size 14px;
+  font-family: 'Forza';
+  display: flex;
+  justify-content: flex-start;
+  color: #29384C;
+  flex-direction: column;
+  margin-top: 14px;
+}
+#ubication{
+  font-size:13px;
+}
+#result{
+  font-size:13px;
+}
+
+#card-info-basic{
+  display: flex;
+  flex-direction:row;
+  align-items: center;
+}
+
+#info-general{
+  font-family: Forza;
+  margin-left: 9px;
+}
+
+#card-name{
+  color:#29384C;
+  font-size: 15px;
+}
+
+#ocupation{
+  font-size: 13px;
+}
+
+#experience{
+  font-size: 13px;
+}
+#specialization{
+  font-size: 15px;
+  font-family: forza;
+  font-weight: bold;
+  font-style: bold;
+  color:#29384C;
+  margin-top: 9px;
+}
+.items{
+  background-color: #E8F4FF !important;
+  color: #828282 !important;
+  font-family: forza;
+  margin-right: 5px;
+}
+.list-group-flush>.list-group-item:last-child {
+  border-bottom-width: 0;
+  display: flex;
+  justify-content: flex-end;
+  font-family: forza;
+}
+.btn{
+  font-size: 13px;
 }
