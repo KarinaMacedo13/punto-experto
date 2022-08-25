@@ -54,7 +54,7 @@ a {
   /* For desktop: */
   .logoNav {
       display: flex;
-      width: 150px;
+      width: 130px;
   }
   .nextOptionNavBar {
       display: none;
@@ -72,10 +72,10 @@ a {
   .initSesion {
       display: flex;
       background-color: #EC1D24;
-      border-radius: 50px;
+      border-radius: 40px;
       text-align: center;
-      font-size: 10px;
-
+      font-size: 9px;
+      width:fit-content;
   }
   .iconExpert{
       display: none;
@@ -83,13 +83,13 @@ a {
 }
 
 @media only screen and (min-width: 1000px) {
-a {font-size: 40%;}
+a {font-size: 30%;}
 }
 @media only screen and (min-width: 1200px) {
-a {font-size: 60%;}
+a {font-size: 50%;}
 }
 @media only screen and (min-width: 1400px) {
-a {font-size: 80%;}
+a {font-size: 70%;}
 }
 
 main{
