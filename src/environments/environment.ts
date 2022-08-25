@@ -5,7 +5,7 @@
 export const environment = {
   firebase: {
     projectId: 'pacasmayoweb-tf',
-    appId: '1:97665068620:web:bdac8e99b975d500874ee9',
+    appId: '1:97665068620:web:41b06717b9695386874ee9',
     databaseURL: 'https://pacasmayoweb-tf-default-rtdb.firebaseio.com',
     storageBucket: 'pacasmayoweb-tf.appspot.com',
     locationId: 'us-central',

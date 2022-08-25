@@ -17,6 +17,7 @@ import { DialogUbicationComponent } from './dialogs/dialog-ubication/dialog-ubic
 import { NgSelectModule } from '@ng-select/ng-select';
 import { InfobuildersComponent } from './main/masterbuilders/infobuilders/infobuilders.component';
 
+import { DialogLoginComponent } from './dialogs/dialog-login/dialog-login.component';
 
 
 @NgModule ({
@@ -29,6 +30,7 @@ import { InfobuildersComponent } from './main/masterbuilders/infobuilders/infobu
     DialogOptionInitial,
     DialogUbicationComponent,
     InfobuildersComponent,
+    DialogLoginComponent,
 
   ],
   imports: [
