@@ -41,7 +41,7 @@ export class HeaderNavComponent implements OnInit {
   onWindowResize() {
     this.getScreenWidth = window.innerWidth;
     this.getScreenHeight = window.innerHeight;
-    console.log(this.getScreenWidth, this.getScreenHeight)
+
     if(this.getScreenWidth > 820 ){
       this.navData = navViewDesktop;
     }else {
