@@ -24,4 +24,8 @@ export class FirestoreService {
     const workersRef = collection(this.firestore, 'dataworker');
     return collectionData(workersRef, {idField: 'id'}) as Observable<WorkersData[]>;
   }
+  getEmail(): Observable<EmailData[]>{
+    const emailRef = collection(this.firestore, 'emailData');
+    return collectionData(emailRef, {idField: 'id'}) as Observable<EmailData[]>;
+  }
 }

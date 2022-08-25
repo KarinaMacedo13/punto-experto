@@ -37,5 +37,4 @@ export class InfobuildersComponent implements OnInit {
       data: name,
     });
   }
-
 }
