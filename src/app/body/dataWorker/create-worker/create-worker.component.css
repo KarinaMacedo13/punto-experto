@@ -16,7 +16,7 @@
 }
 #text-register{
   font-family: Forza;
-  font-size: 14px;
+  font-size: 13px;
   color: #9F9F9F;
 }
 #text-register-2{
@@ -79,7 +79,7 @@ flex-direction: row;
   border-radius: 6px;
   font-family: forza;
   font-weight: normal;
-  font-size: 14px;
+  font-size: 13px;
   line-height: 18px;
   color: #9F9F9F;
 }
@@ -95,7 +95,7 @@ flex-direction: row;
 
   font-family: forza;
   font-weight: 350;
-  font-size: 14px;
+  font-size: 13px;
   line-height: 18px;
   color: #9F9F9F;
 }
@@ -122,103 +122,6 @@ flex-direction: row;
   width: 100%;
 }
 
-#edit-container{
-  margin-top: 10px;
-  margin-right: 5px;
-  display: flex;
-  flex-direction: row;
-}
-#icon-edit{
-  margin-top: px;
-}
-#edit-mydata{
-  text-decoration: underline;
-}
-
-#tittle-mydata {
-  font-size: 16px;
-  font-weight: bold;
-  font-family: forza;
-}
-
-#edit-mydata {
-  font-size: 13px;
-  margin-right: 20px;
-}
-
-.description-form {
-  font-size: 13px;
-  font-family: forza;
-  font-weight: bold;
-  margin-bottom: 3px;
-}
-#container-pic{
-  display:flex;
-  flex-direction: row;
-}
-#input-pic{
-  width: 322px;
-  height: 40px;
-  left: 32px;
-  top: 249px;
-  padding: 8px;
-  margin-bottom: 5px;
-  border: 0px;
-  border: 1px solid #9F9F9F;
-  border-radius: 6px;
-
-
-  font-family: forza;
-  font-weight: normal;
-  font-size: 14px;
-  line-height: 18px;
-  color: #9F9F9F;
-}
-.input-form-mydata {
-  width: 371px;
-  height: 40px;
-  left: 32px;
-  top: 249px;
-  padding: 8px;
-  margin-bottom: 5px;
-  border: 0px;
-  border: 1px solid #9F9F9F;
-  border-radius: 6px;
-
-
-  font-family: forza;
-  font-weight: normal;
-  font-size: 14px;
-  line-height: 18px;
-  color: #9F9F9F;
-}
-#experience{
-  width: 50px;
-  height: 40px;
-  left: 32px;
-  top: 249px;
-  padding: 8px;
-  border: 0px;
-  border: 1px solid #9F9F9F;
-  border-radius: 6px;
-
-  font-family: forza;
-  font-weight: 350;
-  font-size: 14px;
-  line-height: 18px;
-  color: #9F9F9F;
-}
-#container-experience{
-  display:flex;
-  flex-direction: row;
-  align-items: center;
-}
-#years-experience{
-  margin-left: 9px;
-  margin-top:15px;
-  font-size: 12px;
-  font-family: 'Forza';
-}
 #check-terms{
   display:flex;
   flex-direction: row;
@@ -227,8 +130,10 @@ flex-direction: row;
 }
 #text-terms{
   margin-left: 10px;
-  margin-top: 14px;
+  margin-top: 25px;
   font-size: 12px;
+  display:flex;
+  flex-direction: row;
 }
 .group-radio-button{
   display:flex;
@@ -248,8 +153,12 @@ flex-direction: row;
   background: #ED1C24;
   border: 0px;
   font-family: Forza;
-  font-size: 14px;
+  font-size: 13px;
   color:white;
+  padding: 10px;
+  padding-right: 15px;
+  padding-left: 15px;
+  border-radius: 14px;
 }
 #container-galery{
   display:flex;
@@ -259,11 +168,85 @@ flex-direction: row;
   font-family: Forza;
   font-weight: normal;
   color: #9F9F9F;
+  font-size: 13px;
 }
 .form-control{
   font-family: Forza;
   font-weight: normal;
   color: #9F9F9F;
+  font-size: 13px;
+}
+.oportunities{
+  font-family: Forza;
+  font-weight: normal;
+  font-size: 12px;
+  margin-bottom: 5px;
+}
+#terms-red{
+  color:#ED1C24;
+  text-decoration: underline;
+}
+
+@media only screen and (min-width: 1024px) {
+  #container-mydata{
+margin-left: 250px;
+margin-right: 250px;
+  }
+#container-form-first{
+  display:flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content:space-between;
+}
+.input-form-mydata{
+width: 300px;
+margin-right: 10px;
+}
+#container-form-secondary{
+  display:flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content:space-between;
+}
+#zone-work{
+  width: 300px;
+}
+.form-control{
+  width: 259px;
+}
+.form-select{
+  width: 301px;
+}
+#container-experience{
+  margin-right: 130px;
+}
+#text-register{
+  width: 350px;
+}
+}
+.selectContainer{
+  width:300px;
+  border:1.5px solid gray;
+  border-radius:7px;
+  padding:0px 2px;
+  margin:20px 0;
+}
+#optionp{
+  text-decoration: none;
+  display: flex !important;
+  align-items:center;
+  font-family: 'Rubik', sans-serif;
+  width:100%;
+  padding:1% 0% 1%;
+  background-color: white;
+  color:black
+
+}
+.div-uploader input[type='file'] {
+  opacity: 0;
+  width: 30px;
+  position: absolute;
+  z-index: 3;
 }
 .div-uploader::before {
   position: absolute;
@@ -276,11 +259,4 @@ flex-direction: row;
   bottom: 0;
   width:20px;
   z-index: 1;
-
-}
-.div-uploader input[type='file'] {
-  opacity: 0;
-  width: 30px;
-  position: absolute;
-  z-index: 3;
 }

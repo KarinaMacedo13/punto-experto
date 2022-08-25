@@ -1,4 +1,5 @@
 <h2 mat-dialog-bg-orange-title >Iniciar sesión</h2>
+<<<<<<< HEAD
 <h4 mat-dialog-bg-black-subheading-2>Estás punto de acceder a todo nuestro contenido de manera gratuita</h4>
 <br>
     <div class="input-group mb-2 mr-sm-2">
@@ -19,3 +20,19 @@
     <button mat-raised-button type="button">INGRESAR</button><br><br><br>
     <h3 mat-dialog-bg-black-subheading-2>¿Aún no estas registrado? <a href="/" class="register">Registrate aquí</a></h3>
 </div>
+=======
+<h3 mat-dialog-bg-black-subheading-2>Estás punto de acceder a todo nuestro contenido de manera gratuita</h3>
+
+<form (ngSubmit)="loginByEmail()" [formGroup]="dataUser">
+<mat-form-field>
+    <input matInput placeholder="@   Ingresa tu correo">
+    <input matInput placeholder="******">
+</mat-form-field>
+
+<div mat-dialog-actions>
+    <button mat-raised-button type="button">Ingresar</button>
+    <h3 mat-dialog-bg-black-subheading-2>¿Aún no estas registrado?<a href="/" class="register">Registrate aquí</a></h3>
+</div>
+</form>
+
+>>>>>>> 63e9c89237d457f006dd175467fa12df253b527c

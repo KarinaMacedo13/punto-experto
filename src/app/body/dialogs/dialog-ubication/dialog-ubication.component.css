@@ -6,3 +6,24 @@
   font-size: medium;
   font-family: 'Patua One', cursive;
 }
+.selectContainer{
+  width:300px;
+  border:1.5px solid gray;
+  border-radius:7px;
+  padding:0px 2px;
+  margin:20px 0;
+}
+#optionp{
+  text-decoration: none;
+  display: flex !important;
+  align-items:center;
+  font-family: 'Rubik', sans-serif;
+  width:100%;
+  padding:1% 0% 1%;
+  background-color: white;
+  color:black
+
+}
+.titleModal{
+  color:black
+}

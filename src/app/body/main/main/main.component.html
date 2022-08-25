@@ -1,6 +1,17 @@
 <mat-drawer-container class="create-container" autosize>
   <div class ="container-maps-filter">
     <div class="btn-group containerbtnFilter" role="group" aria-label="Basic mixed styles example">
+
+      <div *ngIf=openAlert id="alertId">
+        <div class="alert alert-dark"  role="alert">
+          ¿Autorizas compartir tu ubicación?
+          <div class="btn-alert ">
+            <button class="btn btn-dark" (click)="addUbicationCurrently()" >Si</button>
+            <button class="btn btn-danger"  (click)="addUbicationDefault()">No</button>
+          </div>
+        </div>
+      </div>
+
       <div>
         <button type="button" class="btn btn-outline-danger">Punto de Venta</button>
         <button type="button" class="btn btn-danger" >Maestro de Obra</button>
@@ -32,6 +43,7 @@
 <!--   //  maestros de Obra -->
   <mat-drawer #drawer class="create-sidenav" mode="side"  opened="false" position="end">
     <app-masterbuilders></app-masterbuilders>
+    <app-infobuilders></app-infobuilders>
   </mat-drawer>
 
 </mat-drawer-container>

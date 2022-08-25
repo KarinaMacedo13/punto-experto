@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
-import { Firestore, collection, addDoc, } from '@angular/fire/firestore';
+import { Firestore, collection, addDoc, collectionData } from '@angular/fire/firestore';
+import { Observable } from 'rxjs';
 import { WorkersData } from 'src/app/shared/interfaces/worker';
 
 @Injectable({
@@ -8,9 +9,13 @@ import { WorkersData } from 'src/app/shared/interfaces/worker';
 export class FirestoreService {
 
   constructor(private firestore: Firestore) { }
-  
-  addMaster( workersData: WorkersData) {
+
+  addWorkers( workersData: WorkersData) {
     const workersRef = collection(this.firestore, 'MasterBuilders');
     return addDoc(workersRef, workersData);
+  }
+  getMaster(): Observable<WorkersData[]>{
+    const workersRef = collection(this.firestore, 'dataworker');
+    return collectionData(workersRef, {idField: 'id'}) as Observable<WorkersData[]>;
   }
 }
