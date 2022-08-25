@@ -1,2 +1,13 @@
-<button type="submit" (click)="onSubmit()">Dibujar sjl</button>
+
+<div class="containerbtnFilter">
+  <div >
+
+    <button type="button" class="btn btn-outline-danger">Punto de Venta</button>
+    <button type="button" class="btn btn-danger" >Maestro de Obra</button>
+  </div>
+  <div class="containerFilter">
+    <input placeholder="Buscar ubicación" (click)="openModalUbication()"/>
+    <button><i class="bi bi-funnel"></i>Filtrar</button>
+  </div>
+</div>
 <div #map class="map"></div>

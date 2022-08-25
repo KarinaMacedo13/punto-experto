@@ -32,9 +32,7 @@ export class MainComponent implements OnInit {
     });
     }
 
-    openModalUbication(){
-      this.dialog.open(DialogUbicationComponent, {})
-    }
+
 
     addUbicationCurrently(){
         this.getLocation();
