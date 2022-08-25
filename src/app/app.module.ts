@@ -12,11 +12,14 @@ import { environment } from '../environments/environment';
 import { provideFirestore,getFirestore } from '@angular/fire/firestore';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { provideStorage,getStorage } from '@angular/fire/storage';
+import { OptionPipePipe } from './pipes/option-pipe.pipe';
+import { provideAuth,getAuth } from '@angular/fire/auth';
 
 @NgModule({
   declarations: [
     AppComponent,
-    HeaderNavComponent
+    HeaderNavComponent,
+    OptionPipePipe
   ],
   imports: [
     FormsModule,
@@ -28,7 +31,8 @@ import { provideStorage,getStorage } from '@angular/fire/storage';
     GoogleMapsModule,
     provideFirebaseApp(() => initializeApp(environment.firebase)),
     provideFirestore(() => getFirestore()),
-    provideStorage(() => getStorage())
+    provideStorage(() => getStorage()),
+    provideAuth(() => getAuth())
   ],
   providers: [],
   bootstrap: [AppComponent]

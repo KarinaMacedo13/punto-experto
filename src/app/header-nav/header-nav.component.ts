@@ -1,10 +1,14 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, HostListener } from '@angular/core';
 import { navViewDesktop } from './navViewDesktop';
-import { navMobWorld } from './navViewMobile';
+import { navMobPointExpert } from './navViewMobile';
 import { Router, Event, NavigationStart, NavigationEnd, NavigationError } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
 import { Observable, of } from 'rxjs';
 import { catchError, map } from 'rxjs/operators';
+import { MatDialog } from '@angular/material/dialog';
+import { DialogLoginComponent } from '../body/dialogs/dialog-login/dialog-login.component';
+import { DialogOptionInitial } from '../body/dialogs/dialogInitial/dialoginitial.component';
+
 
 @Component({
   selector: 'app-header-nav',
@@ -13,20 +17,38 @@ import { catchError, map } from 'rxjs/operators';
 })
 export class HeaderNavComponent implements OnInit {
 
-  public navData = navViewDesktop;
-   currentRoute: string;
-  constructor(private router: Router) {
-    this.currentRoute = "Demo";
-    this.router.events.subscribe((event: Event) => {
+  public navData = navMobPointExpert;
+  getScreenWidth:any = window.innerWidth;
+  getScreenHeight:any = window.innerHeight
 
-        if (event instanceof NavigationEnd) {
-            this.currentRoute = event.url;
-              console.log(event);
-        }
-    })
+  constructor(public modal: MatDialog) {
   }
 
+  openDialog(enterAnimationDuration: string, exitAnimationDuration: string): void {
+    this.modal.open(DialogLoginComponent, {
+      width: '25rem',
+      enterAnimationDuration,
+      exitAnimationDuration,
+    });
+  }
 
   ngOnInit(): void {
   }
+
+
+// ancho jalar uno u otro metorno
+@HostListener('window:resize', ['$event'])
+  onWindowResize() {
+    this.getScreenWidth = window.innerWidth;
+    this.getScreenHeight = window.innerHeight;
+    console.log(this.getScreenWidth, this.getScreenHeight)
+    if(this.getScreenWidth > 820 ){
+      this.navData = navViewDesktop;
+    }else {
+      this.navData =  navMobPointExpert ;
+    }
+  }
+
+
+
 }
