@@ -11,29 +11,11 @@ import { WorkersData } from 'src/app/shared/interfaces/worker';
   styleUrls: ['./infobuilders.component.css']
 })
 export class InfobuildersComponent implements OnInit {
-  workerFilter !: WorkersData[];
-  workerId: string = '1';
-  name: string = '';
+
 
   constructor(private firestoreservice:FirestoreService, public dialog: MatDialog) { }
 
   ngOnInit(): void {
-    this.firestoreservice.getMaster().subscribe(workersData => {
-      this.workerFilter = workersData;
-      console.log(this.workerFilter);
-    })
-  }
-  openDialogWhatssap(cellphone:number,name:string){
-    this.dialog.open(DialogWhatssapComponent, {
-      data: {
-        phone:cellphone,
-        name:name,
-      },
-    });
-  }
-  openDialogMensage(name:string){
-    this.dialog.open(DialogEmailComponent, {
-      data: name,
-    });
+
   }
 }
