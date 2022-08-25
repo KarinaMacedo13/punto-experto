@@ -23,8 +23,4 @@ export class MainComponent implements OnInit {
     ngOnInit(): void {
 
     }
-
-
-
-
 }
