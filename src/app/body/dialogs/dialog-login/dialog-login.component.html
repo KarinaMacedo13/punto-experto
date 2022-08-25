@@ -1,7 +1,7 @@
 <h2 mat-dialog-bg-orange-title >Iniciar sesión</h2>
 <h3 mat-dialog-bg-black-subheading-2>Estás punto de acceder a todo nuestro contenido de manera gratuita</h3>
 
-<form (ngSubmit)="submit()" [formGroup]="dataUser">
+<form (ngSubmit)="loginByEmail()" [formGroup]="dataUser">
 <mat-form-field>
     <input matInput placeholder="@   Ingresa tu correo">
     <input matInput placeholder="******">
