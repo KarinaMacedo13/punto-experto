@@ -43,7 +43,10 @@ export class MapsComponent implements OnInit {
 
   addUbicationCurrently(){
     this.getLocation();
-    this.openAlert=false;
+    setTimeout(() => {
+      this.openAlert=false;
+    },3000)
+
 }
 
 addUbicationDefault(){
@@ -59,6 +62,7 @@ getAddress(lat: number, lng: number) {
      geocoder.geocode({ location: latlng }, (results:any, status:any) => {
 
       this.direction=results[0].formatted_address;
+      console.log( this.direction)
  });
 }
 }
