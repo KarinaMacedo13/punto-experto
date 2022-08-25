@@ -5,6 +5,10 @@ import { Router, Event, NavigationStart, NavigationEnd, NavigationError } from '
 import { HttpClient } from '@angular/common/http';
 import { Observable, of } from 'rxjs';
 import { catchError, map } from 'rxjs/operators';
+import { MatDialog } from '@angular/material/dialog';
+import { DialogLoginComponent } from '../body/dialogs/dialog-login/dialog-login.component';
+import { DialogOptionInitial } from '../body/dialogs/dialogInitial/dialoginitial.component';
+
 
 @Component({
   selector: 'app-header-nav',
@@ -14,10 +18,21 @@ import { catchError, map } from 'rxjs/operators';
 export class HeaderNavComponent implements OnInit {
 
   public navData = navMobPointExpert;
-   getScreenWidth:any = window.innerWidth;
-   getScreenHeight:any = window.innerHeight
+  getScreenWidth:any = window.innerWidth;
+  getScreenHeight:any = window.innerHeight
 
-   ngOnInit(): void {
+  constructor(public modal: MatDialog) {
+  }
+
+  openDialog(enterAnimationDuration: string, exitAnimationDuration: string): void {
+    this.modal.open(DialogLoginComponent, {
+      width: '25rem',
+      enterAnimationDuration,
+      exitAnimationDuration,
+    });
+  }
+
+  ngOnInit(): void {
   }
 
 
@@ -33,6 +48,7 @@ export class HeaderNavComponent implements OnInit {
       this.navData =  navMobPointExpert ;
     }
   }
+
 
 
 }
