@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import { EventEmitter, Injectable, Output } from '@angular/core';
 import { Firestore, collection, addDoc, collectionData } from '@angular/fire/firestore';
 import { Observable } from 'rxjs';
 import { WorkersData } from 'src/app/shared/interfaces/worker';
@@ -7,6 +7,7 @@ import { WorkersData } from 'src/app/shared/interfaces/worker';
   providedIn: 'root'
 })
 export class FirestoreService {
+  @Output() searchModal: EventEmitter<any> = new EventEmitter();
 
   constructor(private firestore: Firestore) { }
 

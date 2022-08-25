@@ -19,7 +19,7 @@ import { InfobuildersComponent } from './main/masterbuilders/infobuilders/infobu
 import { DialogWhatssapComponent } from './dialogs/dialog-whatssap/dialog-whatssap.component';
 import { DialogEmailComponent } from './dialogs/dialog-email/dialog-email.component';
 import { DialogOptionsComponent } from './dialogs/dialog-options/dialog-options.component';
-
+import { OptionPipePipe } from './main/pipes/option-pipe.pipe';
 import { DialogLoginComponent } from './dialogs/dialog-login/dialog-login.component';
 
 
@@ -36,7 +36,8 @@ import { DialogLoginComponent } from './dialogs/dialog-login/dialog-login.compon
     DialogWhatssapComponent,
     DialogEmailComponent,
     DialogOptionsComponent,
-    DialogLoginComponent
+    DialogLoginComponent,
+    OptionPipePipe
 
   ],
   imports: [

@@ -10,7 +10,7 @@
   <h5 id="ubication">Ubicación: <span class="bold">Piura-Piura-Pira</span></h5>
   <h5 id="result">Resultado: <span class="bold">50 Maestros de Obra</span></h5>
   </div>
-  <div class="card" *ngFor="let workers of workersData" style="width: 18rem">
+  <div class="card" *ngFor="let workers of workersData | optionPipe: option" style="width: 18rem">
       <div class="card-body">
         <div id="card-info-basic">
           <img src="{{workers.url_photo}}" class="card-img-top imgProfile" alt="...">

@@ -11,6 +11,7 @@ import { DialogOptionsComponent } from '../../dialogs/dialog-options/dialog-opti
 })
 export class MasterbuildersComponent implements OnInit {
   workersData!: WorkersData[];
+  option:string='';
 
   constructor(private firestoreservice:FirestoreService, public dialog: MatDialog) { }
 
@@ -19,12 +20,19 @@ export class MasterbuildersComponent implements OnInit {
       this.workersData = workersData;
       console.log(workersData);
     })
+    this.getOptions();
   }
   navigation(id:string){
     console.log(id);
   }
   openModal(){
     this.dialog.open(DialogOptionsComponent, {
+    });
+  }
+  getOptions(){
+    this.firestoreservice.searchModal.subscribe(data => {
+      this.option = data.data;
+      console.log('obtengo option',data.data)
     });
   }
 }
