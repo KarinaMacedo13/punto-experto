@@ -1,157 +1,194 @@
 <section id="container-mydata">
   <div id="container-first">
     <h4 id="tittle-mydata">Crear tu cuenta</h4>
-    <h4 id="text-register">Registra tus datos personales y prepárate para poner manos a la obra.</h4>
+    <h4 id="text-register">
+      Registra tus datos personales y prepárate para poner manos a la obra.
+    </h4>
     <h4 id="text-register-2">*Campo obligatorio</h4>
   </div>
-  <form [formGroup]="form" novalidate   (ngSubmit)="save($event)" class = "containerForm" >
-    <p class="description-form">Nombres: *</p>
-    <input class="input-form-mydata" placeholder="Ingresa tus nombres" formControlName="names"/>
+  <form>
+    <div id="container-form-first">
+      <div>
+        <p class="description-form">Nombres: *</p>
+        <input class="input-form-mydata" placeholder="Ingresa tus nombres" />
+      </div>
 
-    <p class="description-form">Apellido Paterno: *</p>
-    <input class="input-form-mydata" placeholder="Ingresa tu apellido paterno" formControlName="lastname"/>
+      <div>
+        <p class="description-form">Apellido Paterno: *</p>
+        <input
+          class="input-form-mydata"
+          placeholder="Ingresa tu apellido paterno"
+        />
+      </div>
+      <div>
+        <p class="description-form">Apellido Materno: *</p>
+        <input
+          class="input-form-mydata"
+          placeholder="Ingresa tu apellido materno"
+        />
+      </div>
 
-    <p class="description-form">Apellido Materno: *</p>
-    <input class="input-form-mydata" placeholder="Ingresa tu apellido materno" formControlName="secondLastname"/>
+      <div>
+        <p class="description-form">Fecha de nacimiento: *</p>
+        <input class="input-form-mydata" type="date" placeholder="dd/mm/aaaa" />
+      </div>
 
-    <p class="description-form">Fecha de nacimiento: *</p>
-    <input class="input-form-mydata" type="date" placeholder="dd/mm/aaaa" formControlName="birth"/>
-
-    <p class="description-form">Edad: *</p>
-    <input class="input-form-mydata" type="number" placeholder="Ingresa tu edad" formControlName="age"/>
-
-    <p class="description-form">DNI: *</p>
-    <input class="input-form-mydata" placeholder="Ingresa tu DNI" type="number" formControlName="dni"/>
-
-    <p class="description-form">Celular: *</p>
-    <input class="input-form-mydata"  type="number" placeholder="Ingresa tu numero celular"  formControlName="cellphone"/>
-
-    <p class="description-form">Email: *</p>
-    <input class="input-form-mydata" type="email" placeholder="Ingresa tu email" formControlName="email"/>
-
-    <p class="description-form">Fecha de registro: *</p>
-    <input class="input-form-mydata" type="date" placeholder="dd/mm/aaaa" formControlName="creation"/>
-
-    <p class="description-form">Ocupación: *</p>
-    <select class="form-select input-form-mydata" aria-label="Default select example" formControlName="ocupation" >
-      <option selected >Selecciona tu ocupación</option>
-      <option value="Albañil">Albañil</option>
-      <option value="Maestro de Obras">Maestro de Obras</option>
-      <option value="Oficial">Oficial</option>
-      <option value="Operario">Operario</option>
-      <option value="Peón">Peón</option>
-    </select>
-
-    <p class="description-form">Dirección: *</p>
-    <input class="input-form-mydata" placeholder="departamento,provincia,distrito" formControlName="direccion" />
-
-    <p class="description-form">Certificados: *</p>
-    <div class="input-group mb-3">
-      <input class="input-form-mydata" placeholder="Ingrese sus certificado uno a uno " #element/>
-      <span class="input-group-text" id="basic-addon2" (click)="addCertificado(element)">
-        <mat-icon>add_circle_outline</mat-icon>
-      </span>
+      <div>
+        <p class="description-form">DNI: *</p>
+        <input
+          class="input-form-mydata"
+          placeholder="Ingresa tu DNI"
+          type="number"
+        />
+      </div>
+      <div>
+        <p class="description-form">Celular: *</p>
+        <input
+          class="input-form-mydata"
+          placeholder="Ingresa tu numero celular"
+        />
+      </div>
+      <div>
+        <p class="description-form">Email: *</p>
+        <input
+          class="input-form-mydata"
+          type="email"
+          placeholder="Ingresa tu email"
+        />
+      </div>
+      <div>
+        <p class="description-form">Ocupación: *</p>
+        <select
+          class="form-select input-form-mydata"
+          aria-label="Default select example"
+        >
+          <option selected>Selecciona tu ocupación</option>
+          <option value="Albañil">Albañil</option>
+          <option value="Maestro de Obras">Maestro de Obras</option>
+          <option value="Oficial">Oficial</option>
+          <option value="Operario">Operario</option>
+          <option value="Peón">Peón</option>
+        </select>
+      </div>
+      <div>
+        <p class="description-form">Dirección: *</p>
+        <input
+          class="input-form-mydata"
+          placeholder="departamento,provincia,distrito"
+        />
+      </div>
+      <div>
+        <p class="description-form">
+          ¿Quieres pertenecer a la sección de <br> oportunidades laborales?
+        </p>
+        <mat-radio-group aria-label="Select an option">
+          <mat-radio-button class="oportunities" value="si"
+            >Sí, quiero participar</mat-radio-button
+          >
+          <mat-radio-button class="oportunities" value="no"
+            >No deseo participar</mat-radio-button
+          >
+        </mat-radio-group>
+      </div>
     </div>
 
-    <p class="description-form">¿Quieres pertenecer a la sección de oportunidades?</p>
-    <mat-radio-group  aria-label="Select an option" name="opciones" #value1 (change)="addAuthOportunity(value1)">
-      <mat-radio-button value=true name="opciones" >Sí, quiero participar</mat-radio-button>
-      <mat-radio-button value=false name="opciones">No deseo participar</mat-radio-button>
-    </mat-radio-group>
-<!--
-    <ng-template #templateData *ngIf="value1"> -->
-      <p class="description-form">Foto de perfil:</p>
-
-      <div class="input-group mb-3">
-        <input
-          type="text"
-          class="form-control"
-          placeholder="Agregar foto"
-          aria-label="Recipient's username"
-          aria-describedby="basic-addon2"
-        />
-        <span class="input-group-text div-uploader" id="basic-addon2" >
-          <mat-icon>add_circle_outline</mat-icon>
-          <input type="file" (change)="uploadImage($event, 'url_photo')"/>
-        </span>
-      </div>
-       <div id="container-pic">
-        <div id="pic">
-          <img src="{{url}}">
+    <div id="container-form-secondary">
+      <div>
+        <p class="description-form">Foto de perfil:</p>
+        <div id="container-pic">
+          <div id="pic">
+            <img />
+          </div>
+          <h4 id="change-pic">cambia tu foto</h4>
         </div>
-        <h4 id="change-pic">cambia tu foto</h4>
       </div>
-
-      <p class="description-form">Experiencia*</p>
-      <div id="container-experience">
-        <input id="experience" placeholder="  00" type="number" formControlName="experience" />
-        <p id="years-experience">años de experiencia:*</p>
+      <div>
+        <p class="description-form">Experiencia*</p>
+        <div id="container-experience">
+          <input id="experience" placeholder="  00" type="number" />
+          <p id="years-experience">años de experiencia:*</p>
+        </div>
       </div>
-
-      <p class="description-form">Zonas de trabajo*</p>
-      <div class="input-group mb-3">
-        <input
-          type="text"
-          class="form-control"
-          placeholder="Ubicar zonas de trabajo una a una"
-          aria-label="Recipient's username"
-          aria-describedby="basic-addon2"
-          #area
-        />
-        <span class="input-group-text" id="basic-addon2" (click)="addAreaWork(area)">
-          <mat-icon>add_circle_outline</mat-icon>
-        </span>
+      <div>
+        <p class="description-form">Zonas de trabajo*</p>
+        <div class="input-group mb-3">
+          <input
+            type="text"
+            class="form-control zone-work"
+            placeholder="Ubicar zonas de trabajo"
+            aria-label="Recipient's username"
+            aria-describedby="basic-addon2"
+          />
+          <span class="input-group-text" id="basic-addon2"
+            ><mat-icon>add_circle_outline</mat-icon></span
+          >
+        </div>
       </div>
-
-      <p class="description-form">Especialidad:*</p>
-      <select class="form-select" aria-label="Default select example" formControlName="especialidad">
-        <option selected>Seleccionar especialidad</option>
-        <option value="Gasfitero">Gasfitero</option>
-        <option value="Gestión en Obras">Gestión en Obras</option>
-        <option value="Carpintero">Carpintero</option>
-        <option value="Parquetista">Parquetista</option>
-        <option value="Instalador de Aparatos Elevadores">Instalador de Aparatos Elevadores</option>
-        <option value="Instalador de Domótica en Edificación">Instalador de Domótica en Edificación</option>
-        <option value="Fontanero">Fontanero</option>
-        <option value="Cristalero">Cristalero</option>
-        <option value="Especialista en acabados">Especialista en acabados</option>
-        <option value="Especialista en instalaciones eléctricas">Especialista en instalaciones eléctricas</option>
-      </select>
-
-      <p class="description-form">Galeria de trabajos de obra:</p>
-      <div class="input-group mb-3">
-        <mat-icon>info</mat-icon>
-        <input
-          type="text"
-          class="form-control"
-          placeholder="Agregar foto"
-          aria-label="Recipient's username"
-          aria-describedby="basic-addon2"
-        />
-        <span class="input-group-text div-uploader" id="basic-addon2" (click)="addAreaWork(area)">
-          <mat-icon>add_circle_outline</mat-icon>
-          <input type="file" (change)="uploadImage($event, 'url_projects')"/>
-        </span>
+      <div>
+        <p class="description-form">Especialidad:*</p>
+        <select class="form-select" aria-label="Default select example">
+          <option selected>Seleccionar especialidad</option>
+          <option value="Gasfitero">Gasfitero</option>
+          <option value="Gestión en Obras">Gestión en Obras</option>
+          <option value="Carpintero">Carpintero</option>
+          <option value="Parquetista">Parquetista</option>
+          <option value="Instalador de Aparatos Elevadores">
+            Instalador de Aparatos Elevadores
+          </option>
+          <option value="Instalador de Domótica en Edificación">
+            Instalador de Domótica en Edificación
+          </option>
+          <option value="Fontanero">Fontanero</option>
+          <option value="Cristalero">Cristalero</option>
+          <option value="Especialista en acabados">
+            Especialista en acabados
+          </option>
+          <option value="Especialista en instalaciones eléctricas">
+            Especialista en instalaciones eléctricas
+          </option>
+        </select>
       </div>
-      <p class="description-form">
-        ¿Autorizas que puedan comunicarse contigo a través del número de Whatsapp
-        registrado?
-      </p>
-      <mat-radio-group class="group-radio-button" aria-label="Select an option">
-        <mat-radio-button class="options" value="1">Sí, autorizo</mat-radio-button>
-        <mat-radio-button class="options" value="2">No autorizo</mat-radio-button>
-      </mat-radio-group>
-<!--     </ng-template> -->
-
+      <div>
+        <p class="description-form">Galeria de trabajos de obra:</p>
+        <div class="input-group mb-3">
+          <mat-icon>info</mat-icon>
+          <input
+            type="text"
+            class="form-control"
+            placeholder="Agregar foto"
+            aria-label="Recipient's username"
+            aria-describedby="basic-addon2"
+          />
+          <span class="input-group-text" id="basic-addon2"
+            ><mat-icon>add_circle_outline</mat-icon></span
+          >
+        </div>
+      </div>
+      <div>
+        <p class="description-form">
+          ¿Autorizas que puedan comunicarse contigo <br> a través del número de
+          Whatsapp registrado?
+        </p>
+        <mat-radio-group
+          class="group-radio-button"
+          aria-label="Select an option"
+        >
+          <mat-radio-button class="options" value="1"
+            >Sí, autorizo</mat-radio-button
+          >
+          <mat-radio-button class="options" value="2"
+            >No autorizo</mat-radio-button
+          >
+        </mat-radio-group>
+      </div>
+    </div>
     <div id="check-terms">
       <input type="checkbox" />
-      <p id="text-terms">Acepto los términos y condiciones</p>
+      <h4 id="text-terms">Acepto los  &nbsp; <p id="terms-red">términos y condiciones</p></h4>
     </div>
 
     <div id="container-button-update">
-      <button id="button-update"  type="submit">Registrarme</button>
+      <button id="button-update">Regístrame</button>
     </div>
-
   </form>
 </section>
-
