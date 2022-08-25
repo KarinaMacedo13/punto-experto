@@ -9,9 +9,6 @@ export const navViewDesktop = [
     nav:'CAPACITATE'
   },
   {
-    nav:'EXPERTOS AL DIA'
-  },
-  {
     nav:'CLASES EN VIVO'
   },
   {
