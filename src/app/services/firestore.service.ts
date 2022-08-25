@@ -15,7 +15,7 @@ export class FirestoreService {
     return addDoc(workersRef, workersData);
   }
   getMaster(): Observable<WorkersData[]>{
-    const workersRef = collection(this.firestore, 'dataworker');
+    const workersRef = collection(this.firestore, 'MasterBuilders');
     return collectionData(workersRef, {idField: 'id'}) as Observable<WorkersData[]>;
   }
 }

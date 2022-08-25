@@ -19,8 +19,8 @@ export class InfobuildersComponent implements OnInit {
 
   ngOnInit(): void {
     this.firestoreservice.getMaster().subscribe(workersData => {
-      const workersdata = workersData;
-      this.workerFilter = workersdata.filter(worker => worker.id === this.workerId)
+      this.workerFilter = workersData;
+      // this.workerFilter = workersdata.filter(worker => worker.id === this.workerId)
       console.log(this.workerFilter);
     })
   }
