@@ -7,6 +7,7 @@ import { DialogUbicationComponent } from '../../dialogs/dialog-ubication/dialog-
 import { MatDialog } from '@angular/material/dialog';
 import { lambayeque } from './lambayeque.clean.const';
 import {piura} from './piura.clean.const';
+//import {lima} from './lima.clean.const';
 
 declare const google: any;
 
@@ -16,20 +17,11 @@ declare const google: any;
   styleUrls: ['./maps.component.css']
 })
 export class MapsComponent implements OnInit {
-
   @ViewChild('map', { static: true }) mapElement: any;
   map: any;
   latitude: number = 0;
   longitute: number =0;
-  coordinates = [];
-  ciudad: string = '';
   polygon: any;
-
-  countries = [
-    { id: 'sjl', name: 'SJL' },
-    { id: 'huachipa', name: 'Huachipa' },
-  ];
-
   datamapv1 = new Map(); // key: DEPARTAMENTO_PROVINCIA_DISTRITO , value: COORDENADAS A DIBUJAR
 
   constructor( public dialog: MatDialog,) {
@@ -37,16 +29,20 @@ export class MapsComponent implements OnInit {
 
   ngOnInit() {
     const mapProperties = {
-      center: new google.maps.LatLng(-5.19722, -80.6267        ),
+      center: new google.maps.LatLng(-5.19722, -80.6267),
       zoom: 11,
       mapTypeId: google.maps.MapTypeId.ROADMAP,
     };
+
     this.map = new google.maps.Map(
       this.mapElement.nativeElement,
       mapProperties
     );
 
     this.loadDataMap(this.datamapv1);
+
+    //el mapa por defecto pintará a PIURA (DISTRITO)
+    this.onUbicationObtained('PIURA_PIURA_PIURA');
   }
 
   ubication:any;
@@ -54,19 +50,18 @@ export class MapsComponent implements OnInit {
     let district;
     const dialogRef = this.dialog.open(DialogUbicationComponent, {data:{district}});
     dialogRef.afterClosed().subscribe(result => {
-      const depart = result.district.departamento.toUpperCase();
-      const prov = result.district.provincia.toUpperCase();
-      const distr = result.district.distrito.toUpperCase();
-      const formatDirection = `${depart}_${prov}_${distr}`
-      console.log(formatDirection, "jjresullllltado final");
-
-        this.onSubmit(formatDirection)
+        const depart = result.district.departamento.toUpperCase();
+        const prov = result.district.provincia.toUpperCase();
+        const distr = result.district.distrito.toUpperCase();
+        const formatDirection = `${depart}_${prov}_${distr}`
+        this.onUbicationObtained(formatDirection)
     });
   }
 
   loadDataMap(datamap:any) {
     this.extractDataFromJSONAndAddToMap(lambayeque, this.datamapv1);
     this.extractDataFromJSONAndAddToMap(piura, this.datamapv1);
+    //this.extractDataFromJSONAndAddToMap(lima, this.datamapv1);
   }
 
   extractDataFromJSONAndAddToMap(rawdata:any, datamap:any) {
@@ -78,7 +73,8 @@ export class MapsComponent implements OnInit {
         const fieldDepartamento = fields.nombdep;
         const fieldProvincia = fields.nombprov;
         const fieldDistrito = fields.nombdist;
-        console.log(fieldDepartamento+"_"+fieldProvincia+"_"+fieldDistrito);
+        //console.log(fieldDepartamento+"_"+fieldProvincia+"_"+fieldDistrito); //[NO BORRAR] Util para ver las keys disponibles
+        //console.log("{ departamento:" + "'"+ fieldDepartamento+"', provincia: '"+fieldProvincia+"', distrito: '"+fieldDistrito+ "'},"); //[NO BORRAR] Util para construie el json usado en ubications.const.ts
         datamap.set(fieldDepartamento+"_"+fieldProvincia+"_"+fieldDistrito, fieldsGeoShape);
         }
     }
@@ -95,23 +91,14 @@ export class MapsComponent implements OnInit {
     return googleCoords;
   }
 
-
-/*
-maps.component.ts:56 LAMBAYEQUE_LAMBAYEQUE_CHONGOYAPE
-5maps.component.ts:56 LAMBAYEQUE_LAMBAYEQUE_OYOTUN
-5maps.component.ts:56 LAMBAYEQUE_LAMBAYEQUE_TUMAN
-5maps.component.ts:56 LAMBAYEQUE_LAMBAYEQUE_PITIPO
-5maps.component.ts:56 LAMBAYEQUE_LAMBAYEQUE_JAYANCA
-5maps.component.ts:56 LAMBAYEQUE_LAMBAYEQUE_MOTUPE
-5maps.component.ts:56 LAMBAYEQUE_LAMBAYEQUE_OLMOS
-*/
-
-  onSubmit(data:string) {
-    //this.ciudad = 'sjl';
-//aqui deben llegar esos datos
-    //this.cleanPolygonsFromMap();
-    const coordenadasADibujar= this.getGoogleMapCoordenatesFromDataMap(this.datamapv1, data);
-    this.dibujarCiudad(coordenadasADibujar);
+  onUbicationObtained(data:string) {
+  //borramos el poligono siempre y cuando ya exista por eso el != null
+    if (this.polygon != null) {
+      this.polygon.setMap(null);
+    }
+    console.log
+    const newCoordenadasADibujar = this.getGoogleMapCoordenatesFromDataMap(this.datamapv1, data);
+    this.dibujarCiudad(newCoordenadasADibujar);
   }
 
   limpiarMapa() {
@@ -140,5 +127,24 @@ maps.component.ts:56 LAMBAYEQUE_LAMBAYEQUE_CHONGOYAPE
     this.map.fitBounds(bounds);
   }
 
+  removerDibujoCiudad(coordenas: any) {
+    this.polygon = new google.maps.Polygon({
+      paths: coordenas,
+      strokeColor: '#FF0000',
+      strokeOpacity: 0.0,
+      strokeWeight: 0,
+      fillColor: '#FF0000',
+      fillOpacity: 0.0,
+    });
+    this.polygon.setMap(this.map);
 
+    // Crear el objeto con sus limites
+    var bounds = new google.maps.LatLngBounds();
+    // Obtener rutas del polígono y establecer los detectores de eventos para cada ruta por separado
+    this.polygon.getPath().forEach(function (path:any, index:any) {
+      bounds.extend(path);
+    });
+    // Fit Polygon path bounds
+    this.map.fitBounds(bounds);
+  }
 }

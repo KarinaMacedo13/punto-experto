@@ -1037,10 +1037,10 @@ export const lambayeque = {
         ],
         "poblacion": 12910.0,
         "ccdd": "14",
-        "descripcio": "SA\u00d1\u0091A",
+        "descripcio": "SAÑIA",
         "nombprov": "CHICLAYO",
         "nombdep": "LAMBAYEQUE",
-        "capital": "SA\u00d1\u0091A",
+        "capital": "SAÑIA",
         "idprov": "1401",
         "ubigeo": "140115",
         "geo_shape": {
@@ -3377,7 +3377,7 @@ export const lambayeque = {
         "cnt_ccpp": 35,
         "dat_pob": "INEI",
         "ccpp": "01",
-        "nombdist": "SA\u00d1\u0091A"
+        "nombdist": "SAÑIA"
     },
     "geometry": {
         "type": "Point",
@@ -3396,10 +3396,10 @@ export const lambayeque = {
         ],
         "poblacion": 12608.0,
         "ccdd": "14",
-        "descripcio": "CA\u00d1ARIS",
-        "nombprov": "FERRE\u00d1AFE",
+        "descripcio": "CAÑARIS",
+        "nombprov": "FERREÑAFE",
         "nombdep": "LAMBAYEQUE",
-        "capital": "CA\u00d1ARIS",
+        "capital": "CAÑARIS",
         "idprov": "1402",
         "ubigeo": "140202",
         "geo_shape": {
@@ -6048,7 +6048,7 @@ export const lambayeque = {
         "cnt_ccpp": 117,
         "dat_pob": "INEI",
         "ccpp": "02",
-        "nombdist": "CA\u00d1ARIS"
+        "nombdist": "CAÑARIS"
     },
     "geometry": {
         "type": "Point",
@@ -7569,7 +7569,7 @@ export const lambayeque = {
         "poblacion": 4295.0,
         "ccdd": "14",
         "descripcio": "MANUEL ANTONIO MESONES MURO",
-        "nombprov": "FERRE\u00d1AFE",
+        "nombprov": "FERREÑAFE",
         "nombdep": "LAMBAYEQUE",
         "capital": "MANUEL ANTONIO MESONES MURO",
         "idprov": "1402",
@@ -11831,7 +11831,7 @@ export const lambayeque = {
         "recordid": "1f0e2acb430602de4557f47fc0bb4b4edba41164",
         "fields": {
             "fecha": 2020.0,
-            "geo_point_2d": 
+            "geo_point_2d":
                   [-7.01442466301,
                   -79.6713009573
             ],
@@ -17488,7 +17488,7 @@ export const lambayeque = {
             "poblacion": 15218.0,
             "ccdd": "14",
             "descripcio": "INCAHUASI",
-            "nombprov": "FERRE\u00d1AFE",
+            "nombprov": "FERREÑAFE",
             "nombdep": "LAMBAYEQUE",
             "capital": "INCAHUASI",
             "idprov": "1402",
@@ -25222,10 +25222,10 @@ export const lambayeque = {
             ],
             "poblacion": 37988.0,
             "ccdd": "14",
-            "descripcio": "FERRE\u00d1AFE",
-            "nombprov": "FERRE\u00d1AFE",
+            "descripcio": "FERREÑAFE",
+            "nombprov": "FERREÑAFE",
             "nombdep": "LAMBAYEQUE",
-            "capital": "FERRE\u00d1AFE",
+            "capital": "FERREÑAFE",
             "idprov": "1402",
             "ubigeo": "140201",
             "geo_shape": {
@@ -25900,7 +25900,7 @@ export const lambayeque = {
             "cnt_ccpp": 17,
             "dat_pob": "INEI",
             "ccpp": "02",
-            "nombdist": "FERRE\u00d1AFE"
+            "nombdist": "FERREÑAFE"
         },
         "geometry": {
             "type": "Point",
@@ -25921,7 +25921,7 @@ export const lambayeque = {
             "poblacion": 15567.0,
             "ccdd": "14",
             "descripcio": "PUEBLO NUEVO",
-            "nombprov": "FERRE\u00d1AFE",
+            "nombprov": "FERREÑAFE",
             "nombdep": "LAMBAYEQUE",
             "capital": "PUEBLO NUEVO",
             "idprov": "1402",
@@ -42049,7 +42049,7 @@ export const lambayeque = {
             "poblacion": 22299.0,
             "ccdd": "14",
             "descripcio": "PITIPO",
-            "nombprov": "FERRE\u00d1AFE",
+            "nombprov": "FERREÑAFE",
             "nombdep": "LAMBAYEQUE",
             "capital": "PITIPO",
             "idprov": "1402",
@@ -64930,4 +64930,4 @@ export const lambayeque = {
             }
         },
         "record_timestamp": "2020-08-16T21:41:27.008-05:00"
-    }] }; 
+    }] };
