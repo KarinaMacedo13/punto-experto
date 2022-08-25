@@ -29,12 +29,12 @@ export class DialogLoginComponent implements OnInit {
 
    loginByEmail() {
     this.authService.login(this.dataUser.value.email, this.dataUser.value.password)
-      .then(res => {console.log('login succesfully', res) 
+      .then(res => {console.log('login succesfully', res)
           this.newRoute.navigate(['/oportunity']);
         })
-      .catch(err => console.log('Error' , err))
-      this.errRol();
-      }
+      .catch(err => this.errRol())
+
+    }
 
     errRol() {
       this.snackBar.open('Contraseña o correo incorrecto. Ingresar nuevamente', 'Aceptar', {
