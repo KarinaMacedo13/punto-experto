@@ -1,15 +1,19 @@
-<h2 mat-dialog-title>Enviar Whatssap</h2>
+<h2 id="tittle-wsp" mat-dialog-title>Enviar Whatssap<hr></h2>
+<div id="contenido-wsp">
 <div mat-dialog-content>
-  <p>Para continuar</p>
+  <p>Para continuar:</p>
 </div>
-<mat-checkbox
+<div id="container-terms">
+<input
+type="checkbox"
   class="example-margin"
   #saveCheckboxOne
   (change)="(saveCheckboxOne.checked)"
 >
-  Acepto los <a href="url">Términos y Condiciones</a>
-</mat-checkbox>
+<div>  Acepto los <a id="color" href="url">Términos y Condiciones</a> </div>
+</div>
+</div>
 <div mat-dialog-actions>
-  <button mat-raised-button mat-dialog-close>Cancelar</button>
-  <a mat-raised-button mat-dialog-close [disabled]="!saveCheckboxOne.checked" href="https://api.whatsapp.com/send?phone={{data.phone}}&text=Hola {{data.name}} vi tu perfil laboral en ConstruyeXperto y me gustaría contactarte." target="_blank">Iniciar chat</a>
+  <button class="btns" mat-raised-button mat-dialog-close>Cancelar</button>
+  <a class="btns" mat-raised-button mat-dialog-close [disabled]="!saveCheckboxOne.checked" href="https://api.whatsapp.com/send?phone={{data.phone}}&text=Hola {{data.name}} vi tu perfil laboral en ConstruyeXperto y me gustaría contactarte." target="_blank">Iniciar chat</a>
 </div>

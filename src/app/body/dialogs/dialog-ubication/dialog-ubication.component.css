@@ -8,7 +8,20 @@
   justify-content: center;
   align-items: center;
   font-size: medium;
-  font-family: 'Patua One', cursive;
+  font-family: forza;
+}
+#tittle{
+  font-family: forza;
+ color: #29384C;
+ font-size: 16px;
+ margin-bottom: -6px;
+
+}
+#hr{
+  border-color: #29384C;
+  margin: 0;
+  padding: 0;
+
 }
 .selectContainer{
   width:300px;
@@ -24,8 +37,11 @@
   font-family: 'Rubik', sans-serif;
   width:100%;
   padding:1% 0% 1%;
-  background-color: white;
-  color:black
+  background-color: #F4F4F4;
+  color:black;
+  font-size: 13px;
+  font-family: forza;
+  margin:0px;
 
 }
 .titleModal{

@@ -38,8 +38,7 @@
   font-family: forza;
   display:flex;
   flex-direction: column;
-  padding-top:5px;
-  margin-top: 306px;
+  padding-top: 22px;  margin-top: 0px;
   position:fixed;
   bottom:0px;
   height: 20vh;
@@ -73,10 +72,45 @@ font-size: 12px;
 .text-footer{
   margin-left: 19px;
 }
+.alert-dark{
+  background-color: white;
+  margin-left: 100px;
+  margin-top: 247px;
+}
+.btn-option{
+  font-size: 12px;
+}
+#btn1{
+  margin-right: 5px;
+}
+#text-ubication{
+  font-size: 14px;
+  text-align:center;
+}
+#alertId{
+position: absolute;
+display: flex;
+font-family:forza;
+margin-top: 5%;
+z-index: 5;
+display: flex;
+justify-content: center;
+
+}
+.btn-alert{
+  display: flex;
+  justify-content: space-evenly;
+  font-family:forza;}
 
 
 @media only screen and (min-width: 1024px) {
   .footerOptions{
     align-items: center;}
+
+    .alert-dark{
+      background-color: white;
+      margin-left: 670px;
+      margin-top: 250px;
+}
 
 }
