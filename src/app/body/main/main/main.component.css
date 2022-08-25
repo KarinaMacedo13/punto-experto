@@ -60,3 +60,19 @@
 .footerOptions{
   display:flex;
 }
+#alertId{
+position: absolute;
+display: flex;
+font-family:forza;
+margin-top: 5%
+}
+.btn-alert{
+  display: flex;
+  justify-content: space-evenly;
+  font-family:forza;
+
+}
+.btn-alert .btn{
+  border-radius: 3px;
+  width:80px;
+}

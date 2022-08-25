@@ -1,10 +1,9 @@
-<h2 mat-dialog-title>Buscar ubicación</h2>
+<h2 mat-dialog-title class="titleModal">Buscar ubicación</h2>
 <hr>
 <div mat-dialog-content>
-<input type="text" class="form-control" placeholder="Ingresar ubicación" aria-label="Username" aria-describedby="basic-addon1" (keyup)="searchTerm$.next($event.target)">
-<ng-select   class="selectContainer"  (keyup)="searchTerm$.next($event.target)" >
-   <ng-option *ngFor="let ubication of listUbications" [value]="ubication"  >
-       <p>{{ubication.departamento}}, {{ubication.provincia}},{{ubication.distrito}}</p>
+<ng-select   class="selectContainer"  (keyup)="searchTerm$.next($event.target)" bindLabel="name" >
+   <ng-option *ngFor="let ubication of listFiltered" [value]="ubication" class="options"  >
+       <p id = "optionp">{{ubication.departamento}}, {{ubication.provincia}},{{ubication.distrito}}</p>
   </ng-option>
 </ng-select>
 </div>

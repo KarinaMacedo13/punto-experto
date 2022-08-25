@@ -2,6 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { FirestoreService } from 'src/app/services/firestore.service';
 import { ref, Storage, uploadBytes, getDownloadURL } from '@angular/fire/storage';
+import { ubications } from 'src/app/shared/ubications.const';
+import { Subject } from 'rxjs';
+import { WorkersData } from 'src/app/shared/interfaces/worker';
 
 @Component({
   selector: 'app-create-worker',
@@ -14,13 +17,21 @@ export class CreateWorkerComponent implements OnInit {
   firestoreService: any;
   valueBoolean:boolean=false;
   url:any;
+  arrayProjects:any = [];
+  public searchTerm$= new Subject<any>();
+  public listUbications:any = ubications;
+  public listFiltered:any = [];
+
 
 
   constructor( firestoreService: FirestoreService,
-    private formBuilder: FormBuilder, private storage: Storage,
+    private formBuilder: FormBuilder,
+    private storage: Storage,
+    private restService: FirestoreService,
   ) {this.buildForm();}
 
   ngOnInit(): void {
+    this.filterList();
   }
 
   private buildForm() {
@@ -37,13 +48,10 @@ export class CreateWorkerComponent implements OnInit {
       certificados: [[], ],
       especialidad: ['', [Validators.required]],
       ocupation: ['', [Validators.required]],
-      departamento: ['', [Validators.required]],
-      provincia: ['', [Validators.required]],
-      distrito: ['', [Validators.required]],
       url_photo: [''],
       url_projects: [''],
       experience: ['', [Validators.required]],
-      direccion: ['', [Validators.required]],
+      direccion: ['', ],
       areaWorker: [[],],
       ubigeo: [''],
 
@@ -97,61 +105,72 @@ export class CreateWorkerComponent implements OnInit {
      }
     }
 
-    uploadImage($event : any, keyWord:any) {
+    uploadImagePhoto($event : any, keyWord:any) {
       const file = $event.target.files[0];
       console.log(file);
       const imgRef = ref(this.storage,`products/${file.name}`);
       uploadBytes(imgRef, file)
       .then(response => {
         console.log(response)
-        this.getImages(file.name, keyWord)}
+        this.getImagesPhoto(file.name, keyWord)}
         )
       .catch(error => console.log("upload"+error))
     }
 
-    getImages(file:string, keyword:any) {
+    getImagesPhoto(file:string, keyword:any) {
       const imagesRef = ref(this.storage, `products/${file}`);
       getDownloadURL(imagesRef)
-      .then(response => {this.form.value.keyWord=response, this.url=response})
+      .then(response => {this.form.value.url_photo = response, this.url=response})
       .catch(error => {console.log("listAll"+error)})
     }
 
-  eventPhotoProfile(){
-    this.photoProfile = true;
-  }
-  addPhotoProfile(){
+    uploadImageProjects($event : any, keyWord:any) {
+      const file = $event.target.files[0];
+      console.log(file);
+      const imgRef = ref(this.storage,`products/${file.name}`);
+      uploadBytes(imgRef, file)
+      .then(response => {
+        console.log(response)
+        this.getImagesProjects(file.name, keyWord)}
+        )
+      .catch(error => console.log("upload"+error))
+    }
 
-  }
+    getImagesProjects(file:string, keyword:any) {
+      const imagesRef = ref(this.storage, `products/${file}`);
+      getDownloadURL(imagesRef)
+      .then(response => {this.arrayProjects.push(response), this.url=response})
+      .catch(error => {console.log("listAll"+error)})
+    }
+
 
     save(event:Event) {
+      this.form.value.direccion;
+      this.form.value.url_projects = this.arrayProjects;
       event.preventDefault();
       console.log("dataaaaasin validar");
       console.log(this.form.value)
-      if(this.form.valid){
-        if(this.form.value.userRolId === 1){
-          this.form.value.admin = true
-        }else {this.form.value.admin = false};
-        console.log("this.formCreateUser");
-        console.log(this.form.value);
-       // this.createUser(this.form.value)
-      } else {
         this.form.markAllAsTouched();
-      }
+      this.onSubmit(this.form.value)
     }
-    clear() {
-      console.log("clear clicked")
-      this.form.reset();
-   }
 
-   // conección de firebase
+     // conección de firebase
 
-    
+   async onSubmit(form:WorkersData){
+    try {
+      const response = await this.restService.addWorkers(form);
+      console.log(response)
+    }catch(error){
+       console.log(error)
+    }
+
   }
 
-/*   async onSubmit(){
-    console.log(this.form.value)
-    const response = await this.firestoreService.addMaster(this.form.value)
-    console.log(response)
-  } */
+  filterList = (): void => {
+    this.searchTerm$.subscribe(term => {
+      console.log(term.value)
+       this.listFiltered = this.listUbications.filter((item:any) => item.distrito.toLowerCase().indexOf(term.value.toLowerCase()) >= 0).slice(0,10);
+      });
+  }
 
-
+}

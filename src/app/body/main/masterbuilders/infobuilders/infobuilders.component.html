@@ -1,67 +1,114 @@
-
-<button type="button" class="btn btn-light"><i class="bi bi-arrow-left"></i>Volver al listado</button>
+<button type="button" class="btn btn-light btn-back">
+  <i class="bi bi-arrow-left"></i>Volver al listado
+</button>
 
 <div class="card" *ngFor="let workers of workerFilter" style="width: 18rem">
   <div class="card-body">
-    <img
-      src="{{ workers.url_photo }}"
-      class="card-img-top imgProfile"
-      alt="..."
-    />
-    <h5 class="card-title">{{ workers.names }}</h5>
-    <h6 class="card-subtitle mb-2 text-muted">{{ workers.ocupation }}</h6>
-    <h6 class="card-subtitle mb-2 text-muted">
-      {{ workers.experience }} años de experiencia
-    </h6>
-    <h5 class="card-title">Especializado en:</h5>
+    <div id="container-card">
+      <img
+        id="img"
+        src="{{ workers.url_photo }}"
+        class="card-img-top imgProfile"
+        alt="..."
+      />
+      <div id="text-info">
+        <h5 id="name" class="card-title">{{ workers.names }}</h5>
+        <h6 class="text-in-card card-subtitle mb-2 text-muted">
+          {{ workers.ocupation }}
+        </h6>
+        <h6 class="card-subtitle mb-2 text-muted text-in-card">
+          {{ workers.experience }} años de experiencia
+        </h6>
+      </div>
+    </div>
+
+    <h5 class="card-title sub-tittle">Especializado en:</h5>
     <span
-      class="badge text-bg-info"
+      class="badge text-bg-info items"
       *ngFor="let especialidad of workers.especialidad"
       >{{ especialidad }}</span
     >
-    <h5 class="card-title">Certificados:</h5>
+    <div id="container-group-items">
+      <div>
+    <h5 class="sub-tittle card-title">Certificados:</h5>
     <ul>
-      <li *ngFor="let  certificado of workers.certificados">{{ certificado }}</li>
+      <li class="text-basic" *ngFor="let certificado of workers.certificados">
+        {{ certificado }}
+      </li>
     </ul>
-    <h5 class="card-title">Zonas de Trabajo:</h5>
-    <span
-      class="badge text-bg-info"
-      *ngFor="let area of workers.areaWorker"
-      >{{ area }}</span
+  </div>
+    <h5 class="sub-tittle card-title">Zonas de Trabajo:</h5>
+    <span class="items badge text-bg-info" *ngFor="let area of workers.areaWorker">{{
+      area
+    }}</span>
+    <h5 class="sub-tittle card-title">Galería(obras o proyectos):</h5>
+    <div
+      id="carouselExampleIndicators"
+      class="carousel slide"
+      data-bs-ride="true"
     >
-    <h5 class="card-title">Galería(obras o proyectos):</h5>
-    <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="true">
-        <div class="carousel-indicators">
-          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
-          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+      <div class="carousel-indicators">
+        <button
+          type="button"
+          data-bs-target="#carouselExampleIndicators"
+          data-bs-slide-to="0"
+          class="active"
+          aria-current="true"
+          aria-label="Slide 1"
+        ></button>
+        <button
+          type="button"
+          data-bs-target="#carouselExampleIndicators"
+          data-bs-slide-to="1"
+          aria-label="Slide 2"
+        ></button>
+        <button
+          type="button"
+          data-bs-target="#carouselExampleIndicators"
+          data-bs-slide-to="2"
+          aria-label="Slide 3"
+        ></button>
+      </div>
+      <div class="carousel-inner">
+        <div
+          class="carousel-item active"
+          *ngFor="let projects of workers.url_projects"
+        >
+          <img src="{{ projects }}" class="d-block w-100" alt="..." />
         </div>
-        <div class="carousel-inner">
-          <div class="carousel-item active" *ngFor="let projects of workers.url_projects">
-            <img src="{{ projects }}" class="d-block w-100" alt="...">
-          </div>
-          <!-- <div class="carousel-item active" *ngFor="let projects of workers.url_projects">
+        <!-- <div class="carousel-item active" *ngFor="let projects of workers.url_projects">
             <img src="{{ projects }}" class="d-block w-100" alt="...">
           </div> -->
-          <!-- <div class="carousel-item active">
+        <!-- <div class="carousel-item active">
             <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQZt0h5A35LHrauX4SLMDBlYbuwBclkGxrMkKf4JxYhyRfNNPi-boQwC3na3IgY4WI3AZo&usqp=CAU" class="d-block w-100" alt="...">
           </div> -->
-        </div>
-        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
-          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-          <span class="visually-hidden">Previous</span>
-        </button>
-        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
-          <span class="carousel-control-next-icon" aria-hidden="true"></span>
-          <span class="visually-hidden">Next</span>
-        </button>
       </div>
+      <button
+        class="carousel-control-prev"
+        type="button"
+        data-bs-target="#carouselExampleIndicators"
+        data-bs-slide="prev"
+      >
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button
+        class="carousel-control-next"
+        type="button"
+        data-bs-target="#carouselExampleIndicators"
+        data-bs-slide="next"
+      >
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+    </div>
   </div>
+</div>
   <ul class="list-group list-group-flush">
-    <li class="list-group-item">
-      <h5 class="card-title">Contactar:</h5>
-      <a class="btn btn-danger">Whatssap</a>
-      <a class="btn btn-danger">Mensaje</a>
+    <li id="group-contact" class="list-group-item">
+      <h5 id="contact" class="card-title">Contactar:</h5>
+      <a id="btn-whatsapp" class="btn btn-danger">Whatssap <i id="color1" class="bi bi-whatsapp"></i> </a>
+      <a id="btn-msj" class="btn btn-danger">Mensaje <i class="bi bi-envelope"></i></a>
     </li>
   </ul>
 </div>

@@ -10,15 +10,12 @@ export interface WorkersData {
   age:string;
   creation:string;
   certificados:[];
-  especialidad:[];
+  especialidad:string;
   ocupation:string;
-  departamento:string;
-  provincia:string;
-  distrito:string;
   url_photo:string;
-  url_projects:string;
+  url_projects:[];
   experience:number;
-  direccion:[];
+  direccion:string;
   areaWorker:[];
   ubigeo:number;
 

@@ -8,5 +8,14 @@ export const ubications = [
     departamento: "Lima",
     provincia: "Lima",
     distrito: "San Juan de Lurigancho"
+  },{
+    departamento: "Lima",
+    provincia: "Lima",
+    distrito: "Rimac"
+  },
+  {
+    departamento: "Lima",
+    provincia: "Lima",
+    distrito: "Rimac"
   }
 ]
