@@ -3,28 +3,75 @@
   <p>Deja tus datos para que {{ data }} se contacte contigo</p>
 </div>
 <form [formGroup]="emailForm" (ngSubmit)="sendEmail()">
-  <mat-form-field appearance="legacy">
-    <mat-label>Nombre:</mat-label>
-    <input formControlName="name" matInput placeholder="Nombre" />
-  </mat-form-field>
-  <br />
-  <mat-form-field appearance="legacy">
-    <mat-label>Correo:</mat-label>
-    <input formControlName="correo" matInput placeholder="Correo" />
-  </mat-form-field>
-  <br />
-  <mat-form-field appearance="legacy">
-    <mat-label>Celular:</mat-label>
-    <input formControlName="phone" matInput placeholder="Celular" />
-  </mat-form-field>
-  <br />
-  <mat-form-field appearance="legacy">
-    <mat-label>Mensaje:</mat-label>
-    <input formControlName="message" matInput placeholder="ensaje" />
-  </mat-form-field>
-  <br />
-</form>
-<mat-checkbox
+  <div class="form-group">
+    <label for="validationEmail" class="form-label mt-2"> Nombre </label>
+    <input
+      type="Nombre"
+      class="form-control"
+      formControlName="name"
+      id="validationName"
+      placeholder="Ingresa tu nombre" />
+    <div
+      class="text"
+      *ngIf="
+      emailForm.get('name')?.hasError('required') &&
+      emailForm.get('name')?.touched
+      ">
+      <span>El nombre <strong> es obligatorio.</strong></span>
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="validationEmail" class="form-label mt-2"> Correo </label>
+    <input
+      type="correo"
+      class="form-control"
+      formControlName="correo"
+      id="validationCorreo"
+      placeholder="Ingresa tu nombre" />
+    <div
+      class="text"
+      *ngIf="
+      emailForm.get('correo')?.hasError('required') &&
+      emailForm.get('correo')?.touched
+      ">
+      <span>El correo <strong> es obligatorio.</strong></span>
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="validationEmail" class="form-label mt-2"> Celular </label>
+    <input
+      type="phone"
+      class="form-control"
+      formControlName="phone"
+      id="validatioPhone"
+      placeholder="Ingresa tu celular" />
+    <div
+      class="text"
+      *ngIf="
+      emailForm.get('phone')?.hasError('required') &&
+      emailForm.get('phone')?.touched
+      ">
+      <span>El correo <strong> es obligatorio.</strong></span>
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="validationEmail" class="form-label mt-2"> Mensaje </label>
+    <input
+      type="message"
+      class="form-control"
+      formControlName="message"
+      id="validationMessage"
+      placeholder="Ingresa tu mensaje" />
+    <div
+      class="text"
+      *ngIf="
+      emailForm.get('message')?.hasError('required') &&
+      emailForm.get('message')?.touched
+      ">
+      <span>El correo <strong> es obligatorio.</strong></span>
+    </div>
+  </div>
+  <mat-checkbox
   class="example-margin"
   #saveCheckboxOne
   (change)="(saveCheckboxOne.checked)"
@@ -42,3 +89,5 @@
     value="Enviar Mensaje"
   >
 </div>
+</form>
+

@@ -23,6 +23,7 @@ import { OptionPipePipe } from './main/pipes/option-pipe.pipe';
 import { DialogLoginComponent } from './dialogs/dialog-login/dialog-login.component';
 import { OportunityComponent } from './dataWorker/oportunity/oportunity.component';
 import { MessageComponent } from './dataWorker/message/message.component';
+import { EmailConfirmationComponent } from './dialogs/email-confirmation/email-confirmation.component';
 
 
 @NgModule ({
@@ -41,7 +42,8 @@ import { MessageComponent } from './dataWorker/message/message.component';
     DialogLoginComponent,
     OptionPipePipe,
     OportunityComponent,
-    MessageComponent
+    MessageComponent,
+    EmailConfirmationComponent
 
   ],
   imports: [
