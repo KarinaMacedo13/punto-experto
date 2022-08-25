@@ -20,6 +20,7 @@ import { DialogWhatssapComponent } from './dialogs/dialog-whatssap/dialog-whatss
 import { DialogEmailComponent } from './dialogs/dialog-email/dialog-email.component';
 import { DialogOptionsComponent } from './dialogs/dialog-options/dialog-options.component';
 
+import { DialogLoginComponent } from './dialogs/dialog-login/dialog-login.component';
 
 
 @NgModule ({
@@ -35,6 +36,7 @@ import { DialogOptionsComponent } from './dialogs/dialog-options/dialog-options.
     DialogWhatssapComponent,
     DialogEmailComponent,
     DialogOptionsComponent,
+    DialogLoginComponent
 
   ],
   imports: [

@@ -1,0 +1,38 @@
+* {
+    font-family: forza;
+    font-size: 1.8rem;
+}
+
+h2 {
+    color: #ED1C24;
+    font-size: 3rem;
+}
+
+h3 {
+    font-size: 1rem;
+}
+
+:host {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: medium;
+}
+
+::ng-deep .mat-form-field {
+    background-color:white;
+    padding: 1.5rem 2.5rem;
+    border-radius: 0.7rem;
+}
+
+.mat-dialog-actions button{
+    background-color:white;
+    box-shadow: none;
+    line-height: 0.9rem;
+    margin-bottom:0.7rem;
+}
+
+.register {
+    color: #ED1C24;
+}

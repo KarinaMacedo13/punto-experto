@@ -209,7 +209,7 @@ margin-right: 10px;
   justify-content:space-between;
 }
 #zone-work{
-  width: 300px;  
+  width: 300px;
 }
 .form-control{
   width: 259px;
@@ -223,4 +223,40 @@ margin-right: 10px;
 #text-register{
   width: 350px;
 }
+}
+.selectContainer{
+  width:300px;
+  border:1.5px solid gray;
+  border-radius:7px;
+  padding:0px 2px;
+  margin:20px 0;
+}
+#optionp{
+  text-decoration: none;
+  display: flex !important;
+  align-items:center;
+  font-family: 'Rubik', sans-serif;
+  width:100%;
+  padding:1% 0% 1%;
+  background-color: white;
+  color:black
+
+}
+.div-uploader input[type='file'] {
+  opacity: 0;
+  width: 30px;
+  position: absolute;
+  z-index: 3;
+}
+.div-uploader::before {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  width:20px;
+  z-index: 1;
 }

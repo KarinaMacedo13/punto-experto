@@ -1,3 +1,93 @@
 * {
     color: black;
 }
+
+.btn-back {
+    width: 280px;
+    font-family: Forza;
+    color: #636466;
+    background-color: white;
+    border: 0px;
+    font-weight: normal;
+    font-size: 13px;
+    padding-right: 135px;
+    margin-top: 14px;
+}
+
+#img {
+    border-radius: 100px;
+    width: 5em;
+    margin-right: 9px;
+}
+
+#container-card {
+    display: flex;
+    flex-direction: row;
+    font-family: forza
+}
+
+#name {
+    margin-top: 9px;
+    color: #29384C;
+    font-size: 15px;
+}
+
+.text-in-card {
+    font-size: 13px;
+    color: #636466
+}
+
+#text-info {
+    margin-left: 9px;
+}
+
+.sub-tittle {
+    font-size: 14px;
+    font-family: forza;
+    font-weight: bold;
+    font-style: bold;
+    color: #29384C;
+    margin-top: 9px;
+}
+
+.items {
+    background-color: #E8F4FF !important;
+    color: #828282 !important;
+    font-family: forza;
+    margin-right: 5px;
+}
+.text-basic{
+    font-family: Forza;
+    font-size: 12px;
+    color: #29384C;
+}
+#group-contact{
+    font-family: Forza;
+    display:flex;
+    flex-direction: row;
+    align-items: center;
+
+}
+#btn-msj{
+    background-color: #ED1C24;
+    width: 109px;
+    font-size: 12px;
+    padding: 5px;
+    border:0px;
+    color:white;
+}
+#btn-whatsapp{
+    background-color:#60D66A;
+    width: 109px;
+    font-size: 12px;
+    padding: 5px;
+    border:0px;
+    color: white;
+}
+#contact{
+    font-size: 12px;
+    color:#636466;
+}
+.logo1{
+    border-color:white
+}
