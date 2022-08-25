@@ -4,13 +4,33 @@
 }
 .containerNav{
 width: 100vw;
-
+}
+#exit{
+  color:#EC1D24;
+  margin-left:120px;
+  margin-top: 10px;
 }
 .containerOportunities{
   color:black;
+  font-family: forza;
 }
-.nextOptionNavBar{
-
+.text-oportunity{
+  color:black;
+}
+#header{
+  font-size: 13px;
+  margin-left: 10px;
+  margin-top: 20px;
+  margin-bottom: 15px;
+}
+.item{
+  display:flex;
+  flex-direction: row;
+  margin:5px;
+  margin-left: 10px;
+}
+.item>p{
+  margin-left: 9px;
 }
 
 .example-spacer {

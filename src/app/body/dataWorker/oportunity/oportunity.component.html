@@ -1,67 +1,81 @@
-
 <header class="containerNav">
   <mat-toolbar>
-      <span><img class="logoNav" src="https://i.postimg.cc/HnwhTt7s/logo-Principal.png"/></span>
-      <span><img class="nextOptionNavBar" src="https://i.postimg.cc/yxZqmts2/back.png"/></span>
-      <span class="example-spacer"></span>
-      <div class="optionsNavBar" fxShow="true" fxHide.lt-md="true" *ngFor="let data of navData">
-          <a mat-button routerLink="/">{{data.nav}}</a>
-      </div>
-      <button class="initSesion" mat-button (click)="openDialog('0ms', '0ms')">INICIAR SESIÓN</button>
-      <span (click)="openDialog('0ms', '0ms')"><img class="iconExpert" src="https://i.postimg.cc/jjSzkJC4/icon-Expert.png"/></span>
+    <span
+      ><img
+        class="logoNav"
+        src="https://i.postimg.cc/HnwhTt7s/logo-Principal.png"
+    /></span>
+    <span
+      ><img
+        class="nextOptionNavBar"
+        src="https://i.postimg.cc/yxZqmts2/back.png"
+    /></span>
+    <span class="example-spacer"></span>
+    <div
+      class="optionsNavBar"
+      fxShow="true"
+      fxHide.lt-md="true"
+      *ngFor="let data of navData"
+    >
+      <a mat-button routerLink="/">{{ data.nav }}</a>
+    </div>
+    <button class="initSesion" mat-button (click)="openDialog('0ms', '0ms')">
+      INICIAR SESIÓN
+    </button>
+    <span (click)="openDialog('0ms', '0ms')"
+      ><img
+        class="iconExpert"
+        src="https://i.postimg.cc/jjSzkJC4/icon-Expert.png"
+    /></span>
   </mat-toolbar>
 </header>
+
 <div class="containerOportunities">
-  <h1>Hola, Luis Angello</h1>
-  <p>Aquí podrás actualizar tu información registrada</p>
-  <ul>
-    <li>
-      <a mat-list-item routerLink="aliado" >
-        <mat-icon>person_add_alt</mat-icon> AliadoPacasmayo
-      </a>
-    </li>
+  <hr>
+  <div class="item">
+    <i class="bi bi-wallet2"></i>
+    <p>Aliado Pacasmayo</p>
+  </div>
+<hr>
 
-    <li>
-      <a mat-list-item routerLink="cotizations" >
-        <mat-icon>person_add_alt</mat-icon> Mis cotizaciones
-      </a>
-    </li>
+  <div class="item">
+    <i class="bi bi-card-checklist"></i>
+    <p>Mis cotizaciones</p>
+  </div>
+  <hr>
 
-    <li>
-      <a mat-list-item routerLink="goal" >
-        <mat-icon>person_add_alt</mat-icon> Mis logros
-      </a>
-    </li>
+  <div class="item">
+    <i class="bi bi-star-fill"></i>
+    <p>Mis logros</p>
+  </div>
+<hr>
 
-    <li>
-      <a mat-list-item routerLink="cla" >
-        <mat-icon>person_add_alt</mat-icon> Mis clases en vivo
-      </a>
-    </li>
+  <div class="item">
+    <i class="bi bi-calendar-check"></i>
+    <p>Mis clases en vivo</p>
+  </div>
+  <hr>
 
-    <li>
-      <a mat-list-item routerLink="resum" >
-        <mat-icon>person_add_alt</mat-icon> Resumenes por clase
-      </a>
-    </li>
+  <div class="item">
+    <i class="bi bi-book"></i>
+    <p>Resúmenes por clase</p>
+  </div>
+<hr>
 
-    <li>
-      <a mat-list-item routerLink="actualizar" >
-        <mat-icon>person_add_alt</mat-icon> Mis datos
-      </a>
-    </li>
+  <div mat-list-item routerLink="actualizar" class="item">
+    <i class="bi bi-file-person"></i>
+    <p>Mis datos</p>
+  </div>
+  <hr>
 
-    <li>
-      <a mat-list-item routerLink="message" >
-        <mat-icon>person_add_alt</mat-icon> Mis oportunidades
-      </a>
-    </li>
-  </ul>
+  <div mat-list-item routerLink="message" class="item">
+    <i class="bi bi-envelope-check"></i>
+    <p>Mis oportunidades</p>
+  </div>
+<hr>
 
-    <a mat-list-item (click)="logOut()">
-        <mat-icon>exit_to_app</mat-icon>
-        Cerrar sesión
-    </a>
-
+  <div  id="exit"mat-list-item (click)="logOut()">
+    <i class="bi bi-x-circle"></i>
+    Cerrar sesión
+  </div>
 </div>
-
