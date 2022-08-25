@@ -16,6 +16,6 @@
     </div>
 
 <div mat-dialog-actions>
-    <button mat-raised-button type="button">INGRESAR</button><br><br><br>
-    <h3 mat-dialog-bg-black-subheading-2>¿Aún no estas registrado? <a href="/" class="register">Registrate aquí</a></h3>
+    <button mat-raised-button mat-dialog-close type="button" (click)="login()">INGRESAR</button><br><br><br>
+    <h3 mat-dialog-bg-black-subheading-2 mat-dialog-close >¿Aún no estas registrado? <a  mat-button routerLink="/crear" class="register">Registrate aquí</a></h3>
 </div>

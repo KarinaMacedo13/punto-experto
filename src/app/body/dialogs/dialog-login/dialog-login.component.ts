@@ -16,7 +16,7 @@ export class DialogLoginComponent implements OnInit {
     private authService: AuthService,
     private newRoute: Router,
     private firestore: FirestoreService,
-    private snackBar: MatSnackBar
+    private snackBar: MatSnackBar,
   ) { }
 
   ngOnInit(): void {
@@ -32,7 +32,7 @@ export class DialogLoginComponent implements OnInit {
        })
       .catch(err => console.log('Error' , err))
       }
-   
+
   /* errRol() {
     this.snackBar.open('Contraseña o correo incorrecto. Ingresar nuevamente', 'Aceptar', {
       duration: 5000,
@@ -40,4 +40,8 @@ export class DialogLoginComponent implements OnInit {
       verticalPosition: 'top'
     })
   } */
+
+  login(){
+    this.newRoute.navigate(['/oportunity']);
+  }
 }

@@ -21,6 +21,8 @@ import { DialogEmailComponent } from './dialogs/dialog-email/dialog-email.compon
 import { DialogOptionsComponent } from './dialogs/dialog-options/dialog-options.component';
 
 import { DialogLoginComponent } from './dialogs/dialog-login/dialog-login.component';
+import { OportunityComponent } from './dataWorker/oportunity/oportunity.component';
+import { MessageComponent } from './dataWorker/message/message.component';
 
 
 @NgModule ({
@@ -36,7 +38,9 @@ import { DialogLoginComponent } from './dialogs/dialog-login/dialog-login.compon
     DialogWhatssapComponent,
     DialogEmailComponent,
     DialogOptionsComponent,
-    DialogLoginComponent
+    DialogLoginComponent,
+    OportunityComponent,
+    MessageComponent
 
   ],
   imports: [
