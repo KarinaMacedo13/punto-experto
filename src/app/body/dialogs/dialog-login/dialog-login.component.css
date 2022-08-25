@@ -6,6 +6,12 @@
     align-items: center;
 }
 
+#text{
+    margin-bottom: -10px;
+    font-family: forza;
+font-size: 12px;
+}
+
 h2 {
     color: #ED1C24;
     font-size: 1.6rem;

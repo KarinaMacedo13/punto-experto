@@ -1,39 +1,45 @@
-<h2 mat-dialog-title>Enviar mensaje</h2>
+<h2 id="tittle" mat-dialog-title>Enviar mensaje <hr id="linea1"> </h2>
 <div mat-dialog-content>
-  <p>Deja tus datos para que {{ data }} se contacte contigo</p>
+  <p class="text">Deja tus datos para que {{ data }} se contacte contigo</p> 
 </div>
 
 <mat-form-field appearance="legacy">
-  <mat-label>Nombre:*</mat-label>
-  <input matInput placeholder="Nombre" />
+  <mat-label class="text2">Nombre:*</mat-label>
+  <input class="text" matInput placeholder="Nombre" />
 </mat-form-field>
-<br />
+
+<div class="line"></div>
+
 <mat-form-field appearance="legacy">
-  <mat-label>Correo:*</mat-label>
-  <input matInput placeholder="Correo" />
+  <mat-label class="text2" >Correo:*</mat-label>
+  <input class="text" matInput placeholder="Correo" />
 </mat-form-field>
-<br />
+
+<div class="line"></div>
 <mat-form-field appearance="legacy">
-  <mat-label>Celular:*</mat-label>
-  <input matInput placeholder="Celular" />
+  <mat-label class="text2">Celular:*</mat-label>
+  <input class="text" matInput placeholder="Celular" />
 </mat-form-field>
-<br />
+
+<div class="line"></div>
+
 <mat-form-field appearance="legacy">
-  <mat-label>Mensaje:*</mat-label>
-  <input matInput placeholder="ensaje" />
+  <mat-label class="text2">Mensaje:*</mat-label>
+  <input class="text" matInput placeholder="ensaje" />
 </mat-form-field>
-<br />
-<mat-checkbox
+
+<div class="text" id="container-terms">
+<input
+type="checkbox"
   class="example-margin"
   #saveCheckboxOne
   (change)="(saveCheckboxOne.checked)"
 >
-  Acepto los <a href="url">Términos y Condiciones</a>
-</mat-checkbox>
-
+<div>  Acepto los <a id="color" href="url">Términos y Condiciones</a> </div>
+</div>
 <div mat-dialog-actions>
-  <button mat-raised-button mat-dialog-close>Cancelar</button>
-  <button mat-raised-button mat-dialog-close [disabled]="!saveCheckboxOne.checked">
+  <button class="btns" mat-raised-button mat-dialog-close>Cancelar</button>
+  <button class="btns" mat-raised-button mat-dialog-close [disabled]="!saveCheckboxOne.checked">
     Enviar Mensaje
   </button>
 </div>
