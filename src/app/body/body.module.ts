@@ -30,7 +30,7 @@ import { DialogLoginComponent } from './dialogs/dialog-login/dialog-login.compon
     DialogOptionInitial,
     DialogUbicationComponent,
     InfobuildersComponent,
-    DialogLoginComponent,
+    DialogLoginComponent
 
   ],
   imports: [

@@ -18,8 +18,7 @@ import { provideAuth,getAuth } from '@angular/fire/auth';
 @NgModule({
   declarations: [
     AppComponent,
-    HeaderNavComponent,
-    DialogLoginComponent
+    HeaderNavComponent
   ],
   imports: [
     FormsModule,
