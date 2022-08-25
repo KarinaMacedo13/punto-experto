@@ -5,6 +5,9 @@ import { catchError, map } from 'rxjs/operators';
 import { coordenadasSJL, coordenadasRimac } from './coordenates.const';
 import { DialogUbicationComponent } from '../../dialogs/dialog-ubication/dialog-ubication.component';
 import { MatDialog } from '@angular/material/dialog';
+import { lambayeque } from './lambayeque.clean.const';
+import {piura} from './piura.clean.const';
+
 declare const google: any;
 
 @Component({
@@ -27,6 +30,8 @@ export class MapsComponent implements OnInit {
     { id: 'huachipa', name: 'Huachipa' },
   ];
 
+  datamapv1 = new Map(); // key: DEPARTAMENTO_PROVINCIA_DISTRITO , value: COORDENADAS A DIBUJAR
+
   constructor( public dialog: MatDialog,) {
   }
 
@@ -40,20 +45,73 @@ export class MapsComponent implements OnInit {
       this.mapElement.nativeElement,
       mapProperties
     );
+
+    this.loadDataMap(this.datamapv1);
   }
 
-  onSubmit() {
-    this.ciudad = 'sjl';
-    console.log('ciudad seleccionada: ', this.ciudad);
+  ubication:any;
+  openModalUbication(){
+    let district;
+    const dialogRef = this.dialog.open(DialogUbicationComponent, {data:{district}});
+    dialogRef.afterClosed().subscribe(result => {
+      const depart = result.district.departamento.toUpperCase();
+      const prov = result.district.provincia.toUpperCase();
+      const distr = result.district.distrito.toUpperCase();
+      const formatDirection = `${depart}_${prov}_${distr}`
+      console.log(formatDirection, "jjresullllltado final");
 
-    if (this.ciudad == 'sjl') {
-      this.dibujarCiudad(coordenadasSJL);
-    }
-    if (this.ciudad == 'rimac') {
-      this.dibujarCiudad(coordenadasRimac);
-    }
+        this.onSubmit(formatDirection)
+    });
+  }
 
-   // this.limpiarMapa();
+  loadDataMap(datamap:any) {
+    this.extractDataFromJSONAndAddToMap(lambayeque, this.datamapv1);
+    this.extractDataFromJSONAndAddToMap(piura, this.datamapv1);
+  }
+
+  extractDataFromJSONAndAddToMap(rawdata:any, datamap:any) {
+    for (var i=0; i<rawdata.jsonData.length; i++) {
+      for (var key in rawdata.jsonData[i]) {
+        const data1 = rawdata.jsonData[i];
+        const fields = rawdata.jsonData[i].fields;
+        const fieldsGeoShape = fields.geo_shape;
+        const fieldDepartamento = fields.nombdep;
+        const fieldProvincia = fields.nombprov;
+        const fieldDistrito = fields.nombdist;
+        console.log(fieldDepartamento+"_"+fieldProvincia+"_"+fieldDistrito);
+        datamap.set(fieldDepartamento+"_"+fieldProvincia+"_"+fieldDistrito, fieldsGeoShape);
+        }
+    }
+  }
+
+  getGoogleMapCoordenatesFromDataMap(datamap:any, ciudad:String) {
+    var googleCoords = []
+    const dataToPrint= datamap.get(ciudad); //esto se debe obtener desde frontend!!!
+    for (var i=0; i<dataToPrint.coordinates.length; i++) {
+      const currentLat = dataToPrint.coordinates[i].lat;
+      const currentLng = dataToPrint.coordinates[i].lng;
+      googleCoords[i] = new google.maps.LatLng(currentLat, currentLng);
+    }
+    return googleCoords;
+  }
+
+
+/*
+maps.component.ts:56 LAMBAYEQUE_LAMBAYEQUE_CHONGOYAPE
+5maps.component.ts:56 LAMBAYEQUE_LAMBAYEQUE_OYOTUN
+5maps.component.ts:56 LAMBAYEQUE_LAMBAYEQUE_TUMAN
+5maps.component.ts:56 LAMBAYEQUE_LAMBAYEQUE_PITIPO
+5maps.component.ts:56 LAMBAYEQUE_LAMBAYEQUE_JAYANCA
+5maps.component.ts:56 LAMBAYEQUE_LAMBAYEQUE_MOTUPE
+5maps.component.ts:56 LAMBAYEQUE_LAMBAYEQUE_OLMOS
+*/
+
+  onSubmit(data:string) {
+    //this.ciudad = 'sjl';
+//aqui deben llegar esos datos
+    //this.cleanPolygonsFromMap();
+    const coordenadasADibujar= this.getGoogleMapCoordenatesFromDataMap(this.datamapv1, data);
+    this.dibujarCiudad(coordenadasADibujar);
   }
 
   limpiarMapa() {
@@ -82,7 +140,5 @@ export class MapsComponent implements OnInit {
     this.map.fitBounds(bounds);
   }
 
-  openModalUbication(){
-    this.dialog.open(DialogUbicationComponent, {})
-  }
+
 }

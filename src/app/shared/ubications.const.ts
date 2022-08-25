@@ -14,8 +14,24 @@ export const ubications = [
     distrito: "Rimac"
   },
   {
-    departamento: "Lima",
-    provincia: "Lima",
-    distrito: "Rimac"
-  }
+    departamento: "Piura",
+    provincia: "Piura",
+    distrito: "Catacaos"
+  },
+  {
+    departamento: "Piura",
+    provincia: "Talara",
+    distrito: "Los organos"
+  },
+  {
+    departamento: "Piura",
+    provincia: "Sullana",
+    distrito: "Bellavista"
+  },
+  {
+    departamento: "Piura",
+    provincia: "Sullana",
+    distrito: "Salitral"
+  },
 ]
+

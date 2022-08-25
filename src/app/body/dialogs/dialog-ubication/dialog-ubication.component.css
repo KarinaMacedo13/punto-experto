@@ -27,3 +27,6 @@
 .titleModal{
   color:black
 }
+.mat-dialog-actions button{
+background-color: brown;
+}
