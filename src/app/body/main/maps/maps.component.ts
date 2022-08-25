@@ -96,7 +96,6 @@ export class MapsComponent implements OnInit {
     if (this.polygon != null) {
       this.polygon.setMap(null);
     }
-    console.log
     const newCoordenadasADibujar = this.getGoogleMapCoordenatesFromDataMap(this.datamapv1, data);
     this.dibujarCiudad(newCoordenadasADibujar);
   }
