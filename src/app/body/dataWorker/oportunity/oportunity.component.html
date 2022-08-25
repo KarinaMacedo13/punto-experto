@@ -58,7 +58,7 @@
     </li>
   </ul>
 
-    <a mat-list-item [routerLink]="['/']">
+    <a mat-list-item (click)="logOut()">
         <mat-icon>exit_to_app</mat-icon>
         Cerrar sesión
     </a>
