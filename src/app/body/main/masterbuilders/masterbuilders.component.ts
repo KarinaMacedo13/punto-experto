@@ -31,11 +31,6 @@ export class MasterbuildersComponent implements OnInit {
     this.firestoreservice.getMaster().subscribe(workersData => {
       this.workersData = workersData;
       // this.number = workersData.length;
-      console.log(workersData);
-    })
-    this.firestoreservice.getMaster().subscribe(workersData => {
-      this.workerFilter = workersData;
-      console.log(this.workerFilter);
     })
     this.getOptions();
     this.firestoreservice.searchModal.subscribe(data => {
@@ -43,7 +38,11 @@ export class MasterbuildersComponent implements OnInit {
     });
   }
   navigation(id:string){
-    console.log(id);
+    this.workerFilter = this.workersData.filter(worker => worker.id === id)
+    this.container = !this.container;
+    this.info = !this.info;
+  }
+  navigationleft(){
     this.container = !this.container;
     this.info = !this.info;
   }
@@ -55,8 +54,6 @@ export class MasterbuildersComponent implements OnInit {
     this.firestoreservice.searchModal.subscribe(data => {
       this.option = data.data;
       this.ubication = data.dataUbication;
-      console.log('obtengo option',data.data)
-      console.log('obtengo ubicacion',data.dataUbication)
     });
   }
   openModalUbication(){

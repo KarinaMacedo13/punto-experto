@@ -17,25 +17,20 @@ export class OptionPipePipe implements PipeTransform {
       const experienceArray = workers.sort(
         (a: any, b: any) => b.experience - a.experience
       );
-      console.log('soy experienceArray', experienceArray);
-
       return experienceArray;
     }
     if (option === 'certificate') {
       const certificateArray = workers.sort(
         (a: any, b: any) => b.certificados.length - a.certificados.length
       );
-      console.log('soy certificateArray', certificateArray);
       return certificateArray;
     }
     if (ubication != undefined) {
       const distritoUbicationLower = ubication.distrito.toLowerCase();
-      console.log('soy la ubicacion en minuscula', distritoUbicationLower);
       const filterArequipa = workers.map((e) => ({
         object: e,
         area: e.areaWorker.map((e: any) => e.toLowerCase().split(',')).flat(),
       }));
-      console.log('lowercase workers', filterArequipa);
       const filterUbication = filterArequipa.map((e: any) => {
         if (
           e.area.filter((e: any) => e.includes(distritoUbicationLower))
@@ -49,7 +44,6 @@ export class OptionPipePipe implements PipeTransform {
       //     dataNumber: this.filterFinal.length,
       //   });
       // }
-      console.log(this.filterFinal)
       return this.filterFinal;
     }
     return workers;
