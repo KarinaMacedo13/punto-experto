@@ -1,20 +1,23 @@
 export const navViewDesktop = [
   {
-    nav:'CALCULADORA'
+    nav:'CALCULADORA',
+    id: 'calculate'
   },
   {
-    nav:'PUNTO EXPERTO'
+    nav:'PUNTO EXPERTO',
+    id: 'point'
   },
   {
-    nav:'CAPACITATE'
+    nav:'CAPACITATE',
+    id: 'capacit'
   },
   {
-    nav:'CLASES EN VIVO'
+    nav:'CLASES EN VIVO',
+    id: 'class'
   },
   {
-    nav:'PRODUCTOS'
-  },
-  {
-    nav:'ESCRIBENOS'
+    nav:'INICIAR SESIÓN',
+    id: 'init'
+
   },
 ]

@@ -1,18 +1,22 @@
 *{
   margin: 0;
   box-sizing: border-box;
+
 }
 .containerNav{
 width: 100vw;
 }
 #exit{
   color:#EC1D24;
-  margin-left:120px;
+  margin-left:11px;
   margin-top: 10px;
 }
 .containerOportunities{
   color:black;
   font-family: forza;
+  margin-top:60px;
+  margin-left: 200px;
+  margin-right: 200px;
 }
 .text-oportunity{
   color:black;
@@ -100,23 +104,13 @@ a {
       display: none;
   }
 }
-
-@media only screen and (min-width: 1000px) {
-a {font-size: 40%;}
+.containerOportunities{
+  color:black;
+  font-family: forza;
+  margin-top:0px;
+  margin-left: 0px;
+  margin-right: 0px;
 }
-@media only screen and (min-width: 1200px) {
-a {font-size: 50%;}
-.initSesion {
-  width: 350px;
-}
-}
-@media only screen and (min-width: 1400px) {
-a {font-size: 70%;}
-.initSesion {
-  width: 380px;
-}
-}
-
 main{
   background-color: #EC1D24;
   width: 100%;

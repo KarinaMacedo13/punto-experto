@@ -1,6 +1,6 @@
-<h2 mat-dialog-title>Enviar mensaje</h2>
+<h2 id="tittle" mat-dialog-title>Enviar mensaje <hr id="linea1"> </h2>
 <div mat-dialog-content>
-  <p>Deja tus datos para que {{ data }} se contacte contigo</p>
+  <p class="text">Deja tus datos para que {{ data }} se contacte contigo</p> 
 </div>
 <form [formGroup]="emailForm" (ngSubmit)="sendEmail()">
   <div class="form-group">
@@ -76,8 +76,7 @@
   #saveCheckboxOne
   (change)="(saveCheckboxOne.checked)"
 >
-  Acepto los <a href="url">Términos y Condiciones</a>
-</mat-checkbox>
+<div>  Acepto los <a id="color" href="url">Términos y Condiciones</a> </div>
 
 <div mat-dialog-actions>
   <button mat-raised-button mat-dialog-close>Cancelar</button>
@@ -89,5 +88,4 @@
     value="Enviar Mensaje"
   >
 </div>
-</form>
 
