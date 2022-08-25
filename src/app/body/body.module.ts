@@ -18,6 +18,7 @@ import { NgSelectModule } from '@ng-select/ng-select';
 import { InfobuildersComponent } from './main/masterbuilders/infobuilders/infobuilders.component';
 import { DialogWhatssapComponent } from './dialogs/dialog-whatssap/dialog-whatssap.component';
 import { DialogEmailComponent } from './dialogs/dialog-email/dialog-email.component';
+import { DialogOptionsComponent } from './dialogs/dialog-options/dialog-options.component';
 
 
 
@@ -33,6 +34,7 @@ import { DialogEmailComponent } from './dialogs/dialog-email/dialog-email.compon
     InfobuildersComponent,
     DialogWhatssapComponent,
     DialogEmailComponent,
+    DialogOptionsComponent,
 
   ],
   imports: [
