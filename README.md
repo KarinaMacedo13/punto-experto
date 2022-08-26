@@ -1,6 +1,6 @@
 # PuntoExperto
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.0.2.
+![logo-pacasmayo](https://user-images.githubusercontent.com/98657256/186792554-73a36249-60fc-42d8-87e0-b29c8464105b.jpg)
 
 ## Descripción
 
